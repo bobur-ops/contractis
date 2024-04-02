@@ -1,0 +1,73 @@
+// colors & bg
+$white: #ffffff;
+$black: #000;
+$white-transparent: #ffffff80;
+$black-transparent: #6866660d;
+$gray: #ffffffcc;
+$violet: #f6bafde6;
+$blue: #316ad7e6;
+$checkbox-color: #7177ff;
+$gradient-violet-blue: linear-gradient(91deg, $violet -7.12%, $blue 114.37%);
+$gradient-skyblue-blue: linear-gradient(98deg, #0085ff -38.38%, #3633d0 71.88%);
+$bg-stars: url(assets/images/background.jpg);
+$bg-inputs: #101010;
+$gray-secondary: #30363d;
+$red: #bb323a;
+
+// border
+$border-radius-s: 10px;
+$border-radius-m: 15px;
+$border-radius-l: 20px;
+$border-radius-rounded: 50%;
+
+// z-index
+$z-index-0: -1; // background
+$z-index-1: 1; // standard elements
+$z-index-2: 2; // standard elements on standard elements
+$z-index-3: 3; // header or sidebar
+$z-index-4: 4; // modal
+$z-index-5: 5; // extra elements
+
+// fonts
+$base-font: 'Montserrat', monospace;
+$title-font: 'Play', sans-serif;
+$logo-font: 'Meedori Sans', sans-serif;
+$font-height-large: 150%;
+
+// width
+$full-height: calc(100vh - calcHeight(119px));
+$media-desktop: 1660px;
+$media-xl: 1280px;
+$media-lg: 1024px;
+$media-md: 768px;
+$media-sm: 640px;
+
+$ui-step: 5px;
+
+@function calcHeight($size, $step: 1) {
+  @return calc(100vh / (1080px / $size * $step));
+}
+
+@function calcWidth($size) {
+  @return calc(100vw / (1920px / $size));
+}
+@function uiStep($multiplier) {
+  @return calc($ui-step * #{$multiplier});
+}
+
+$space-x-small: #{uiStep(1)}; // 5px
+$space-smaller: #{uiStep(2)}; // 10px
+$space-small: #{uiStep(3)}; // 15px
+$space-small-plus: #{uiStep(4)}; // 20px
+$space-medium: #{uiStep(5)}; // 25px
+$space-medium-plus: #{uiStep(6)}; // 30px
+$space-large: #{uiStep(7)}; // 35px
+$space-large-plus: #{uiStep(8)}; // 40px
+$space-x-large: #{uiStep(9)}; // 45px
+$space-x-large-plus: #{uiStep(10)}; // 50px
+$space-xx-large: #{uiStep(11)}; // 55px
+$space-xx-large-plus: #{uiStep(12)}; // 60px
+$space-big: #{uiStep(13)}; // 65px
+$space-big-plus: #{uiStep(14)}; // 70px
+$space-x-big: #{uiStep(15)}; // 75px
+$space-x-big-plus: #{uiStep(16)}; // 80px

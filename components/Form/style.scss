@@ -1,0 +1,52 @@
+.form {
+  @apply flex flex-col;
+  gap: calcHeight(30px);
+  &-labels {
+    @apply flex flex-col;
+    gap: calcHeight(24px)
+  }
+  color: $white;
+  font-family: $base-font;
+  &-field {
+    @apply flex flex-col;
+    gap: calcHeight(15px);
+    font-weight: 400;
+    &__input {
+      @apply relative w-full h-full flex;
+      &-switcher {
+        @apply absolute cursor-pointer;
+        top: 50%;
+        transform: translate(0, -50%);
+        right: 24.68px;
+        width: 19.35px;
+        height: 16.258px;
+      }
+    }
+    &__label {
+      line-height: calcHeight(11px);
+      height: calcHeight(11px);
+      font-size: 16px;
+      font-weight: 400;
+      text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    }
+    &--error {
+      color: $red
+    }
+
+  }
+  &-input {
+    @apply w-full relative;
+    padding: calcHeight(16px) calcHeight(25px);
+    border-radius: 12px;
+    transition: all 0.3s;
+    border: 1px solid $white-transparent;
+    background: rgba(16, 16, 16, 0.80);
+    font-size: 14px;
+    &:focus {
+      border: 1px solid $white;
+    }
+    &--error {
+      border: 1px solid $red;
+    }
+  }
+}

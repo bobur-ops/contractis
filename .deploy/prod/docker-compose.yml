@@ -1,0 +1,37 @@
+version: '3'
+
+networks:
+  frontend-local:
+    driver: bridge
+
+services:
+  proxy:
+    build:
+      context: ../../../proxy
+      dockerfile: .deploy/prod.Dockerfile
+      args:
+        CONFIG_FILE: frontend/frontend.prod.conf
+    image: proxy-local
+    container_name: proxy-local
+    ports:
+      - '${PROXY_PORT:-80}:80'
+    environment:
+      NGINX_SERVER: ${NGINX_SERVER:-localhost}
+    depends_on:
+      - frontend
+    networks:
+      - frontend-local
+
+  frontend:
+    build:
+      context: ../..
+      dockerfile: .deploy/prod/Dockerfile
+      args:
+        VITE_API_URL: ${VITE_API_URL:-https://contractis.ru/api/}
+        VITE_SOCKET_HOST: ${VITE_SOCKET_HOST:-wss://contractis.ru}
+        VITE_GOOGLE_MAP_TOKEN: ${VITE_GOOGLE_MAP_TOKEN}
+    image: frontend-local
+    container_name: frontend-local
+    restart: unless-stopped
+    networks:
+      - frontend-local

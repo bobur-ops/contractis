@@ -1,0 +1,16 @@
+@mixin earth-gif($background-size, $top, $left) {
+  background: url("/assets/images/Earth.gif") top (-$top) left (-$left);
+  background-size: $background-size;
+  border-radius: $border-radius-rounded;
+}
+
+@mixin gradient-text($font, $size, $weight, $line-height: normal) {
+  background: $gradient-skyblue-blue;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: $font;
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
