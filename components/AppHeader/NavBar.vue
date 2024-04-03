@@ -33,27 +33,24 @@ const NavItems = ref([
 
 <style scoped lang="scss">
 .menu {
-  display: none;
-  gap: $space-x-large-plus;
+  display: flex;
+  /* gap: $space-x-large-plus; */
+  gap: calcWidth(35);
+  @media screen and ($media-lg-query) {
+    @apply hidden;
+  }
   &__item {
     color: $white;
+    opacity: 0.9;
+    /* letter-spacing: 0.75px; */
     font-family: $base-font;
-    height: 29px;
-    font-size: 15px;
-    font-weight: 500;
+    /* height: 29px; */
+    font-size: calcWidth(15);
+    font-weight: 400;
     line-height: 150%;
-    @media screen and ($media-xl-query) {
-      /* font-size: 22px; */
-    }
     a {
       white-space: nowrap;
     }
-  }
-}
-
-@media screen and ($media-lg-query) {
-  .menu {
-    @apply flex;
   }
 }
 </style>

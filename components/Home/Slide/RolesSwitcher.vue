@@ -50,25 +50,26 @@ watch(role, () => {
   bottom: calcHeight(40px);
   right: 0;
   color: $white;
-  width: 100%;
   z-index: $z-index-2;
   gap: calcHeight(55px);
-  padding: 0 10px;
+  padding: 0;
   @media screen and ($media-lg-query) {
-    padding: 0;
-    width: unset;
+    width: 100%;
   }
   &__role-block {
     @apply flex flex-col justify-end cursor-pointer;
     gap: calcHeight(12px);
+    @media screen and ($media-lg-query) {
+      width: 100%;
+    }
   }
   &__role-image {
     @apply flex justify-center items-end;
-    width: 140px;
-    height: 95px;
+    height: calcWidth(200);
+    width: calcWidth(230);
     @media screen and ($media-lg-query) {
-      height: 200px;
-      width: 230px;
+      height: calculateVw768(140);
+      width: 100%;
     }
     background-color: $black-transparent;
     border-radius: $border-radius-l;
@@ -76,18 +77,17 @@ watch(role, () => {
     border: 1.5px solid $white;
     transition: 0.6s;
     img {
-      width: 131px;
-      height: 159px;
+      height: 235px;
       @media screen and ($media-lg-query) {
-        width: unset;
-        height: 235px;
+        height: calculateVw768(235);
       }
     }
     &_active {
       box-shadow: 0 0 35px 0 $white-transparent;
-      height: 160px;
+      height: calcWidth(260);
       @media screen and ($media-lg-query) {
-        height: 260px;
+        height: calculateVw768(260);
+        width: 100%;
       }
     }
   }

@@ -48,9 +48,19 @@ $ui-step: 5px;
   @return calc(100vh / (1080px / $size * $step));
 }
 
+// @function calcWidth($size) {
+//   @return calc(100vw / (1920px / $size));
+// }
 @function calcWidth($size) {
-  @return calc(100vw / (1920px / $size));
+  $vwSize: $size * 100 / 1920;
+  @return #{$vwSize}vw;
 }
+
+@function calculateVw768($size) {
+  $vwSize: calc($size * 100 / 768);
+  @return #{$vwSize}vw;
+}
+
 @function uiStep($multiplier) {
   @return calc($ui-step * #{$multiplier});
 }

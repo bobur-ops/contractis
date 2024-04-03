@@ -11,7 +11,7 @@ a {
   text-decoration: none;
 }
 .container {
-  max-width: $media-desktop;
+  max-width: calcWidth(1660);
 }
 @media screen and ($media-desktop-query) {
   .container {

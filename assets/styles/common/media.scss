@@ -1,8 +1,8 @@
 @import './variables.scss';
 
 $media-desktop-query: 'max-width: #{$media-desktop}';
-$media-desktop-min-query: "min-width: #{$media-desktop}";
-$media-xl-query: 'min-width: #{$media-xl}';
-$media-lg-query: 'min-width: #{$media-lg}';
-$media-md-query: 'min-width: #{$media-md}';
-$media-sm-query: 'min-width: #{$media-sm}';
+$media-desktop-min-query: 'min-width: #{$media-desktop}';
+$media-xl-query: 'max-width: #{$media-xl}';
+$media-lg-query: 'max-width: #{$media-lg}';
+$media-md-query: 'max-width: #{$media-md}';
+$media-sm-query: 'max-width: #{$media-sm}';

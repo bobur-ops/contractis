@@ -18,7 +18,7 @@
           font-weight="500"
           @click="ToLogin"
         >
-          <arrow-text font-size="15px" font-weight="500"> Войти </arrow-text>
+          <arrow-text font-size="15px" font-weight="400"> Войти </arrow-text>
         </button-ghost>
         <app-header-lang-select class="header-actions__select" />
       </article>
@@ -45,44 +45,47 @@ const emits = defineEmits(['open-sidebar']);
 <style scoped lang="scss">
 .header {
   @apply sticky w-full flex justify-center;
+  /* height: calcHeight(119px); */
   height: calcHeight(119px);
   background: linear-gradient(180deg, #000 29.5%, rgba(0, 0, 0, 0) 100%);
-  padding: 0 15px;
-  @media screen and ($media-sm-query) {
-    padding: 0 50px;
-  }
+  padding: 0 calcWidth(15);
   top: 0;
   &-nav {
     @apply flex;
     gap: $space-x-big-plus;
   }
   &-actions {
-    display: none;
+    @apply flex h-full justify-center items-center;
     font-family: $base-font;
     color: $white;
-    font-size: 15px;
+    font-size: calcWidth(18);
     font-weight: 500;
     gap: $space-medium-plus;
-    &__link {
-      height: 29px;
-    }
     @media screen and ($media-lg-query) {
-      @apply flex h-full justify-center items-center;
+      @apply hidden;
+    }
+    &__link {
+      /* height: 29px; */
+      opacity: 0.9;
+      font-size: calcWidth(15);
     }
   }
   &-wrapper {
     @apply flex justify-between items-center;
-    padding-bottom: calcHeight(8px);
+    padding-bottom: calcWidth(8);
+    background: url('assets/icons/Header/Line.svg') no-repeat bottom
+      calcWidth(13) left;
+    /* background: url('assets/icons/Header/Line.svg') no-repeat bottom
+      calcHeight(10px, var(--step)) left; */
     @media screen and ($media-lg-query) {
-      background: url('assets/icons/Header/Line.svg') no-repeat bottom
-        calcHeight(10px, var(--step)) left;
+      background: none;
     }
   }
   &__logo {
-    @media screen and ($media-md-query) {
-      height: 28px;
+    height: calcWidth(30);
+    @media screen and ($media-lg-query) {
+      height: calculateVw768(30);
     }
-    height: 15px;
   }
 }
 </style>

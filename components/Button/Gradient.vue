@@ -21,18 +21,18 @@ defineProps({
   @apply flex justify-center items-center;
   color: $white;
   background: url('/assets/images/buttons/gradient-button.svg');
-  height: 37px;
-  padding: 15px 25px;
-  @media screen and ($media-lg-query) {
-    padding: 15px 40px;
-    height: 45px;
-  }
+  background-size: contain;
+  padding: calcWidth(15) calcWidth(48);
+  /* height: calcHeight(48px); */
+  height: calcWidth(48);
   background-size: contain;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  /* width: v-bind(width);
-  height: v-bind(height); */
   background-blend-mode: color;
+  @media screen and ($media-lg-query) {
+    padding: calculateVw768(15) calculateVw768(40);
+    height: calculateVw768(48);
+  }
   //&:hover {
   //  mask-image: url("/assets/images/buttons/gradient-button.svg");
   //  background: rgba(0, 0, 0, 0.28);
@@ -41,12 +41,12 @@ defineProps({
     @apply flex items-center;
     gap: 10px;
     font-family: $base-font;
-    font-size: 13px;
     white-space: nowrap;
     font-weight: 500;
+    font-size: calcWidth(18);
+    font-weight: 500;
     @media screen and ($media-lg-query) {
-      font-size: 18px;
-      font-weight: 500;
+      font-size: calculateVw768(18);
     }
   }
 }

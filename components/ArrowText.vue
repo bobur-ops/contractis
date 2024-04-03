@@ -23,10 +23,7 @@ defineProps({
 .arrow-text {
   @apply flex items-center;
   gap: 10px;
-  font-size: 13px;
-  @media screen and ($media-lg-query) {
-    font-size: 18px;
-  }
+  font-size: calcWidth(18);
   font-weight: v-bind(fontWeight);
   &:after {
     content: url('assets/icons/arrow.svg');
@@ -40,6 +37,9 @@ defineProps({
   }
   &__logo {
     font-family: $logo-font;
+  }
+  @media screen and ($media-lg-query) {
+    font-size: calculateVw768(18);
   }
 }
 </style>

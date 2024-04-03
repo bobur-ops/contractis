@@ -28,11 +28,11 @@
         <h2>fourth page</h2>
       </swiper-slide>
     </Swiper>
-    <home-pagination
+    <!-- <home-pagination
       :speed-time="speedTime / 1000 + 's'"
       :current-page="currentPage"
       :pages="4"
-    />
+    /> -->
   </section>
 </template>
 

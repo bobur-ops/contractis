@@ -30,13 +30,13 @@ onMounted(() => {
 <style scoped lang="scss">
 .main {
   min-height: $full-height;
-  padding: 0 15px;
-  @media screen and ($media-sm-query) {
-    padding: 0 50px;
+  padding: 0 50px;
+  @media screen and ($media-lg-query) {
+    padding: 0;
   }
 }
 .default-layout {
-  background: $black $bg-stars repeat fixed;
+  background: $black;
   font-family: $base-font;
 }
 </style>

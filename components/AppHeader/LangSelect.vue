@@ -20,18 +20,21 @@
     @apply flex items-center;
     gap: 10px;
     &:after {
-      height: 26px;
       content: url('assets/icons/arrow.svg');
+      height: 26px;
       margin-left: $space-smaller;
     }
   }
   &__name {
     line-height: 150%;
-    height: 26px;
+    /* height: 26px; */
+    height: calcWidth(26);
   }
   &__image {
-    width: 34px;
-    height: 24px;
+    /* width: 34px;
+    height: 24px; */
+    width: calcWidth(34);
+    height: calcWidth(24);
     margin-left: 7px;
   }
 }

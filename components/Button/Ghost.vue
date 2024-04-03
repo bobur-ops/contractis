@@ -16,17 +16,19 @@ defineProps({
 <style scoped lang="scss">
 .ghost-button {
   @apply flex justify-center items-center;
-  border-radius: $border-radius-m;
+  /* border-radius: $border-radius-m; */
+  border-radius: calcWidth(15);
   border: 1px solid $white;
   color: $white;
-  height: 37px;
   white-space: nowrap;
-  font-size: 13px;
-  padding: 15px 25px;
+  padding: calcWidth(13) calcWidth(22);
+  height: calcWidth(48);
+  font-size: calcWidth(13);
   @media screen and ($media-lg-query) {
-    padding: 15px 40px;
-    height: 45px;
-    font-size: 18px;
+    padding: calculateVw768(13) calculateVw768(22);
+    font-size: calculateVw768(13);
+    height: calculateVw768(48);
+    border-radius: calculateVw768(15);
   }
 }
 </style>

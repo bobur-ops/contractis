@@ -62,69 +62,71 @@ const ToLogin = () => {
   &__info {
     @apply flex flex-col;
     gap: calcHeight(40px);
-    max-width: 736px;
+    max-width: calcWidth(768);
     margin-top: calcHeight(81px);
+    @media screen and ($media-lg-query) {
+      max-width: calculateVw768(768);
+    }
     &-name {
       font-family: $base-font;
-      font-size: 22px;
-      letter-spacing: calcHeight(1.1px);
-      @media screen and ($media-lg-query) {
-        font-size: calcHeight(50px);
-        letter-spacing: 3.25px;
-      }
+      font-size: calcWidth(50);
+      letter-spacing: calcWidth(3.25);
       font-style: normal;
       font-weight: 500;
       line-height: 100%; /* 80px */
       &_gradient {
-        @include gradient-text($logo-font, 18px, 700);
+        @include gradient-text($logo-font, calcWidth(42), 700);
         letter-spacing: -1.1px;
         @media screen and ($media-lg-query) {
-          @include gradient-text($logo-font, calcHeight(42px), 700);
-          letter-spacing: -3.25px;
+          @include gradient-text($logo-font, calculateVw768(42), 700);
         }
+      }
+      @media screen and ($media-lg-query) {
+        font-size: calculateVw768(50);
       }
     }
     &-description {
       font-family: $base-font;
       font-style: normal;
       font-weight: 400;
-      font-size: calcHeight(15px);
-
+      font-size: calcWidth(17);
       @media screen and ($media-lg-query) {
-        line-height: 150%;
-        max-width: 597px;
-        font-size: calcHeight(17px);
+        font-size: calculateVw768(17);
       }
     }
 
     &-buttons {
-      @apply flex justify-between;
+      @apply flex;
+      gap: $space-large-plus;
       @media screen and ($media-lg-query) {
-        @apply justify-start;
-        gap: $space-large-plus;
+        @apply justify-between;
       }
     }
 
     &-advantages {
-      @apply flex justify-between;
-      @media screen and ($media-md-query) {
-        @apply justify-start;
-        gap: $space-large;
+      @apply flex;
+      gap: $space-large;
+      @media screen and ($media-lg-query) {
+        /* gap: calculateVw768(40); */
+        @apply justify-between;
       }
       &-item {
         @apply flex flex-col;
         line-height: normal;
         font-family: $base-font;
-        font-size: calcHeight(15px);
+        font-size: calcWidth(15);
         font-weight: 500;
-        gap: calcHeight(12px);
+        gap: calcWidth(15);
+        @media screen and ($media-lg-query) {
+          font-size: calculateVw768(15);
+        }
       }
       &-count {
         font-family: $title-font;
-        font-size: 18px;
+        font-size: calcWidth(30);
         font-weight: 700;
         @media screen and ($media-lg-query) {
-          font-size: 36px;
+          font-size: calculateVw768(30);
         }
       }
     }
@@ -135,12 +137,12 @@ const ToLogin = () => {
       calcHeight(134.47px),
       calcHeight(145.18px)
     );
-    display: none;
-    @media screen and ($media-lg-query) {
-      @apply flex justify-center;
-    }
+    @apply flex justify-center;
     width: calcHeight(714px);
     height: calcHeight(709.24px);
+    @media screen and ($media-lg-query) {
+      @apply hidden;
+    }
   }
 }
 </style>

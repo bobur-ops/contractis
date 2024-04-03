@@ -31,8 +31,7 @@
               сейчас!
             </p>
             <button-ghost
-              width="253px"
-              height="48px"
+              class="ghost-button"
               font-size="18px"
               font-weight="500"
               @click="ToLogin"
@@ -110,36 +109,36 @@ const ToLogin = () => {
   &__role-image {
     height: calcHeight(750px);
     @apply self-end;
-    @apply hidden;
     @media screen and ($media-lg-query) {
-      @apply block;
+      @apply hidden;
     }
   }
   &__title {
-    @include gradient-text($base-font, calcHeight(26px), 500);
-    margin-bottom: calcHeight(35px);
+    @include gradient-text($base-font, calcWidth(50), 500, calcHeight(70px));
+    margin-bottom: calcHeight(65px);
     @media screen and ($media-lg-query) {
-      margin-bottom: calcHeight(65px);
       @include gradient-text(
         $base-font,
-        calcHeight(50px),
+        calculateVw768(50),
         500,
         calcHeight(70px)
       );
+      margin-bottom: calcHeight(35px);
     }
   }
   &__text {
     max-width: calcHeight(980px);
-    font-size: 13px;
     font-weight: 400;
     font-family: $base-font;
-    margin-bottom: calcHeight(33px);
+    margin-bottom: calcWidth(35);
+    /* line-height: calcHeight(33px); */
+    font-size: calcWidth(18);
     @media screen and ($media-lg-query) {
-      line-height: calcHeight(33px);
-      font-size: calcHeight(22px);
+      font-size: calculateVw768(18);
+      margin-bottom: calculateVw768(35);
     }
     span {
-      font-weight: 600;
+      font-weight: 500;
     }
     &:last-of-type {
       margin-bottom: calcHeight($space-big);
@@ -156,5 +155,16 @@ const ToLogin = () => {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
+}
+
+.ghost-button {
+  min-width: calcWidth(253);
+  height: calcWidth(48);
+  font-size: calcWidth(18);
+  @media screen and ($media-lg-query) {
+    min-width: calculateVw768(253);
+    height: calculateVw768(48);
+    font-size: calculateVw768(18);
+  }
 }
 </style>

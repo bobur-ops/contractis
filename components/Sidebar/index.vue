@@ -86,12 +86,9 @@ const NavItems = ref([
     color: $white;
     font-family: $base-font;
     height: 29px;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 500;
     line-height: 150%;
-    @media screen and ($media-xl-query) {
-      /* font-size: 22px; */
-    }
     a {
       white-space: nowrap;
     }
