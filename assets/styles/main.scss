@@ -10,9 +10,17 @@
 a {
   text-decoration: none;
 }
+
 .container {
-  max-width: calcWidth(1660);
+  max-width: calcWidth(1360);
 }
+
+@media screen and (max-width: 1660px) {
+  .container {
+    max-width: calcWidth(1660);
+  }
+}
+
 @media screen and ($media-desktop-query) {
   .container {
     @apply px-2.5;

@@ -18,8 +18,8 @@ defineProps({
   @apply flex justify-center items-center;
   /* border-radius: $border-radius-m; */
   border-radius: calcWidth(15);
-  border: 1px solid $white;
-  color: $white;
+  border: 1px solid rgba($color: #ffffff, $alpha: 0.6);
+  color: rgba($color: #fff, $alpha: 0.9);
   white-space: nowrap;
   padding: calcWidth(13) calcWidth(22);
   height: calcWidth(48);

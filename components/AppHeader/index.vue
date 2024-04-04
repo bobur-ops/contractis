@@ -52,7 +52,8 @@ const emits = defineEmits(['open-sidebar']);
   top: 0;
   &-nav {
     @apply flex;
-    gap: $space-x-big-plus;
+    /* gap: $space-x-big-plus; */
+    gap: calcWidth(50);
   }
   &-actions {
     @apply flex h-full justify-center items-center;
@@ -75,6 +76,9 @@ const emits = defineEmits(['open-sidebar']);
     padding-bottom: calcWidth(8);
     background: url('assets/icons/Header/Line.svg') no-repeat bottom
       calcWidth(13) left;
+    background-size: calcWidth(666);
+    /* background: url('assets/icons/Header/Line.svg') no-repeat bottom
+      calcWidth(13) left; */
     /* background: url('assets/icons/Header/Line.svg') no-repeat bottom
       calcHeight(10px, var(--step)) left; */
     @media screen and ($media-lg-query) {
@@ -83,8 +87,10 @@ const emits = defineEmits(['open-sidebar']);
   }
   &__logo {
     height: calcWidth(30);
+    width: calcWidth(180);
     @media screen and ($media-lg-query) {
       height: calculateVw768(30);
+      width: calculateVw768(180);
     }
   }
 }

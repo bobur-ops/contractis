@@ -19,7 +19,7 @@ defineProps({
 <style scoped lang="scss">
 .gradient-button {
   @apply flex justify-center items-center;
-  color: $white;
+  color: rgba($color: #fff, $alpha: 0.9);
   background: url('/assets/images/buttons/gradient-button.svg');
   background-size: contain;
   padding: calcWidth(15) calcWidth(48);

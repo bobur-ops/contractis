@@ -107,7 +107,7 @@ const ToLogin = () => {
     column-gap: calcHeight(90px);
   }
   &__role-image {
-    height: calcHeight(750px);
+    height: calcWidth(650);
     @apply self-end;
     @media screen and ($media-lg-query) {
       @apply hidden;
@@ -115,7 +115,7 @@ const ToLogin = () => {
   }
   &__title {
     @include gradient-text($base-font, calcWidth(50), 500, calcHeight(70px));
-    margin-bottom: calcHeight(65px);
+    margin-bottom: calcWidth(65);
     @media screen and ($media-lg-query) {
       @include gradient-text(
         $base-font,
@@ -132,20 +132,23 @@ const ToLogin = () => {
     font-family: $base-font;
     margin-bottom: calcWidth(35);
     /* line-height: calcHeight(33px); */
-    font-size: calcWidth(18);
+    font-size: calcWidth(17);
+    color: rgba($color: #fff, $alpha: 0.6);
     @media screen and ($media-lg-query) {
       font-size: calculateVw768(18);
       margin-bottom: calculateVw768(35);
     }
     span {
       font-weight: 500;
+      color: rgba($color: #fff, $alpha: 0.9);
     }
     &:last-of-type {
       margin-bottom: calcHeight($space-big);
     }
   }
   &__text-block {
-    padding-top: calcHeight(60px, var(--step));
+    /* padding-top: calcHeight(60px, var(--step)); */
+    padding-top: calcWidth(225);
   }
 }
 .fade-enter-active,

@@ -73,6 +73,7 @@ const ToLogin = () => {
       letter-spacing: calcWidth(3.25);
       font-style: normal;
       font-weight: 500;
+      color: rgba($color: #fff, $alpha: 0.85);
       line-height: 100%; /* 80px */
       &_gradient {
         @include gradient-text($logo-font, calcWidth(42), 700);
@@ -88,10 +89,14 @@ const ToLogin = () => {
     &-description {
       font-family: $base-font;
       font-style: normal;
+      color: #ffffff;
+      opacity: 0.9;
       font-weight: 400;
       font-size: calcWidth(17);
+      max-width: calcWidth(597);
       @media screen and ($media-lg-query) {
         font-size: calculateVw768(17);
+        max-width: calculateVw768(597);
       }
     }
 
@@ -117,6 +122,7 @@ const ToLogin = () => {
         font-size: calcWidth(15);
         font-weight: 500;
         gap: calcWidth(15);
+        color: rgba($color: #fff, $alpha: 0.9);
         @media screen and ($media-lg-query) {
           font-size: calculateVw768(15);
         }
@@ -132,14 +138,23 @@ const ToLogin = () => {
     }
   }
   &__earth {
-    @include earth-gif(
-      calcHeight(929.39px),
-      calcHeight(134.47px),
+    background: url('/assets/images/Earth.gif') top (-110px) left (-120px);
+    background-size: 730px;
+    background-repeat: no-repeat;
+    border-radius: 100%;
+    width: calcWidth(470);
+    transform: scale(0.75);
+    height: calcWidth(470);
+    /* @include earth-gif(
+      calcHeight(750.39px),
+      calcHeight(100.47px),
       calcHeight(145.18px)
-    );
+    ); */
     @apply flex justify-center;
-    width: calcHeight(714px);
-    height: calcHeight(709.24px);
+    /* width: calcHeight(714px);
+    height: calcHeight(709.24px); */
+    width: calcWidth(615);
+    height: calcWidth(622);
     @media screen and ($media-lg-query) {
       @apply hidden;
     }

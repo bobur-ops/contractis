@@ -1,5 +1,6 @@
 @mixin earth-gif($background-size, $top, $left) {
-  background: url("/assets/images/Earth.gif") top (-$top) left (-$left);
+  background: url('/assets/images/Earth.gif') top (-$top) left (-$left);
+  background-repeat: no-repeat;
   background-size: $background-size;
   border-radius: $border-radius-rounded;
 }

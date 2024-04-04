@@ -40,14 +40,16 @@ const NavItems = ref([
     @apply hidden;
   }
   &__item {
+    @apply flex items-center;
     color: $white;
     opacity: 0.9;
-    /* letter-spacing: 0.75px; */
     font-family: $base-font;
-    /* height: 29px; */
     font-size: calcWidth(15);
     font-weight: 400;
-    line-height: 150%;
+
+    /* letter-spacing: 0.75px; */
+    /* height: 29px; */
+    /* line-height: 150%; */
     a {
       white-space: nowrap;
     }
