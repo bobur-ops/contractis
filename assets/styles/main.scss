@@ -15,9 +15,9 @@ a {
   max-width: calcWidth(1360);
 }
 
-@media screen and (max-width: 1660px) {
+@media screen and ($media-lg-query) {
   .container {
-    max-width: calcWidth(1360);
+    max-width: calcWidth(1660);
   }
 }
 
