@@ -138,12 +138,14 @@ const ToLogin = () => {
     }
   }
   &__earth {
-    background: url('/assets/images/Earth.gif') top (-110px) left (-120px);
-    background-size: 730px;
+    background: url('/assets/images/Earth.gif') top calcWidth(-125) left
+      calcWidth(-145);
+    /* background: url('/assets/images/Earth.gif') top -110px left -120px; */
+    background-size: calcWidth(850);
     background-repeat: no-repeat;
     border-radius: 100%;
     width: calcWidth(470);
-    transform: scale(0.75);
+    transform: scale(0.8);
     height: calcWidth(470);
     /* @include earth-gif(
       calcHeight(750.39px),
