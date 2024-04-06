@@ -1,0 +1,103 @@
+.order-card-main {
+  @apply flex flex-col;
+  width: 74.5%;
+  padding: 36px 35px;
+  border-radius: 12px;
+  border: 1px solid $border-block;
+  background: $bg-black-block;
+  color: white;
+  &__inner {
+    @apply flex flex-col h-fit w-full;
+  }
+  &__top {
+    @apply flex justify-between;
+    &-right {
+      @apply flex flex-col items-end;
+      margin-top: $space-x-small;
+      gap: $space-small;
+    }
+  }
+  &__price {
+    @include gradient-text($base-font, 26px, 700, 18px);
+    letter-spacing: 1.3px;
+    &-format {
+      font-size: 26px;
+      font-weight: 500;
+    }
+  }
+  &__period {
+    line-height: 17px;
+    font-size: 24px;
+  }
+  &__title {
+    @apply flex items-end;
+    line-height: 17px;
+    font-size: 24px;
+    font-weight: 600;
+    gap: 16px;
+    margin-bottom: $space-small;
+    &-icon {
+      height: 23px;
+    }
+  }
+  &__categories {
+    margin-bottom: $space-small-plus;
+  }
+  &__keywords {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 14px;
+    margin-bottom: $space-small-plus;
+    &-list {
+      font-weight: 500;
+    }
+  }
+  &__technologies {
+    @apply flex;
+    gap: 10px;
+    font-weight: 600;
+    margin-bottom: $space-small-plus;
+  }
+  &__description {
+    @apply flex flex-col;
+    gap: $space-small;
+    line-height: 22px;
+    margin-bottom: $space-medium;
+    word-wrap: break-word;
+    &-title {
+      width: 100%;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 14px;
+    }
+    &-show {
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 12px;
+      text-decoration-line: underline;
+    }
+  }
+  &__range-block {
+    @apply flex flex-wrap;
+    column-gap: 50px;
+    row-gap: 20px;
+    margin-bottom: $space-big;
+  }
+  &__examples {
+    margin-bottom: $space-large-plus;
+    &-category {
+      @apply flex items-center;
+      margin-bottom: $space-large;
+      gap: $space-small;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 11px;
+    }
+  }
+  &__file-label {
+    margin-bottom: $space-small-plus;
+    font-weight: 600;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,5 @@
+.modal-overlay {
+  @apply overflow-y-auto fixed flex items-center justify-center top-0 left-0 w-full h-full;
+  z-index: $z-index-4;
+  background: rgba(11, 13, 16, 0.2);
+}

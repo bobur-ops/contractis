@@ -22,15 +22,16 @@
             >Регистрация</nuxt-link
           >
 
-          <button-ghost
-            width="125px"
+          <shared-button-ghost
+            width="105px"
             height="38px"
             font-size="15px"
             font-weight="500"
+            size="md"
             @click="ToLogin"
           >
-            <arrow-text font-size="15px" font-weight="500"> Войти </arrow-text>
-          </button-ghost>
+            Войти
+          </shared-button-ghost>
           <div class="w-fit">
             <app-header-lang-select class="header-actions__select" />
           </div>

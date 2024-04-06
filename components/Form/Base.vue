@@ -1,5 +1,5 @@
 <template>
-  <form class="form">
+  <form class="form" autocomplete="off" @submit.prevent="submitForm">
     <div class="form-labels">
       <slot name="labels" />
     </div>
@@ -9,8 +9,22 @@
   </form>
 </template>
 
-<script setup></script>
+<script setup>
+defineProps({
+  gapLabels: { type: String, default: '15px' }
+});
+const emits = defineEmits(['submit-form']);
+const submitForm = () => {
+  emits('submit-form');
+};
+</script>
 
 <style scoped lang="scss">
 @import 'style';
+.form {
+  &-labels {
+    @apply flex flex-col;
+    gap: v-bind(gapLabels);
+  }
+}
 </style>

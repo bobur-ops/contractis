@@ -4,10 +4,11 @@
       v-for="(el, ind) in digitCount"
       :key="el + ind"
       v-model="digits[ind]"
-      type="text"
+      type="number"
       class="input-OTP__digit-input"
       :class="{ 'input-OTP__digit-input_active': digits[ind] !== null }"
       maxlength="2"
+      autocomplete="off"
       @keydown="handleInput($event, ind)"
     />
   </div>
@@ -17,7 +18,7 @@
 const props = defineProps({
   digitCount: { type: Number, required: true }
 });
-const emit = defineEmits(['codeChange']);
+const emit = defineEmits(['update:modelValue']);
 const digits = reactive([]);
 for (let i = 0; i < props.digitCount; i++) digits[i] = null;
 const inputOTP = ref(null);
@@ -37,6 +38,7 @@ const handleInput = (event, index) => {
       if (index !== 0 && index !== props.digitCount)
         inputOTP.value.children[index - 1].focus();
     } else digits[index] = null;
+    emit('update:modelValue', digits.join(''));
     return;
   }
 
@@ -51,7 +53,7 @@ const handleInput = (event, index) => {
       } else return true;
     });
   }
-  emit('codeChange', +digits.join(''));
+  emit('update:modelValue', digits.join(''));
 };
 </script>
 
@@ -60,19 +62,19 @@ const handleInput = (event, index) => {
   @apply w-full flex justify-between;
   &__digit-input {
     @apply flex text-center relative;
-    font-size: calcHeight(36px);
+    font-size: 36px;
     font-weight: 500;
-    width: calcHeight(58px);
-    height: calcHeight(65px);
+    width: 58px;
+    height: 65px;
     color: $white;
+    transition: 0.1s;
     background:
       linear-gradient($bg-inputs, $bg-inputs) padding-box,
-      $gray-secondary border-box;
-    border: 2px solid $gray-secondary;
-    border-radius: $border-radius-m;
+      $white border-box;
+    border: 1px solid transparent;
+    border-radius: $border-radius-l;
     &_active,
     &:focus {
-      border: 2px solid transparent;
       background:
         linear-gradient($bg-inputs, $bg-inputs) padding-box,
         $gradient-skyblue-blue border-box;

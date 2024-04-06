@@ -25,6 +25,8 @@ const props = defineProps({
 
 const icon = ref<any>('');
 
+console.log(props.name);
+
 try {
   const iconsImport = import.meta.glob('assets/icons/**/**.svg', {
     as: 'raw',

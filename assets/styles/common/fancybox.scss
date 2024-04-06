@@ -1,0 +1,8 @@
+.fancybox {
+  &__image {
+    max-height: calc(100vh - 136px);
+  }
+  &__content {
+    padding: 0;
+  }
+}

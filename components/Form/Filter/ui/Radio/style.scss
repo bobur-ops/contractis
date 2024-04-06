@@ -1,0 +1,99 @@
+.filter-radio {
+  &__button {
+    @apply p-0;
+    background: transparent !important;
+    gap: 10px;
+    color: $white !important;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+  &__arrow {
+    @apply transition-transform;
+    height: 6px;
+  }
+  &__input-container {
+    @apply p-0 flex flex-col items-end relative overflow-y-scroll;
+    color: $white !important;
+    margin-bottom: 35px;
+    max-height: 220px;
+    direction: rtl;
+    padding-left: 15px;
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+    &::-webkit-scrollbar-track {
+      background: $gray-30;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $white;
+      border-radius: 3px;
+    }
+  }
+  &__label {
+    font-size: 16px;
+    letter-spacing: 0.64px;
+    font-weight: 400;
+    cursor: pointer;
+    &:hover {
+      transition: 0.2s;
+      color: $gray;
+    }
+    &_active {
+      @apply relative;
+      @include gradient-text($base-font, 16px, 600);
+      &:before {
+        @apply absolute top-1/2 -translate-y-1/2;
+        content: '';
+        width: 4px;
+        height: 14px;
+        background: $gradient-skyblue-blue;
+        border-radius: $border-radius-s;
+        left: -8px;
+      }
+    }
+  }
+  &__input {
+    display: none;
+  }
+  &__count {
+    @apply px-2.5 flex items-center;
+    font-size: 15px;
+    font-weight: 400;
+    height: 30px;
+    border-radius: $border-radius-s;
+    &_yellow {
+      @include color-block('yellow');
+    }
+    &_pink {
+      @include color-block('pink');
+    }
+    &_blue {
+      @include color-block('blue');
+    }
+    &_red {
+      @include color-block('red');
+    }
+    &_sky {
+      @include color-block('sky');
+    }
+    &_green {
+      @include color-block('green');
+    }
+  }
+  &__input-block {
+    @apply flex justify-between items-center w-full;
+    height: 43px;
+    min-height: 43px;
+    direction: ltr;
+  }
+  &__count-block {
+    @apply flex justify-center;
+    width: 50px;
+  }
+  &__flag-block {
+    @apply flex justify-center;
+    width: 40px;
+    margin-right: 5px;
+  }
+}

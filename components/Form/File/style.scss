@@ -1,0 +1,98 @@
+.form-shadow-file {
+  &__label {
+    color: $white;
+    line-height: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+    transition: color 0.2s ease-in-out;
+    margin-bottom: 16px;
+    &_error {
+      color: $light-red !important;
+    }
+  }
+  &__inner {
+    @apply flex flex-col;
+    border: 1px dashed $border-block;
+    border-radius: $border-radius-m;
+    background: $bg-black-block-10;
+    padding: 25px 25px 15px 25px;
+    min-height: 240px;
+    transition: 0.1s;
+    &_drop {
+      border-color: $gray;
+    }
+  }
+  &__description {
+    @apply flex justify-between;
+    margin-bottom: $space-small-plus;
+  }
+  &__title-block {
+    max-width: 400px;
+  }
+  &__title {
+    font-size: 16px;
+    color: $gray;
+    margin-bottom: $space-smaller;
+  }
+  &__subtitle {
+    color: $gray-50;
+    font-size: 12px;
+    &_error {
+      color: $light-red !important;
+    }
+  }
+  &__formats {
+    max-width: 320px;
+    font-size: 12px;
+    color: $gray-30;
+    &_error {
+      color: $light-red !important;
+    }
+  }
+  &__files {
+    @apply flex;
+    gap: 60px;
+  }
+  &__file-list {
+    @apply flex;
+    gap: $space-small-plus;
+  }
+  &__file {
+    @apply flex flex-col justify-end;
+    width: 95px;
+    height: 95px;
+    padding: 8px 8px 5px 8px;
+    gap: 8px;
+    line-height: 12px;
+    font-weight: 500;
+    font-size: 12px;
+    background: $white;
+    color: $black;
+    border-radius: $border-radius-s;
+    transition: 0.1s;
+    &_hover {
+      background: $gray-50;
+    }
+  }
+  &__file-icon {
+    width: 56px;
+    align-self: center;
+  }
+  &__file-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: $black-text;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  &__file-block {
+    @apply flex flex-col items-center cursor-pointer;
+    gap: $space-smaller;
+  }
+  &__delete-button {
+    font-size: 12px;
+    color: $dark-red;
+  }
+}

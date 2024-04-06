@@ -1,6 +1,6 @@
 <template>
   <article class="home-slide-roles">
-    <div class="home-slide-roles__wrapper container">
+    <div class="home-slide-roles__inner container">
       <transition name="fade">
         <div
           v-if="role === 'executor'"
@@ -30,12 +30,15 @@
               <span>Начните делать первые шаги</span> для получения Заказа прямо
               сейчас!
             </p>
-            <button-ghost
-              class="ghost-button"
+            <shared-button-ghost
+              width="245px"
+              height="45px"
               font-size="18px"
-              font-weight="500"
+              font-weight="600"
+              arrow-gap="15px"
+              class="home-slide-roles__button"
               @click="ToLogin"
-              >Начать работу</button-ghost
+              >Начать работу</shared-button-ghost
             >
           </div>
         </div>
@@ -61,17 +64,16 @@
               отзывов поможет вам определиться с конечным Исполнителем, а
               Telegram-взаимодействие сделает его удобным!
             </p>
-            <button-ghost
-              width="321px"
-              height="48px"
+            <shared-button-ghost
+              width="302px"
+              height="45px"
               font-size="18px"
-              font-weight="500"
+              font-weight="600"
+              arrow-gap="15px"
+              class="home-slide-roles__button"
               @click="ToLogin"
+              >Найти исполнителя</shared-button-ghost
             >
-              <arrow-text font-size="18px" font-weight="500"
-                >Найти исполнителя</arrow-text
-              >
-            </button-ghost>
           </div>
         </div>
       </transition>
@@ -87,7 +89,7 @@ const roleSwitch = (switchRole) => {
 };
 const router = useRouter();
 const ToLogin = () => {
-  router.push('/login');
+  router.push('/auth/login');
 };
 </script>
 
@@ -96,7 +98,7 @@ const ToLogin = () => {
   @apply w-full flex justify-center relative;
   color: $white;
   min-height: $full-height;
-  &__wrapper {
+  &__inner {
     min-height: $full-height;
     @apply relative;
   }
@@ -104,7 +106,10 @@ const ToLogin = () => {
   &__customer-block {
     @apply absolute flex;
     min-height: $full-height;
-    column-gap: calcHeight(90px);
+    column-gap: calcWidth(90);
+    @media screen and ($media-lg-query) {
+      column-gap: calculateVw768(90);
+    }
   }
   &__role-image {
     height: calcWidth(650);
@@ -114,41 +119,48 @@ const ToLogin = () => {
     }
   }
   &__title {
-    @include gradient-text($base-font, calcWidth(50), 500, calcHeight(70px));
-    margin-bottom: calcWidth(65);
+    @include gradient-text($title-font, calcWidth(50), 500, 150%);
+    margin-bottom: calcWidth(60);
     @media screen and ($media-lg-query) {
-      @include gradient-text(
-        $base-font,
-        calculateVw768(50),
-        500,
-        calcHeight(70px)
-      );
-      margin-bottom: calcHeight(35px);
+      @include gradient-text($title-font, calculateVw768(50), 500, 150%);
+      margin-bottom: calculateVw768(60);
     }
+    /* @include gradient-text($title-font, 70px, 700, 70px); */
+    /* margin-bottom: 65px; */
   }
   &__text {
-    max-width: calcHeight(980px);
-    font-weight: 400;
-    font-family: $base-font;
-    margin-bottom: calcWidth(35);
-    /* line-height: calcHeight(33px); */
+    line-height: calcWidth(33);
+    max-width: calcWidth(980);
     font-size: calcWidth(17);
+    font-weight: 400;
     color: rgba($color: #fff, $alpha: 0.6);
+    margin-bottom: calcWidth(15);
     @media screen and ($media-lg-query) {
-      font-size: calculateVw768(18);
-      margin-bottom: calculateVw768(35);
+      line-height: calculateVw768(33);
+      max-width: calculateVw768(980);
+      font-size: calculateVw768(17);
+      margin-bottom: calculateVw768(15);
     }
     span {
       font-weight: 500;
       color: rgba($color: #fff, $alpha: 0.9);
     }
     &:last-of-type {
-      margin-bottom: calcHeight($space-big);
+      margin-bottom: calcWidth(60);
+      @media screen and ($media-lg-query) {
+        margin-bottom: calculateVw768(60);
+      }
     }
   }
+  &__button {
+    width: fit-content;
+  }
   &__text-block {
-    /* padding-top: calcHeight(60px, var(--step)); */
-    padding-top: calcWidth(225);
+    @apply flex flex-col justify-center;
+    margin-bottom: calcWidth(190);
+    @media screen and ($media-lg-query) {
+      margin-bottom: calculateVw768(190);
+    }
   }
 }
 .fade-enter-active,
@@ -158,16 +170,5 @@ const ToLogin = () => {
 .fade-enter-from,
 .fade-leave-to {
   opacity: 0;
-}
-
-.ghost-button {
-  min-width: calcWidth(253);
-  height: calcWidth(48);
-  font-size: calcWidth(18);
-  @media screen and ($media-lg-query) {
-    min-width: calculateVw768(253);
-    height: calculateVw768(48);
-    font-size: calculateVw768(18);
-  }
 }
 </style>

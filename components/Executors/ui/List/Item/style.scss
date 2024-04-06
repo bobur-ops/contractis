@@ -1,0 +1,136 @@
+.executors-list-item {
+  @apply overflow-hidden w-full flex justify-center relative;
+  padding: 25px 3.25%;
+  height: fit-content;
+  transition: all 0.3s;
+  border-radius: 12px;
+  background: $bg-black-block;
+  color: $white;
+  border: 1px solid $border-block;;
+  &__inner {
+    @apply flex w-full h-full flex-col;
+  }
+  &__top {
+    @apply flex w-full h-fit;
+    gap: 3.25%;
+  }
+  &__profile {
+    @apply flex flex-col items-center;
+    gap: 10px;
+    min-width: 100px;
+    min-height: 170px;
+    &-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: $border-radius-rounded;
+    }
+    &-link {
+      gap: 5px;
+      @apply flex items-center;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 7px;
+      &-icon {
+        height: 20px;
+      }
+    }
+  }
+  &__main {
+    @apply w-full h-full;
+  }
+  &__title {
+    @apply flex items-start;
+    gap: $space-small-plus;
+  }
+  &__name {
+    @apply flex;
+    gap: $space-small;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 19px;
+    margin-bottom: $space-smaller;
+    &-verified {
+      width: 21px;
+      height: 18px;
+    }
+  }
+  &__technologies {
+    @apply flex;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: $space-small-plus;
+  }
+  &__region {
+    @apply flex items-center;
+    line-height: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    gap: $space-x-small;
+    margin-bottom: 18px;
+    &-img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  &__description {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 125%;
+    text-align: justify;
+    margin-bottom: 25px;
+    transition: height 0.2s;
+  }
+  &__top {
+    @apply flex justify-between;
+    &-right {
+      @apply flex flex-col items-end;
+      gap: 15px;
+    }
+  }
+  &__price {
+    @include gradient-text($base-font, 22px, 600, 22px);
+    line-height: 22px;
+  }
+  &__rating {
+    @apply flex items-end;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 13px;
+    letter-spacing: -0.02em;
+    gap: 5px;
+    &-star {
+      height: 17px;
+      width: 18px;
+    }
+  }
+  &__buttons {
+    @apply flex self-end;
+    gap: $space-medium;
+    &-icon {
+      width: 18px;
+      height: 20px;
+    }
+  }
+  &__bottom {
+    @apply w-full flex flex-col;
+    gap: $space-small-plus;
+    transition: height 0.2s;
+    &-line {
+      @apply absolute w-full bottom-0 flex justify-center items-center cursor-pointer;
+      height: 20px;
+      z-index: $z-index-1;
+      background: black;
+      &-elements {
+        @apply flex flex-col w-fit h-fit;
+        gap: 4px;
+      }
+      &-element {
+        @apply inline-block cursor-pointer;
+        width: 100px;
+        height: 1px;
+        background: $gray-50;
+      }
+    }
+  }
+}

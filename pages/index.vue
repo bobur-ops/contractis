@@ -2,7 +2,7 @@
   <section class="home">
     <Swiper
       :modules="[SwiperMousewheel, SwiperPagination, SwiperNavigation]"
-      :direction="'vertical'"
+      direction="vertical"
       :mousewheel="true"
       :speed="speedTime"
       :pagination="{
@@ -37,7 +37,12 @@
 </template>
 
 <script setup>
+definePageMeta({
+  middleware: ['user']
+});
 import IconArrowDown from 'assets/icons/Vector.svg';
+import { authCurrentUserAdapter, AuthUser } from '~/utils/api';
+const router = useRouter();
 const speedTime = 800;
 const currentPage = ref(1);
 const paginationRender = (swiper, current) => {
@@ -60,6 +65,25 @@ const advantages = ref([
     name: 'Исполнителей'
   }
 ]);
+const { query } = useRoute();
+const { clearToken, setToken } = useStore();
+
+if (query.invite && process.client) {
+  console.log(query.invite);
+  const { data } = await AuthUser.companyInvite(query.invite);
+  console.log(data);
+}
+
+const userData = useUserData();
+onMounted(async () => {
+  console.log(query);
+  if (query.data) {
+    clearToken();
+    userData.value = authCurrentUserAdapter(JSON.parse(query.data));
+    setToken(userData.value.userToken);
+    router.push('/dashboard');
+  }
+});
 </script>
 
 <style scoped lang="scss">
@@ -78,5 +102,10 @@ const advantages = ref([
   bottom: 30px;
   color: $gray;
   cursor: pointer;
+}
+</style>
+<style lang="scss">
+.home .swiper-pagination {
+  @apply hidden;
 }
 </style>

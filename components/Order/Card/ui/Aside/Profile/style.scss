@@ -1,0 +1,70 @@
+.order-card-aside-profile {
+  @apply w-full h-fit flex items-center justify-center;
+  padding: 30px 25px;
+  background: $bg-black-block;
+  border-radius: 12px;
+  border: 1px solid $border-block;
+  &__inner {
+    @apply w-full h-fit flex flex-col;
+  }
+  &__header {
+    @apply flex flex-col items-center w-full;
+    gap: $space-small-plus;
+    margin-bottom: $space-xx-large;
+  }
+  &__name {
+    line-height: 13px;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: $border-radius-rounded;
+    &_white {
+      background: $white;
+    }
+  }
+  &__stat {
+    @apply flex flex-col w-full;
+    margin-bottom: $space-large;
+    &-title {
+      margin-bottom: $space-small-plus;
+      line-height: 11px;
+    }
+    &-list {
+      @apply flex flex-col w-full;
+      gap: $space-small;
+    }
+    &-item {
+      @apply flex justify-between items-center;
+      font-size: 14px;
+      line-height: 12px;
+    }
+  }
+  &__contacts {
+    @apply flex flex-col w-full;
+    &-title {
+      line-height: 11px;
+      margin-bottom: $space-medium;
+    }
+    &-list {
+      @apply flex flex-col w-full;
+      gap: $space-small-plus;
+    }
+    &-item {
+      @apply flex items-center overflow-hidden w-full;
+      gap: $space-small;
+      &-icon {
+        width: 22px;
+      }
+      &-text {
+        @apply overflow-hidden;
+        max-width: 80%;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-size: 14px;
+      }
+    }
+  }
+}

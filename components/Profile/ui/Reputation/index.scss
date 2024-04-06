@@ -1,0 +1,133 @@
+.profile-reputation {
+  background: $bg-black-block;
+  padding: $space-large 0;
+  border-radius: $border-radius-m;
+  min-height: 600px;
+  max-width: 1000px;
+  &__title {
+    margin-left: $space-large;
+    font-weight: 600;
+    font-size: 24px;
+    margin-bottom: $space-large-plus;
+  }
+  &__rating-block {
+    @apply flex;
+    gap: 45px;
+    margin: 0 0 $space-xx-large-plus $space-large;
+  }
+  &__main-rating-block {
+    @apply relative bg-no-repeat;
+    background-image: url('/assets/images/profile/Laurel Wreath.png');
+    height: 150px;
+    width: 150px;
+  }
+  &__main-rating {
+    @apply absolute;
+    color: $bg-black-block;
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 32px;
+    left: 50%;
+    top: 53px;
+    transform: translateX(-50%);
+  }
+  &__detail-title {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: $space-large;
+  }
+  &__detail-title-string {
+    @apply block;
+  }
+  &__stars-list {
+    @apply flex;
+    gap: $space-big-plus;
+  }
+  &__rating-item {
+    @apply flex flex-col;
+    gap: 12px;
+  }
+  &__reviews-block {
+    overflow-x: hidden;
+  }
+  &__reviews-title {
+    margin: 0 0 $space-medium-plus $space-large;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__no-reviews {
+    @apply flex justify-center items-center;
+    height: 185px;
+  }
+  &__no-reviews-text {
+    font-size: 20px;
+    font-weight: 400;
+    color: $gray-60;
+  }
+  &__swiper {
+    @apply m-0 overflow-x-visible;
+    height: 245px;
+    padding: 0 $space-large 0 $space-large;
+  }
+  &__swiper-slide {
+    height: 210px !important;
+    width: 440px !important;
+  }
+  &__review {
+    border-radius: $border-radius-m;
+    border: 1px solid $gray-50;
+    padding: $space-small-plus $space-medium;
+    height: 100%;
+    width: 100%;
+  }
+  &__avatar {
+    height: 40px;
+    width: 40px;
+    border-radius: $border-radius-rounded;
+  }
+  &__star {
+    width: 20px;
+    height: 20px;
+  }
+  &__review-top {
+    @apply flex justify-between;
+    margin-bottom: $space-small;
+  }
+  &__author {
+    @apply flex;
+    gap: $space-small;
+  }
+  &__author-name {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 18px;
+  }
+  &__date {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 15px;
+  }
+  &__review-title {
+    @apply flex flex-col justify-center;
+  }
+  &__rating {
+    @apply flex items-center;
+    font-size: 20px;
+    font-weight: 700;
+    gap: 10px;
+  }
+  &__review-description {
+    overflow: hidden;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+  }
+  &__more-review {
+    @apply absolute;
+    bottom: $space-small;
+    left: $space-medium;
+  }
+}

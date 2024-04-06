@@ -1,0 +1,84 @@
+.filter-range {
+  @apply flex flex-wrap;
+  row-gap: 15px;
+  column-gap: 25px;
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    &_error {
+      color: $light-red;
+    }
+  }
+  &__input-container {
+    @apply flex items-center;
+  }
+  &__input-block {
+    @apply relative flex;
+  }
+  &__input-sign,
+  &__input-unit {
+    @apply absolute;
+    top: 16px;
+    font-size: 14px;
+    line-height: 10px;
+    color: $gray-100;
+  }
+  &__input-sign {
+    left: 10px;
+  }
+  &__input-unit {
+    right: 10px;
+  }
+  &__input {
+    @apply bg-transparent;
+    height: 40px;
+    border: 1px solid $white;
+    padding-left: 40px;
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    input[type='number'] {
+      -moz-appearance: textfield;
+    }
+  }
+  &__separator {
+    height: 1px;
+    width: 16px;
+    background: $white;
+  }
+  &__button {
+    @apply justify-center;
+    background: transparent !important;
+    border-radius: 0 15px 15px 0;
+    height: 40px;
+    border: 1px solid $white;
+    gap: 5px;
+  }
+  &__arrow {
+    @apply transition-transform;
+    min-width: 10px;
+    min-height: 5px;
+  }
+  &__options {
+    width: 65px;
+    border-radius: $border-radius-m;
+    border: 1px solid $white;
+    background: $bg-black-block !important;
+  }
+  &__base {
+    height: 38px;
+    font-size: 16px;
+  }
+  &__active {
+    color: $white;
+    background: transparent !important;
+    border: 1.5px solid $blue;
+  }
+  &__description {
+    font-size: 15px;
+    font-weight: 400;
+    color: $gray-70;
+  }
+}

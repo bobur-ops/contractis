@@ -1,18 +1,43 @@
 // colors & bg
 $white: #ffffff;
 $black: #000;
+$black-text: #111827;
 $white-transparent: #ffffff80;
-$black-transparent: #6866660d;
-$gray: #ffffffcc;
+$black-transparent: #ffffff0d;
+$black-30: rgba(0, 0, 0, 0.3);
+$border-block: #30363d;
+$gray-05: rgba(255, 255, 255, 0.05);
+$gray-30: rgba(255, 255, 255, 0.3);
+$gray-50: rgba(255, 255, 255, 0.5);
+$gray-60: rgba(255, 255, 255, 0.6);
+$gray-70: rgba(255, 255, 255, 0.7);
+$gray: rgba(255, 255, 255, 0.8);
+$gray-100: #9c9c9c;
+$star: #373737;
+$radial-glow-start: #3771c82b;
+$radial-glow-end: #3771c800;
+
 $violet: #f6bafde6;
 $blue: #316ad7e6;
-$checkbox-color: #7177ff;
-$gradient-violet-blue: linear-gradient(91deg, $violet -7.12%, $blue 114.37%);
-$gradient-skyblue-blue: linear-gradient(98deg, #0085ff -38.38%, #3633d0 71.88%);
+
+$lite-green: #60d34c;
+
 $bg-stars: url(assets/images/background.jpg);
-$bg-inputs: #101010;
-$gray-secondary: #30363d;
-$red: #bb323a;
+$bg-inputs: #0b0d10;
+$bg-inputs-light: #1a1a1a;
+$bg-black-block: #0b0d10;
+$bg-black-block-10: #0b0d101a;
+$bg-black-block-75: #0b0d10bf;
+$light-red: #e13347;
+$dark-red: #da5e5e;
+
+$gradient-violet-blue: linear-gradient(91deg, $violet -7.12%, $blue 114.37%);
+$gradient-skyblue-blue: linear-gradient(98deg, #0085ff -38.38%, #211cf2 71.88%);
+$gradient-skyblue-blue-20: linear-gradient(
+  98deg,
+  rgba(0, 133, 255, 0.2) -38.38%,
+  rgba(33, 28, 242, 0.2) 71.88%
+);
 
 // border
 $border-radius-s: 10px;
@@ -35,8 +60,12 @@ $logo-font: 'Meedori Sans', sans-serif;
 $font-height-large: 150%;
 
 // width
-$full-height: calc(100vh - calcHeight(119px));
-$media-desktop: 1660px;
+$header-height: 90px;
+$bottom-page-space: 120px;
+$full-height: calc(100vh - $header-height);
+$main-height: calc(100vh - $header-height - $bottom-page-space);
+$media-desktop: 1420px;
+
 $media-xl: 1280px;
 $media-lg: 1024px;
 $media-md: 768px;

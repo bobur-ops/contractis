@@ -1,0 +1,33 @@
+.notification {
+  @apply float-right w-auto;
+  &_warning {
+    max-width: 320px;
+    background: linear-gradient(90deg, #936B00, #7F490A);
+  }
+  &__list {
+    width: 448px !important;
+  }
+  &__inner {
+    @apply items-center;
+    padding: $space-small $space-small-plus;
+    gap: $space-small-plus;
+  }
+  &__container {
+    @apply flex flex-col;
+  }
+  &__text-block {
+    width: auto;
+  }
+  &__icon {
+    border-radius: 6px;
+    background: $black-30;
+  }
+  &__description {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+  }
+  &__progress {
+    @apply hidden;
+  }
+}

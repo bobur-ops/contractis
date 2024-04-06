@@ -1,0 +1,95 @@
+.order-list-item {
+  @apply flex relative;
+  width: 100%;
+  max-width: 1009px;
+  padding: 25px 35px;
+  background: $bg-black-block;
+  border: 1px solid $border-block;
+  border-radius: $border-radius-m;
+  &__top {
+    @apply flex w-full justify-between;
+    &-price {
+      @apply flex flex-col items-end;
+      margin-top: 8px;
+      gap: $space-small;
+    }
+  }
+  &__title {
+    @apply flex items-end;
+    gap: $space-small-plus;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: $space-smaller;
+    line-height: 23px;
+  }
+  &__person-icon {
+    height: 23px;
+  }
+  &__categories {
+    margin-bottom: 15px;
+  }
+  &__keywords {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: $space-small;
+    &-list {
+      font-weight: 500;
+    }
+  }
+  &__technologies {
+    @apply flex;
+    gap: 10px;
+    font-weight: 600;
+    margin-bottom: $space-small-plus;
+    font-size: 16px;
+  }
+  &__description-text {
+      @apply overflow-hidden;
+      max-width: 78%;
+      word-wrap: break-word;
+      margin-bottom: $space-small;
+      -webkit-line-clamp: 2;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      font-size: 16px;
+  }
+  &__additional-data {
+    @apply flex;
+    gap: 45px;
+  }
+  &__price {
+    @apply flex flex-row;
+    gap: 10px;
+    @include gradient-text($base-font, 24px, 700, 18px);
+    letter-spacing: 1.3px;
+    &-format {
+      font-size: 24px;
+      font-weight: 500;
+    }
+  }
+  &__period {
+    font-size: 22px;
+    line-height: 15px;
+  }
+  &__avatar-block {
+    @apply flex flex-col items-center absolute justify-center text-center;
+    bottom: 0;
+    right: 0;
+    line-height: 110%;
+    gap: $space-small;
+    max-width: 120px;
+  }
+  &__name {
+    line-height: 13px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  &__avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: $border-radius-rounded;
+    &_white {
+      background: $white;
+    }
+  }
+}

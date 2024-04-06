@@ -1,0 +1,46 @@
+.order-list-item {
+  @apply flex w-full relative;
+  min-height: 160px;
+  padding: 24px;
+  background: $bg-black-block;
+  border: 1px solid $border-block;
+  border-radius: $border-radius-m;
+  &__description {
+    @apply flex flex-col justify-between;
+  }
+  &__title {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 16px;
+  }
+  &__title-link {
+    @apply overflow-hidden;
+    -webkit-line-clamp: 2;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+  }
+  &__categories {
+    margin-bottom: $space-small-plus;
+  }
+  &__main-data {
+    @apply flex flex-col items-end absolute bottom-0;
+    right: 24px;
+  }
+  &__price {
+    @include gradient-text($base-font, 14px, 700, 14px);
+    margin-bottom: 7px;
+    &-format {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+  &__period {
+    font-size: 14px;
+    line-height: 14px;
+    margin-bottom: 24px;
+  }
+  &__stats {
+    @apply flex flex-col;
+    gap: 18px;
+  }
+}

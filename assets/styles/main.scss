@@ -6,11 +6,26 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  color: $white;
+}
+body {
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    background: $border-block;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: $white;
+    border-radius: 5px;
+  }
 }
 a {
   text-decoration: none;
 }
-
+// .container {
+//   max-width: $media-desktop;
+// }
 .container {
   max-width: calcWidth(1360);
 }
@@ -20,7 +35,29 @@ a {
     max-width: calcWidth(1560);
   }
 }
-
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: calcWidth(1660);
+  }
+}
+#telegram-login-contractis_ro_bot {
+  opacity: 0.01;
+  border-radius: 10px;
+  @apply w-fit h-full absolute right-0;
+  z-index: $z-index-1;
+  cursor: pointer;
+}
+.tgme_widget_login_button {
+  @apply w-full h-full absolute;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
 @media screen and ($media-desktop-query) {
   .container {
     @apply px-2.5;

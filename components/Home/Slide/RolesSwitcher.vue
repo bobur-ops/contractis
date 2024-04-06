@@ -10,9 +10,13 @@
       >
         <img src="assets/images/home/executor.png" alt="executor" />
       </div>
-      <arrow-text :font-weight="roleFont[0]" font-size="16px" font-family="base"
-        >Исполнитель</arrow-text
+      <shared-arrow-text
+        :font-weight="roleFont[0]"
+        font-size="22px"
+        font-family="base"
       >
+        Исполнитель
+      </shared-arrow-text>
     </div>
     <div
       class="role-switcher__role-block role-switcher__customer"
@@ -24,9 +28,13 @@
       >
         <img src="assets/images/home/customer.png" alt="customer" />
       </div>
-      <arrow-text :font-weight="roleFont[1]" font-size="16px" font-family="base"
-        >Заказчик</arrow-text
+      <shared-arrow-text
+        :font-weight="roleFont[1]"
+        font-size="22px"
+        font-family="base"
       >
+        Заказчик
+      </shared-arrow-text>
     </div>
   </article>
 </template>
@@ -49,36 +57,36 @@ watch(role, () => {
   @apply absolute flex justify-between;
   bottom: calcHeight(40px);
   right: 0;
-  color: $white;
+  color: rgba($color: #fff, $alpha: 0.9);
   z-index: $z-index-2;
-  /* gap: calcHeight(55px); */
-  gap: calcWidth(45);
-  padding: 0;
+  gap: calcWidth(55);
   @media screen and ($media-lg-query) {
+    gap: calculateVw768(55);
+    bottom: calculateVw768(40px);
     width: 100%;
   }
   &__role-block {
     @apply flex flex-col justify-end cursor-pointer;
-    gap: calcHeight(12px);
+    gap: calcWidth(12);
     @media screen and ($media-lg-query) {
-      width: 100%;
+      gap: calculateVw768(12);
     }
   }
   &__role-image {
     @apply flex justify-center items-end;
-    height: calcWidth(120);
-    width: calcWidth(170);
-    @media screen and ($media-lg-query) {
-      height: calculateVw768(120);
-      width: 100%;
-    }
+    width: calcWidth(180);
     background-color: $black-transparent;
-    border-radius: $border-radius-l;
+    border-radius: calcWidth(20);
     backdrop-filter: blur(14.846222877502441px);
     border: 1.5px solid $white;
+    height: calcWidth(130);
     transition: 0.6s;
+    @media screen and ($media-lg-query) {
+      width: calculateVw768(180);
+      height: calculateVw768(130);
+      border-radius: calculateVw768(20);
+    }
     img {
-      /* height: 235px; */
       height: calcWidth(170);
       @media screen and ($media-lg-query) {
         height: calculateVw768(170);
@@ -86,10 +94,9 @@ watch(role, () => {
     }
     &_active {
       box-shadow: 0 0 35px 0 $white-transparent;
-      height: calcWidth(180);
+      height: calcWidth(190);
       @media screen and ($media-lg-query) {
-        height: calculateVw768(180);
-        width: 100%;
+        height: calculateVw768(190);
       }
     }
   }

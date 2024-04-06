@@ -1,0 +1,14 @@
+.profile-reputation__swiper {
+  .swiper-pagination {
+    @apply absolute bottom-0 flex justify-center;
+    .swiper-pagination-bullet {
+      height: 4px;
+      width: 26px;
+      background: $gray-50;
+      border-radius: 2px;
+    }
+    .swiper-pagination-bullet-active {
+      background: $gradient-skyblue-blue;
+    }
+  }
+}

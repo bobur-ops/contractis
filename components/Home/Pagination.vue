@@ -28,10 +28,7 @@ const convertToDouble = (number) => {
 
 <style scoped lang="scss">
 .pagination {
-  @apply hidden flex-col items-center absolute;
-  @media screen and ($media-lg-query) {
-    @apply flex;
-  }
+  @apply flex flex-col items-center absolute;
   width: 26px;
   bottom: 30px;
   right: 30px;

@@ -1,15 +1,11 @@
 .form {
   @apply flex flex-col;
-  gap: calcHeight(30px);
-  &-labels {
-    @apply flex flex-col;
-    gap: calcHeight(24px)
-  }
+  gap: 30px;
   color: $white;
   font-family: $base-font;
   &-field {
-    @apply flex flex-col;
-    gap: calcHeight(15px);
+    @apply flex flex-col relative;
+    gap: 15px;
     font-weight: 400;
     &__input {
       @apply relative w-full h-full flex;
@@ -22,31 +18,51 @@
         height: 16.258px;
       }
     }
+    &__password-input {
+      padding: 0 65px 0 25px !important;
+    }
     &__label {
-      line-height: calcHeight(11px);
-      height: calcHeight(11px);
-      font-size: 16px;
-      font-weight: 400;
+      color: $white;
+      line-height: 100%;
       text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
+      transition: color 0.2s ease-in-out;
+      &_error {
+        color: $light-red !important;
+      }
     }
-    &--error {
-      color: $red
+    &__limit {
+      @apply absolute;
+      bottom: 13px;
+      right: 25px;
+      font-size: 18px;
+      color: $border-block;
     }
-
   }
   &-input {
     @apply w-full relative;
-    padding: calcHeight(16px) calcHeight(25px);
-    border-radius: 12px;
-    transition: all 0.3s;
-    border: 1px solid $white-transparent;
-    background: rgba(16, 16, 16, 0.80);
-    font-size: 14px;
+    padding: 0 25px;
+    height: 55px;
+    background:
+            linear-gradient($bg-inputs, $bg-inputs) padding-box,
+            $border-block border-box;
+    border: 1px solid transparent;
+    border-radius: $border-radius-m;
     &:focus {
-      border: 1px solid $white;
+      background:
+              linear-gradient($bg-inputs, $bg-inputs) padding-box,
+              $gradient-skyblue-blue border-box;
     }
-    &--error {
-      border: 1px solid $red;
+    &_error {
+      transition: 0.2s ease-in-out;
+      background:
+              linear-gradient($bg-inputs, $bg-inputs) padding-box,
+              $light-red border-box;
+    }
+    &::-webkit-calendar-picker-indicator {
+      width: 14px;
+      height: 16px;
+      background: url("assets/icons/Input/calendar.svg") no-repeat center center;
+      color: #00000000;
     }
   }
 }

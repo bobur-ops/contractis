@@ -9,6 +9,6 @@
 <style scoped lang="scss">
 .main {
   min-height: 100vh;
-  background: $bg-stars fixed center;
+  background: $bg-stars repeat fixed center;
 }
 </style>

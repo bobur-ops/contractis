@@ -1,0 +1,17 @@
+@keyframes change-color {
+  0% {
+    border: 1px solid $white;
+  }
+  100% {
+    border: 1px solid #3633D0;
+  }
+}
+
+@keyframes change-shadow-color {
+  0% {
+    border: 1px solid $border-block;
+  }
+  100% {
+    border: 1px solid $white;
+  }
+}

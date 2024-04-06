@@ -1,0 +1,95 @@
+.home-slide-start {
+  @apply w-full flex justify-center items-center;
+  height: $full-height;
+  color: $white;
+  &__inner {
+    @apply flex justify-between items-center;
+  }
+  &__info {
+    @apply flex flex-col;
+    gap: calcWidth(60);
+    max-width: calcWidth(680);
+    @media screen and ($media-lg-query) {
+      max-width: calculateVw768(680);
+    }
+
+    &-name {
+      font-family: $base-font;
+      font-size: calcWidth(50);
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: 0%;
+      color: rgba($color: #fff, $alpha: 0.85);
+      line-height: 100%; /* 80px */
+      @media screen and ($media-lg-query) {
+        font-size: calculateVw768(50);
+      }
+      &_gradient {
+        @include gradient-text($logo-font, calcWidth(42), 700);
+        letter-spacing: -2.75px;
+        @media screen and ($media-lg-query) {
+          @include gradient-text($logo-font, calculateVw768(42), 700);
+        }
+      }
+    }
+    &-description {
+      max-width: calcWidth(597);
+      font-family: $base-font;
+      color: rgba($color: #fff, $alpha: 0.6);
+      font-size: calcWidth(18);
+      font-style: normal;
+      font-weight: 400;
+      line-height: 140%;
+      @media screen and ($media-lg-query) {
+        max-width: calculateVw768(597);
+        font-size: calculateVw768(18);
+      }
+    }
+
+    &-buttons {
+      @apply flex;
+      gap: $space-large-plus;
+      @media screen and ($media-lg-query) {
+        margin-bottom: calculateVw768(40);
+      }
+    }
+
+    &-advantages {
+      @apply flex;
+      gap: $space-large;
+      &-item {
+        @apply flex flex-col;
+        line-height: 13px;
+        font-family: $base-font;
+        font-size: calcWidth(15);
+        font-weight: 500;
+        color: rgba($color: #fff, $alpha: 0.9);
+        gap: calcWidth(20);
+        @media screen and ($media-lg-query) {
+          font-size: calculateVw768(15);
+          gap: calculateVw768(20);
+        }
+      }
+      &-count {
+        font-family: $title-font;
+        font-size: calcWidth(30);
+        font-weight: 700;
+        // line-height: 23px;
+        @media screen and ($media-lg-query) {
+          font-size: calculateVw768(30);
+        }
+      }
+    }
+  }
+  &__earth-block {
+    @include earth-block(calcWidth(500));
+    // @include earth-block(500px);
+    @media screen and ($media-lg-query) {
+      display: none;
+    }
+  }
+  &__earth {
+    @include earth-video(calcWidth(662), calcWidth(106), calcWidth(100));
+    // @include earth-video(662px, 106px, 100px);
+  }
+}

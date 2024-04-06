@@ -1,0 +1,72 @@
+.subscription {
+  @apply flex justify-center w-full;
+  padding-top: 30px;
+
+  &__path {
+    @apply inline-block;
+    color: $gray-70;
+    line-height: 14px;
+    font-size: 14px;
+    margin-bottom: 35px;
+  }
+
+  &__title {
+    @apply flex items-end;
+    gap: $space-small;
+    margin-bottom: $space-large-plus;
+    &-text {
+      font-size: 30px;
+      line-height: 21px;
+      font-weight: 600;
+      &_advantages {
+        margin-bottom: 54px;
+      }
+      &_description {
+        margin-bottom: 40px;
+      }
+    }
+    &-mark {
+      @include h1-gradient-mark;
+      margin-bottom: 2px;
+    }
+  }
+
+  &__description {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: $gray-100;
+    max-width: 993px;
+    margin-bottom: $space-x-large-plus;
+  }
+
+  &__everyone {
+    @apply w-full;
+    border-radius: 12px;
+    border: 1px solid $border-block;
+    height: 493px;
+    padding: 51px 76px;
+    margin-bottom: 100px;
+    background:
+            url('assets/images/subscription/advantages/Peoples.png') right center
+            no-repeat,
+            $bg-black-block;
+    &-title {
+      font-size: 48px;
+      font-weight: 600;
+      line-height: 70px;
+      max-width: 904px;
+      &_small {
+        font-size: 36px;
+        font-weight: 400;
+        margin-bottom: 52px;
+      }
+    }
+  }
+
+  &__buttons {
+    @apply flex;
+    gap: $space-x-large-plus;
+    margin-bottom: $space-x-big;
+  }
+}

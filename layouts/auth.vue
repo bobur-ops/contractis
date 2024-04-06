@@ -1,9 +1,9 @@
 <template>
   <div class="auth-layout">
-    <app-header />
+    <app-header-ui />
     <main ref="main" class="main">
       <section class="auth">
-        <div class="auth__wrapper container">
+        <div class="auth__inner container">
           <img
             class="planet"
             src="assets/images/auth/Planet.png"
@@ -12,7 +12,7 @@
           <article class="auth-block">
             <slot />
             <img
-              src="assets/images/auth/Astronaut.png"
+              src="assets/images/astronauts/Astronaut-auth.png"
               class="astronaut"
               alt="astronaut"
             />
@@ -23,42 +23,33 @@
   </div>
 </template>
 
-<script setup>
-const main = ref();
-const setStep = () => {
-  main.value !== null && main.value.clientHeight < 860
-    ? document.body.style.setProperty('--step', '1.8')
-    : document.body.style.setProperty('--step', '1');
-};
-onMounted(() => {
-  setStep();
-  window.addEventListener('resize', setStep, true);
-});
-</script>
+<script setup></script>
 
 <style scoped lang="scss">
 .main {
   min-height: $full-height;
 }
 .auth-layout {
-  background: $black $bg-stars repeat fixed;
+  background: $black $bg-stars repeat fixed center;
   font-family: $base-font;
 }
 .astronaut {
   @apply absolute;
-  top: calcHeight(203px);
-  right: -100%;
+  top: 50%;
+  transform: translateY(-50%);
+  right: -99%;
 }
 .planet {
   @apply absolute;
-  top: calcHeight(105px);
-  left: calcHeight(50px);
+  top: calcHeight(120px);
+  left: 0;
 }
 .auth {
   @apply w-full flex justify-center items-center;
-  height: $full-height;
-  &__wrapper {
-    @apply w-full flex justify-center items-center relative;
+  min-height: $full-height;
+  padding: 45px 0;
+  &__inner {
+    @apply w-full h-full flex justify-center items-center relative;
   }
   &-block {
     @apply relative;
