@@ -1,6 +1,6 @@
 <template>
   <div id="root">
-    <start-animation v-if="loading || true" />
+    <start-animation v-if="loading" />
     <nuxt-layout :class="{ hidden: loading }">
       <nuxt-page />
     </nuxt-layout>
