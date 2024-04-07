@@ -43,12 +43,15 @@ const { isOutside } = useMouseInElement(btn);
   border: 1px solid rgba($color: #fff, $alpha: 0.6);
   color: rgba($color: #fff, $alpha: 0.9);
   line-height: 10px;
-  /* width: v-bind(width); */
   transition: background-color 0.2s ease-in-out;
   background: transparent;
+
   border-radius: calcWidth(10);
   @media screen and ($media-lg-query) {
     border-radius: calculateVw768(10);
+  }
+  @media screen and ($media-md-query) {
+    border-radius: calculateVw425(10);
   }
   &:hover {
     animation: change-color 0.2s forwards;
@@ -61,6 +64,10 @@ const { isOutside } = useMouseInElement(btn);
       padding: calculateVw768(18) calculateVw768(50);
       height: calculateVw768(48);
     }
+    @media screen and ($media-md-query) {
+      padding: calculateVw425(13) calculateVw425(25);
+      height: calculateVw425(37);
+    }
   }
   &.size-sm {
     padding: calcWidth(14) calcWidth(22);
@@ -68,6 +75,10 @@ const { isOutside } = useMouseInElement(btn);
     @media screen and ($media-lg-query) {
       padding: calculateVw768(14) calculateVw768(22);
       height: calculateVw768(38);
+    }
+    @media screen and ($media-md-query) {
+      padding: calculateVw425(14) calculateVw425(22);
+      height: calculateVw425(38);
     }
   }
 }

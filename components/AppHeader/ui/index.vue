@@ -29,6 +29,7 @@
           class="header-actions__select"
           :lang-list="langSelect"
         />
+        <svgo-light class="header-actions__theme" />
       </article>
       <article v-else-if="userData" class="header-actions">
         <svgo-notification-avail class="header-actions__notifications" />
@@ -37,6 +38,7 @@
           class="header-actions__select"
           :lang-list="langSelect"
         />
+        <svgo-light class="header-actions__theme" />
       </article>
       <article class="lg:hidden">
         <!-- <nuxt-icon
@@ -68,15 +70,27 @@ const emits = defineEmits(['open-sidebar']);
 <style scoped lang="scss">
 .header {
   @apply sticky w-full flex justify-center;
-  height: 90px;
+  height: calcWidth(90);
   background: linear-gradient(180deg, #000 29.5%, rgba(0, 0, 0, 0) 100%);
   top: 0;
   z-index: $z-index-3;
+  @media screen and ($media-lg-query) {
+    height: calculateVw768(90);
+  }
+  @media screen and ($media-md-query) {
+    height: calculateVw425(90);
+  }
   &-nav {
     @apply flex items-start;
     /* gap: $space-x-large-plus; */
     gap: calcWidth(60);
     /* padding-bottom: calcWidth(33); */
+    @media screen and ($media-lg-query) {
+      gap: calculateVw768(60);
+    }
+    @media screen and ($media-md-query) {
+      gap: calculateVw425(60);
+    }
   }
   &-actions {
     @apply flex h-full justify-center items-center self-center;
@@ -97,6 +111,10 @@ const emits = defineEmits(['open-sidebar']);
         color: $gray-70;
         transition: 0.1s;
       }
+    }
+    &__theme {
+      width: calcWidth(24);
+      height: calcWidth(24);
     }
   }
   &-inner {
@@ -125,6 +143,9 @@ const emits = defineEmits(['open-sidebar']);
 
     @media screen and ($media-lg-query) {
       width: calculateVw768(180);
+    }
+    @media screen and ($media-md-query) {
+      width: calculateVw425(180);
     }
   }
 }

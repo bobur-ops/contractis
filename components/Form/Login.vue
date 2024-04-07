@@ -5,7 +5,7 @@
         id="email"
         v-model="email"
         :label="label.email"
-        placeholder="мама"
+        placeholder="E-mail"
         type="text"
         :status-error="errorStatus"
         :is-validate-error="!!errors.email"
@@ -14,7 +14,7 @@
         id="password"
         v-model="password"
         :label="label.password"
-        placeholder="папа"
+        placeholder="Password"
         :status-error="errorStatus"
         :message-error="errorMessage"
         :is-validate-error="!!errors.password"
@@ -37,7 +37,7 @@
         font-size="20px"
         :disabled="isDisabled"
       >
-        Войти
+        <shared-arrow-text> Войти </shared-arrow-text>
       </shared-button-gradient-blue>
       <another-auth text="или" />
     </template>
@@ -112,32 +112,66 @@ watch(email, () => (errorStatus.value = null));
 @import './style';
 .login-form {
   &-references {
-    margin: 15px 0 0 0;
+    margin: calcWidth(15) 0 0 0;
     @apply flex justify-between w-full;
     color: $gray;
     font-weight: 500;
+    @media screen and ($media-lg-query) {
+      margin: calculateVw768(15) 0 0 0;
+    }
+    @media screen and ($media-md-query) {
+      margin: calculateVw425(15) 0 0 0;
+    }
   }
   &__redirect {
     @apply flex;
     color: $white;
-    gap: 30px;
-    font-size: 16px;
+    gap: calcWidth(30);
+    font-size: calcWidth(16);
+    @media screen and ($media-lg-query) {
+      gap: calculateVw768(30);
+      font-size: calculateVw768(16);
+    }
+    @media screen and ($media-md-query) {
+      gap: calculateVw425(30);
+      font-size: calculateVw425(14);
+    }
 
     &-question {
       color: $gray;
-      line-height: 15px;
+      line-height: calcWidth(15);
       font-weight: 400;
+      @media screen and ($media-lg-query) {
+        line-height: calculateVw768(15);
+      }
+      @media screen and ($media-md-query) {
+        line-height: calculateVw425(15);
+      }
     }
 
     &-link {
-      line-height: 15px;
+      line-height: calcWidth(15);
       text-decoration: underline;
       font-weight: 400;
+      @media screen and ($media-lg-query) {
+        line-height: calculateVw768(15);
+      }
+      @media screen and ($media-md-query) {
+        line-height: calculateVw425(15);
+      }
 
       &_mod {
         font-weight: 500;
-        line-height: 24px;
-        font-size: 16px;
+        line-height: calcWidth(24);
+        font-size: calcWidth(16);
+        @media screen and ($media-lg-query) {
+          line-height: calculateVw768(24);
+          font-size: calculateVw768(16);
+        }
+        @media screen and ($media-md-query) {
+          line-height: calculateVw425(24);
+          font-size: calculateVw425(16);
+        }
       }
     }
   }

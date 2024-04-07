@@ -34,7 +34,7 @@
         type="submit"
         :disabled="isDisabled"
       >
-        Зарегистрироваться
+        <shared-arrow-text> Зарегистрироваться </shared-arrow-text>
       </shared-button-gradient-blue>
       <another-auth text="или" />
     </template>

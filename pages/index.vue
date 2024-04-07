@@ -97,11 +97,21 @@ onMounted(async () => {
 }
 .arrowDown {
   @apply absolute left-1/2 -translate-x-1/2 transform;
-  width: 42px;
-  height: 21px;
-  bottom: 30px;
+  width: calcWidth(42);
+  height: calcWidth(32);
+  bottom: calcWidth(30);
   color: $gray;
   cursor: pointer;
+  @media screen and ($media-lg-query) {
+    width: calculateVw768(42);
+    height: calculateVw768(32);
+    bottom: calculateVw768(30);
+  }
+  @media screen and ($media-md-query) {
+    width: calculateVw425(42);
+    height: calculateVw425(32);
+    bottom: calculateVw425(30);
+  }
 }
 </style>
 <style lang="scss">

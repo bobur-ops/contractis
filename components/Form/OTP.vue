@@ -62,17 +62,30 @@ const handleInput = (event, index) => {
   @apply w-full flex justify-between;
   &__digit-input {
     @apply flex text-center relative;
-    font-size: 36px;
+    font-size: calcWidth(36);
     font-weight: 500;
-    width: 58px;
-    height: 65px;
+    width: calcWidth(58);
+    height: calcWidth(65);
     color: $white;
     transition: 0.1s;
     background:
       linear-gradient($bg-inputs, $bg-inputs) padding-box,
-      $white border-box;
+      $border-block border-box;
     border: 1px solid transparent;
-    border-radius: $border-radius-l;
+    /* border: 1px solid $border-block; */
+    border-radius: calcWidth(20);
+    @media screen and ($media-lg-query) {
+      font-size: calculateVw768(36);
+      width: calculateVw768(58);
+      height: calculateVw768(65);
+      border-radius: calculateVw768(20);
+    }
+    @media screen and ($media-md-query) {
+      font-size: calculateVw425(36);
+      width: calculateVw425(58);
+      height: calculateVw425(65);
+      border-radius: calculateVw425(20);
+    }
     &_active,
     &:focus {
       background:

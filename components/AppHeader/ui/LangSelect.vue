@@ -84,7 +84,8 @@ onMounted(() => {
     color: $white;
   }
   &__image {
-    width: calcWidth(16);
+    width: calcWidth(22);
+    height: calcWidth(15);
   }
   &__options {
     border-radius: $border-radius-s;

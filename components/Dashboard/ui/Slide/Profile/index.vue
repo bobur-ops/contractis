@@ -4,12 +4,12 @@
       <teleport to="main">
         <transition name="slide-fade">
           <profile-ui-init
-            v-if="!userData.user.firstName || !userData.user.type"
+            v-if="!userData?.user?.firstName || !userData?.user?.type || true"
           />
         </transition>
       </teleport>
     </client-only>
-    <client-only>
+    <!-- <client-only>
       <teleport to=".dashboard">
         <div class="container">
           <span class="profile__path">
@@ -60,9 +60,9 @@
       <profile-ui-about user-role="client" @to-edit="showModal('about')" />
       <profile-ui-reputation user-role="client" />
       <profile-ui-orders />
-    </div>
+    </div> -->
   </article>
-  <Teleport to="#root">
+  <!-- <Teleport to="#root">
     <transition name="modal-transition">
       <modals-profile-edit-about
         v-if="openModal === 'about'"
@@ -93,7 +93,7 @@
         @modal-close="modalClose"
       />
     </transition>
-  </Teleport>
+  </Teleport> -->
 </template>
 
 <script setup>

@@ -48,8 +48,16 @@ watch(
 }
 .checkbox {
   &-text {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: calcWidth(16);
+    line-height: calcWidth(24);
+    @media screen and ($media-lg-query) {
+      font-size: calculateVw768(16);
+      line-height: calculateVw768(24);
+    }
+    @media screen and ($media-md-query) {
+      font-size: calculateVw425(13);
+      line-height: auto;
+    }
     &:hover {
       transition: 0.2s;
       color: $gray;
@@ -71,11 +79,21 @@ watch(
     @apply flex justify-center items-center;
     top: 0;
     left: 0;
-    height: 24px;
-    min-width: 24px;
-    border-radius: 4px;
+    height: calcWidth(24);
+    min-width: calcWidth(24);
+    border-radius: calcWidth(4);
     background: url('/assets/icons/check-off.svg') no-repeat center center;
     background-size: cover;
+    @media screen and ($media-lg-query) {
+      height: calculateVw768(24);
+      min-width: calculateVw768(24);
+      border-radius: calculateVw768(4);
+    }
+    @media screen and ($media-md-query) {
+      height: calculateVw425(24);
+      min-width: calculateVw425(24);
+      border-radius: calculateVw425(4);
+    }
   }
 }
 </style>

@@ -24,7 +24,8 @@ const handleOpenSidebar = () => {
   min-height: $full-height;
 }
 .default-layout {
-  background: $black $bg-stars repeat fixed center;
+  /* background: $black $bg-stars repeat fixed center; */
   font-family: $base-font;
+  @include gb-blur();
 }
 </style>

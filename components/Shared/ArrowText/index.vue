@@ -76,26 +76,38 @@ defineProps({
     height: calculateVw768(8);
     width: calculateVw768(4);
   }
+  @media screen and ($media-md-query) {
+    height: calculateVw425(8);
+    width: calculateVw425(4);
+  }
 }
 .arrow-text {
   @apply flex items-center;
   gap: v-bind(arrowGap);
   /* font-size: v-bind(fontSize); */
-  font-weight: v-bind(fontWeight);
+  font-weight: 500;
   color: rgba($color: #fff, $alpha: 0.9);
 
   &.size-lg {
   }
   &.size-md {
     font-size: calcWidth(18);
+    white-space: nowrap;
     @media screen and ($media-lg-query) {
       font-size: calculateVw768(18);
+    }
+    @media screen and ($media-md-query) {
+      font-size: calculateVw425(13);
     }
   }
   &.size-sm {
     font-size: calcWidth(14);
+    white-space: nowrap;
     @media screen and ($media-lg-query) {
       font-size: calculateVw768(14);
+    }
+    @media screen and ($media-md-query) {
+      font-size: calculateVw425(10);
     }
   }
   &_base {

@@ -28,7 +28,8 @@ const route = useRoute();
   min-width: calcWidth(591);
   /* min-width: 591px; */
   &__item {
-    color: rgba($color: #fff, $alpha: 0.9);
+    color: white;
+    opacity: 90;
     letter-spacing: 0%;
     font-family: $base-font;
     font-size: calcWidth(15);

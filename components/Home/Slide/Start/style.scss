@@ -11,6 +11,11 @@
     max-width: calcWidth(680);
     @media screen and ($media-lg-query) {
       max-width: calculateVw768(680);
+      gap: calculateVw768(60);
+    }
+    @media screen and ($media-md-query) {
+      max-width: 100%;
+      gap: calculateVw425(40);
     }
 
     &-name {
@@ -18,17 +23,24 @@
       font-size: calcWidth(50);
       font-style: normal;
       font-weight: 500;
-      letter-spacing: 0%;
+      letter-spacing: 2.75px;
       color: rgba($color: #fff, $alpha: 0.85);
       line-height: 100%; /* 80px */
       @media screen and ($media-lg-query) {
         font-size: calculateVw768(50);
       }
+      @media screen and ($media-md-query) {
+        font-size: calculateVw425(22);
+      }
+
       &_gradient {
         @include gradient-text($logo-font, calcWidth(42), 700);
         letter-spacing: -2.75px;
         @media screen and ($media-lg-query) {
           @include gradient-text($logo-font, calculateVw768(42), 700);
+        }
+        @media screen and ($media-md-query) {
+          @include gradient-text($logo-font, calculateVw425(18), 700);
         }
       }
     }
@@ -44,6 +56,10 @@
         max-width: calculateVw768(597);
         font-size: calculateVw768(18);
       }
+      @media screen and ($media-md-query) {
+        max-width: unset;
+        font-size: calculateVw425(13);
+      }
     }
 
     &-buttons {
@@ -51,6 +67,9 @@
       gap: $space-large-plus;
       @media screen and ($media-lg-query) {
         margin-bottom: calculateVw768(40);
+      }
+      @media screen and ($media-md-query) {
+        margin-bottom: calculateVw425(40);
       }
     }
 
@@ -69,6 +88,10 @@
           font-size: calculateVw768(15);
           gap: calculateVw768(20);
         }
+        @media screen and ($media-md-query) {
+          font-size: calculateVw425(15);
+          gap: calculateVw425(20);
+        }
       }
       &-count {
         font-family: $title-font;
@@ -77,6 +100,9 @@
         // line-height: 23px;
         @media screen and ($media-lg-query) {
           font-size: calculateVw768(30);
+        }
+        @media screen and ($media-md-query) {
+          font-size: calculateVw425(30);
         }
       }
     }

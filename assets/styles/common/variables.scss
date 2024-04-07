@@ -32,7 +32,11 @@ $light-red: #e13347;
 $dark-red: #da5e5e;
 
 $gradient-violet-blue: linear-gradient(91deg, $violet -7.12%, $blue 114.37%);
-$gradient-skyblue-blue: linear-gradient(98deg, #0085ff -38.38%, #211cf2 71.88%);
+$gradient-skyblue-blue: linear-gradient(
+  97.86deg,
+  #89c6ff -35.55%,
+  #3633d0 71.88%
+);
 $gradient-skyblue-blue-20: linear-gradient(
   98deg,
   rgba(0, 133, 255, 0.2) -38.38%,
@@ -40,9 +44,9 @@ $gradient-skyblue-blue-20: linear-gradient(
 );
 
 // border
-$border-radius-s: 10px;
-$border-radius-m: 15px;
-$border-radius-l: 20px;
+$border-radius-s: calcWidth(10);
+$border-radius-m: calcWidth(15);
+$border-radius-l: calcWidth(20);
 $border-radius-rounded: 50%;
 
 // z-index
@@ -87,6 +91,11 @@ $ui-step: 5px;
 
 @function calculateVw768($size) {
   $vwSize: calc($size * 100 / 768);
+  @return #{$vwSize}vw;
+}
+
+@function calculateVw425($size) {
+  $vwSize: calc($size * 100 / 425);
   @return #{$vwSize}vw;
 }
 

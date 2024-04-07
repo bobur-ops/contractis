@@ -19,6 +19,7 @@ body {
     background: $white;
     border-radius: 5px;
   }
+  overflow-x: hidden;
 }
 a {
   text-decoration: none;
@@ -37,7 +38,7 @@ a {
 }
 @media screen and (max-width: 768px) {
   .container {
-    max-width: calcWidth(1660);
+    max-width: calculateVw768(708);
   }
 }
 #telegram-login-contractis_ro_bot {

@@ -108,7 +108,14 @@ const ToLogin = () => {
     min-height: $full-height;
     column-gap: calcWidth(90);
     @media screen and ($media-lg-query) {
+      /* @apply static; */
+      /* min-height: auto; */
       column-gap: calculateVw768(90);
+    }
+    @media screen and ($media-md-query) {
+      /* @apply static; */
+      /* min-height: auto; */
+      column-gap: calculateVw425(90);
     }
   }
   &__role-image {
@@ -120,16 +127,20 @@ const ToLogin = () => {
   }
   &__title {
     @include gradient-text($title-font, calcWidth(50), 500, 150%);
-    margin-bottom: calcWidth(60);
+    margin-bottom: calcWidth(50);
     @media screen and ($media-lg-query) {
       @include gradient-text($title-font, calculateVw768(50), 500, 150%);
-      margin-bottom: calculateVw768(60);
+      margin-bottom: calculateVw768(35);
+    }
+    @media screen and ($media-md-query) {
+      @include gradient-text($title-font, calculateVw425(26), 500, 150%);
+      margin-bottom: calculateVw425(35);
     }
     /* @include gradient-text($title-font, 70px, 700, 70px); */
     /* margin-bottom: 65px; */
   }
   &__text {
-    line-height: calcWidth(33);
+    /* line-height: calcWidth(33); */
     max-width: calcWidth(980);
     font-size: calcWidth(17);
     font-weight: 400;
@@ -141,6 +152,12 @@ const ToLogin = () => {
       font-size: calculateVw768(17);
       margin-bottom: calculateVw768(15);
     }
+    @media screen and ($media-md-query) {
+      line-height: 150%;
+      max-width: calculateVw425(980);
+      font-size: calculateVw425(13);
+      margin-bottom: calculateVw425(15);
+    }
     span {
       font-weight: 500;
       color: rgba($color: #fff, $alpha: 0.9);
@@ -149,6 +166,9 @@ const ToLogin = () => {
       margin-bottom: calcWidth(60);
       @media screen and ($media-lg-query) {
         margin-bottom: calculateVw768(60);
+      }
+      @media screen and ($media-md-query) {
+        margin-bottom: calculateVw425(35);
       }
     }
   }
@@ -159,7 +179,14 @@ const ToLogin = () => {
     @apply flex flex-col justify-center;
     margin-bottom: calcWidth(190);
     @media screen and ($media-lg-query) {
-      margin-bottom: calculateVw768(190);
+      @apply justify-start;
+      margin: calculateVw768(67) 0;
+      /* margin: calculateVw768(66) 0; */
+    }
+    @media screen and ($media-md-query) {
+      @apply justify-start;
+      margin: calculateVw425(0) 0;
+      /* margin: calculateVw425(66) 0; */
     }
   }
 }

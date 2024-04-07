@@ -5,9 +5,10 @@
       :id="id"
       class="form-field__label"
       :class="{
-        'form-field__label_error': statusError || isValidateError
+        'form-field__label_error': statusError || isValidateError,
+        'form-field__label_big': size === 'big',
+        'form-field__label_default': size === 'default'
       }"
-      :style="styles.label"
     >
       {{ label }}
     </label>
@@ -15,10 +16,13 @@
       :id="id"
       :model-value="inputModel.text"
       :type="type"
+      :class="{
+        'form-input_error': statusError || isValidateError,
+        'form-field__input_big': size === 'big'
+      }"
       autocomplete-type="on"
       :placeholder="placeholder"
-      :status-error="statusError"
-      :style="styles.input"
+      :status-error="statusError || isValidateError"
       :input-mode="inputMode"
       :mask="mask"
       @update:model-value="updateValue"
@@ -86,6 +90,57 @@ const updateValue = (value) => {
 <style scoped lang="scss">
 @import 'style';
 .form-field {
-  gap: v-bind(gap);
+  gap: calcWidth(12);
+  @media screen and ($media-lg-query) {
+    gap: calculateVw768(12);
+  }
+  @media screen and ($media-md-query) {
+    gap: calculateVw425(12);
+  }
+  /* gap: v-bind(gap); */
+}
+.form-field {
+  &__label {
+    &_big {
+      font-size: calcWidth(18);
+      font-weight: 500;
+      @media screen and ($media-lg-query) {
+        font-size: calculateVw768(18);
+      }
+      @media screen and ($media-md-query) {
+        font-size: calculateVw425(14);
+      }
+    }
+    &_default {
+      font-size: calcWidth(16);
+      font-weight: 400;
+      @media screen and ($media-lg-query) {
+        font-size: calculateVw768(16);
+      }
+      @media screen and ($media-md-query) {
+        font-size: calculateVw425(16);
+      }
+    }
+  }
+  &__input {
+    &_big {
+      font-size: calcWidth(18);
+      @media screen and ($media-lg-query) {
+        font-size: calculateVw768(18);
+      }
+      @media screen and ($media-md-query) {
+        font-size: calculateVw425(18);
+      }
+    }
+    &_default {
+      font-size: calcWidth(16);
+      @media screen and ($media-lg-query) {
+        font-size: calculateVw768(16);
+      }
+      @media screen and ($media-md-query) {
+        font-size: calculateVw425(16);
+      }
+    }
+  }
 }
 </style>

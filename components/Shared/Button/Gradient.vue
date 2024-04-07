@@ -31,6 +31,12 @@ defineProps({
     width: calculateVw768(200);
     height: calculateVw768(48);
   }
+  @media screen and ($media-md-query) {
+    width: calculateVw425(200);
+    height: calculateVw425(37);
+    /* width: calculateVw425(122);
+    height: calculateVw425(37); */
+  }
   .bg-img {
     position: absolute;
     left: 0;
@@ -51,10 +57,14 @@ defineProps({
     /* font-size: v-bind(fontSize); */
     font-size: calcWidth(18);
     color: rgba($color: #fff, $alpha: 0.9);
-    font-weight: v-bind(fontWeight);
+    font-weight: 500;
     @media screen and ($media-lg-query) {
       font-size: calculateVw768(18);
       gap: calculateVw768(10);
+    }
+    @media screen and ($media-md-query) {
+      font-size: calculateVw425(13);
+      gap: calculateVw425(10);
     }
   }
 }
