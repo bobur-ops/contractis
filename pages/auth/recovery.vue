@@ -17,7 +17,7 @@
       </template>
       <template #buttons>
         <shared-button-gradient-blue button-height="50px" font-size="20px">
-          <shared-arrow-text> Подтвердить </shared-arrow-text>
+          Подтвердить
         </shared-button-gradient-blue>
       </template>
     </form-base>
@@ -46,28 +46,12 @@ const submit = handleSubmit((values) => {
 </script>
 <style scoped lang="scss">
 .recovery {
-  width: calcWidth(392);
-  margin: calcWidth(37) calcWidth(40);
-  @media screen and ($media-lg-query) {
-    width: unset;
-    margin: 0;
-  }
-  @media screen and ($media-md-query) {
-    width: unset;
-    margin: 0;
-  }
+  width: 392px;
+  margin: 37px 40px;
   &__info {
     @apply flex flex-col;
-    margin-bottom: calcWidth(30);
-    gap: calcWidth(30);
-    @media screen and ($media-lg-query) {
-      gap: calculateVw768(30);
-      margin-bottom: calculateVw768(30);
-    }
-    @media screen and ($media-md-query) {
-      gap: calculateVw425(30);
-      margin-bottom: calculateVw425(30);
-    }
+    margin-bottom: 30px;
+    gap: 30px;
   }
   &__form {
     &-necessarily {
@@ -77,65 +61,31 @@ const submit = handleSubmit((values) => {
   }
   &__description {
     &-text {
-      color: rgba($color: #fff, $alpha: 0.6);
-      line-height: calcWidth(24);
+      color: $gray;
+      line-height: 24px;
       font-weight: 400;
-      font-size: calcWidth(16);
-      @media screen and ($media-lg-query) {
-        font-size: calculateVw768(16);
-        line-height: calculateVw768(24);
-      }
-      @media screen and ($media-md-query) {
-        font-size: calculateVw425(13);
-        line-height: calculateVw425(20);
-      }
+      font-size: 16px;
     }
     &-link {
-      line-height: calcWidth(24);
+      line-height: 24px;
       text-decoration: underline;
       font-weight: 400;
-      color: rgba($color: #fff, $alpha: 0.9);
-      font-size: calcWidth(16);
-      @media screen and ($media-lg-query) {
-        font-size: calculateVw768(16);
-        line-height: calculateVw768(24);
-      }
-      @media screen and ($media-md-query) {
-        font-size: calculateVw425(14);
-        line-height: calculateVw425(24);
-      }
+      font-size: 16px;
     }
   }
   &__send {
-    line-height: calcWidth(24);
+    line-height: 24px;
     text-decoration: underline;
-    font-weight: 300;
-    font-size: calcWidth(16);
+    font-weight: 500;
+    font-size: 16px;
     float: right;
-    color: rgba($color: #fff, $alpha: 0.9);
-    @media screen and ($media-lg-query) {
-      font-size: calculateVw768(16);
-      line-height: calculateVw768(24);
-    }
-    @media screen and ($media-md-query) {
-      font-size: calculateVw425(14);
-      line-height: calculateVw425(24);
-    }
   }
   &__name {
-    line-height: calcWidth(36);
+    line-height: 48px;
     font-family: $base-font;
-    font-weight: 500;
-    color: rgba($color: #fff, $alpha: 0.85);
-    font-size: calcWidth(36);
-    @media screen and ($media-lg-query) {
-      font-size: calculateVw768(36);
-      line-height: calculateVw768(36);
-    }
-    @media screen and ($media-md-query) {
-      font-size: calculateVw425(24);
-      line-height: calculateVw425(28);
-    }
+    font-weight: 600;
+    color: white;
+    font-size: 36px;
   }
 }
 </style>

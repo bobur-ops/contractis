@@ -23,103 +23,55 @@ definePageMeta({
 </script>
 <style scoped lang="scss">
 .login {
-  width: calcWidth(392);
-  margin: calcWidth(36) calcWidth(40);
-  @media screen and ($media-lg-query) {
-    width: auto;
-    margin: 0;
-  }
+  width: 392px;
+  margin: 36px 40px;
+
   &__info {
     @apply flex flex-col;
-    margin-bottom: calcWidth(30);
-    gap: calcWidth(30);
-    @media screen and ($media-lg-query) {
-      margin-bottom: calculateVw768(30);
-      gap: calculateVw768(30);
-    }
-    @media screen and ($media-md-query) {
-      margin-bottom: calculateVw425(30);
-      gap: calculateVw425(30);
-    }
+    margin-bottom: 30px;
+    gap: 30px;
   }
 
   &__form {
     &-references {
-      margin: calcWidth(15) 0 0 0;
+      margin: 15px 0 0 0;
       @apply flex justify-between w-full;
       color: $gray;
       font-weight: 500;
-      @media screen and ($media-lg-query) {
-        margin: calculateVw768(15) 0 0 0;
-      }
-      @media screen and ($media-md-query) {
-        margin: calculateVw425(15) 0 0 0;
-      }
     }
   }
 
   &__redirect {
-    @apply flex justify-between;
+    @apply flex;
     color: $white;
-    font-size: calcWidth(16);
-    @media screen and ($media-lg-query) {
-      font-size: calculateVw768(16);
-    }
-    @media screen and ($media-md-query) {
-      font-size: calculateVw425(14);
-    }
+    gap: 30px;
+    font-size: 16px;
+
     &-question {
-      color: rgba($color: #fff, $alpha: 0.6);
-      line-height: calcWidth(15);
-      font-weight: 300;
-      @media screen and ($media-lg-query) {
-        line-height: calculateVw768(15);
-      }
-      @media screen and ($media-md-query) {
-        line-height: calculateVw425(15);
-      }
+      color: $gray;
+      line-height: 15px;
+      font-weight: 400;
     }
 
     &-link {
-      line-height: calcWidth(15);
+      line-height: 15px;
       text-decoration: underline;
-      font-weight: 300;
-      color: rgba($color: #fff, $alpha: 0.9);
-      @media screen and ($media-lg-query) {
-        line-height: calculateVw768(15);
-      }
-      @media screen and ($media-md-query) {
-        line-height: calculateVw425(15);
-      }
+      font-weight: 400;
 
       &_mod {
         font-weight: 500;
-        line-height: calcWidth(24);
-        font-size: calcWidth(16);
-        @media screen and ($media-lg-query) {
-          line-height: calculateVw768(24);
-          font-size: calculateVw768(16);
-        }
-        @media screen and ($media-md-query) {
-          line-height: calculateVw425(24);
-          font-size: calculateVw425(16);
-        }
+        line-height: 24px;
+        font-size: 16px;
       }
     }
   }
 
   &__name {
-    /* line-height: calcWidth(26); */
+    line-height: 26px;
     font-family: $base-font;
-    font-weight: 500;
-    color: rgba($color: #fff, $alpha: 0.85);
-    font-size: calcWidth(30);
-    @media screen and ($media-lg-query) {
-      font-size: calculateVw768(30);
-    }
-    @media screen and ($media-md-query) {
-      font-size: calculateVw425(24);
-    }
+    font-weight: 600;
+    color: white;
+    font-size: 36px;
   }
 }
 </style>

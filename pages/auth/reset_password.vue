@@ -26,7 +26,7 @@
       </template>
       <template #buttons>
         <shared-button-gradient-blue button-height="50px" font-size="20px">
-          <shared-arrow-text> Подтвердить </shared-arrow-text>
+          Подтвердить
         </shared-button-gradient-blue>
       </template>
     </form-base>
@@ -56,28 +56,12 @@ const submit = handleSubmit((values) => {
 </script>
 <style scoped lang="scss">
 .verification {
-  width: calcWidth(392);
-  margin: calcWidth(37) calcWidth(40);
-  @media screen and ($media-lg-query) {
-    width: unset;
-    margin: 0;
-  }
-  @media screen and ($media-md-query) {
-    width: unset;
-    margin: 0;
-  }
+  width: 392px;
+  margin: 37px 40px;
   &__info {
     @apply flex flex-col;
-    margin-bottom: calcWidth(30);
-    gap: calcWidth(30);
-    @media screen and ($media-lg-query) {
-      gap: calculateVw768(30);
-      margin-bottom: calculateVw768(30);
-    }
-    @media screen and ($media-md-query) {
-      gap: calculateVw425(30);
-      margin-bottom: calculateVw425(30);
-    }
+    margin-bottom: 30px;
+    gap: 30px;
   }
   &__form {
     &-necessarily {
@@ -87,47 +71,24 @@ const submit = handleSubmit((values) => {
   }
   &__description {
     &-text {
-      /* color: $gray; */
-      color: rgba($color: #fff, $alpha: 0.6);
-      line-height: calcWidth(20);
+      color: $gray;
+      line-height: 20px;
       font-weight: 400;
-      font-size: calcWidth(16);
-      @media screen and ($media-lg-query) {
-        font-size: calculateVw768(16);
-        line-height: calculateVw768(20);
-      }
-      @media screen and ($media-md-query) {
-        font-size: calculateVw425(13);
-        line-height: calculateVw425(20);
-      }
+      font-size: 16px;
     }
     &-link {
-      line-height: calcWidth(20);
+      line-height: 20px;
       text-decoration: underline;
       font-weight: 400;
-      font-size: calcWidth(16);
-      @media screen and ($media-lg-query) {
-        font-size: calculateVw768(16);
-      }
-      @media screen and ($media-md-query) {
-        font-size: calculateVw425(13);
-      }
+      font-size: 16px;
     }
   }
   &__name {
-    line-height: calcWidth(36);
+    line-height: 48px;
     font-family: $base-font;
-    font-weight: 500;
-    color: rgba($color: #fff, $alpha: 0.85);
-    font-size: calcWidth(30);
-    @media screen and ($media-lg-query) {
-      font-size: calculateVw768(30);
-      line-height: calculateVw768(36);
-    }
-    @media screen and ($media-md-query) {
-      font-size: calculateVw425(24);
-      line-height: calculateVw425(28);
-    }
+    font-weight: 600;
+    color: white;
+    font-size: 36px;
   }
 }
 </style>

@@ -23,6 +23,9 @@ export const AuthUser = {
   registration(body) {
     return postData('users/registration', body, authCurrentUserAdapter);
   },
+  verification(userId, code) {
+    return postData(`users/email/verify/${userId}/${code}`);
+  },
   companyInvite(inviteCode) {
     return getData('users/profile/invite', null, null, { invite: inviteCode });
   },

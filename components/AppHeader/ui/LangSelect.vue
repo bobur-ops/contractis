@@ -59,7 +59,7 @@ onMounted(() => {
 
 <style lang="scss">
 .lang-select {
-  margin-left: calcWidth(7);
+  margin-left: pxToRem(7);
   &:hover {
     color: $gray-70;
     transition: 0.1s;
@@ -70,22 +70,21 @@ onMounted(() => {
   }
   &__arrow {
     @apply transition-transform;
-    margin-left: calcWidth(10);
-    width: calcWidth(4);
-    height: calcWidth(8);
+    margin-left: pxToRem(10);
+    width: pxToRem(4);
+    height: pxToRem(8);
     transform: rotate(0);
     &_active {
       transform: rotate(90deg);
     }
   }
   &__name {
-    line-height: calcWidth(10);
-    margin-left: 5px;
+    line-height: pxToRem(10);
+    margin-left: pxToRem(5);
     color: $white;
   }
   &__image {
-    width: calcWidth(22);
-    height: calcWidth(15);
+    width: pxToRem(16);
   }
   &__options {
     border-radius: $border-radius-s;
@@ -93,8 +92,8 @@ onMounted(() => {
     background: $bg-black-block !important;
   }
   &__base {
-    height: calcWidth(32);
-    font-size: calcWidth(14);
+    height: pxToRem(32);
+    font-size: pxToRem(14);
   }
   &__active {
     background: transparent !important;

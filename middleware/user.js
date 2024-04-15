@@ -4,7 +4,12 @@ export default defineNuxtRouteMiddleware(async (to) => {
   // eslint-disable-next-line no-undef
   const { token } = useStore();
   if (typeof token.value === 'object') return;
-  const inaccessiblePages = ['/auth'];
+  const inaccessiblePages = [
+    '/auth/registration',
+    '/auth/login',
+    '/auth/recovery',
+    '/auth/reset_password'
+  ];
   // eslint-disable-next-line no-undef
   const isInaccessible = computed(() =>
     inaccessiblePages.find((route) => to.path.startsWith(route))

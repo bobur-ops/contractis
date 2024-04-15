@@ -34,7 +34,7 @@
         type="submit"
         :disabled="isDisabled"
       >
-        <shared-arrow-text> Зарегистрироваться </shared-arrow-text>
+        Зарегистрироваться
       </shared-button-gradient-blue>
       <another-auth text="или" />
     </template>
@@ -55,10 +55,11 @@ const { handleSubmit, errors, defineField } = useForm({
     middle_name: ''
   }
 });
-const emit = defineEmits(['registerUser']);
 const currentUserData = useUserData();
 const isDisabled = ref(false);
+
 const route = useRoute();
+const router = useRouter();
 
 const referralCode = computed(() => route.query.referral_code ?? null);
 const inviteCode = computed(() => route.query.invite ?? null);
@@ -90,8 +91,8 @@ const createUser = async (data) => {
   if (userData.value) {
     setToken(userData.value.userToken);
     currentUserData.value = userData.value;
-    emit('registerUser');
     console.log(currentUserData.value);
+    await router.push(`/auth/verification/?userId=${userData.value.user.id}`);
     isDisabled.value = false;
   } else {
     userData.value = error.value.statusCode;

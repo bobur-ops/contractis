@@ -32,11 +32,7 @@ $light-red: #e13347;
 $dark-red: #da5e5e;
 
 $gradient-violet-blue: linear-gradient(91deg, $violet -7.12%, $blue 114.37%);
-$gradient-skyblue-blue: linear-gradient(
-  97.86deg,
-  #89c6ff -35.55%,
-  #3633d0 71.88%
-);
+$gradient-skyblue-blue: linear-gradient(98deg, #0085ff -38.38%, #211cf2 71.88%);
 $gradient-skyblue-blue-20: linear-gradient(
   98deg,
   rgba(0, 133, 255, 0.2) -38.38%,
@@ -44,9 +40,9 @@ $gradient-skyblue-blue-20: linear-gradient(
 );
 
 // border
-$border-radius-s: calcWidth(10);
-$border-radius-m: calcWidth(15);
-$border-radius-l: calcWidth(20);
+$border-radius-s: pxToRem(10);
+$border-radius-m: 15px;
+$border-radius-l: 20px;
 $border-radius-rounded: 50%;
 
 // z-index
@@ -66,14 +62,10 @@ $font-height-large: 150%;
 // width
 $header-height: 90px;
 $bottom-page-space: 120px;
-$full-height: calc(100vh - $header-height);
+$full-height: calc(100vh - pxToRem(90));
+// $full-height: calc(100vh - $header-height);
 $main-height: calc(100vh - $header-height - $bottom-page-space);
 $media-desktop: 1420px;
-
-$media-xl: 1280px;
-$media-lg: 1024px;
-$media-md: 768px;
-$media-sm: 640px;
 
 $ui-step: 5px;
 
@@ -81,26 +73,14 @@ $ui-step: 5px;
   @return calc(100vh / (1080px / $size * $step));
 }
 
-// @function calcWidth($size) {
-//   @return calc(100vw / (1920px / $size));
-// }
 @function calcWidth($size) {
-  $vwSize: $size * 100 / 1920;
-  @return #{$vwSize}vw;
+  @return calc(100vw / (1920px / $size));
 }
-
-@function calculateVw768($size) {
-  $vwSize: calc($size * 100 / 768);
-  @return #{$vwSize}vw;
-}
-
-@function calculateVw425($size) {
-  $vwSize: calc($size * 100 / 425);
-  @return #{$vwSize}vw;
-}
-
 @function uiStep($multiplier) {
   @return calc($ui-step * #{$multiplier});
+}
+@function pxToRem($pxValue, $baseFontSize: 16) {
+  @return ($pxValue / $baseFontSize) * 1rem;
 }
 
 $space-x-small: #{uiStep(1)}; // 5px
@@ -109,8 +89,10 @@ $space-small: #{uiStep(3)}; // 15px
 $space-small-plus: #{uiStep(4)}; // 20px
 $space-medium: #{uiStep(5)}; // 25px
 $space-medium-plus: #{uiStep(6)}; // 30px
+$space-medium-plus: #{uiStep(6)}; // 30px
 $space-large: #{uiStep(7)}; // 35px
-$space-large-plus: #{uiStep(8)}; // 40px
+$space-large-plus: 3.125rem; // 40px
+// $space-large-plus: #{uiStep(8)}; // 40px
 $space-x-large: #{uiStep(9)}; // 45px
 $space-x-large-plus: #{uiStep(10)}; // 50px
 $space-xx-large: #{uiStep(11)}; // 55px

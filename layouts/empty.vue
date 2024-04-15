@@ -9,7 +9,6 @@
 <style scoped lang="scss">
 .main {
   min-height: 100vh;
-  /* background: $bg-stars repeat fixed center; */
-  @include gb-blur();
+  background: $bg-stars repeat fixed center;
 }
 </style>

@@ -7,18 +7,22 @@ export const useApi = () => {
     headers = {},
     query = {}
   ) => {
+    const response = ref(null);
     // eslint-disable-next-line no-undef
-    const { data, error, pending, refresh, status } = await useLazyFetch(
+    const { data, error, pending, refresh, status } = await useFetch(
       () => `${API}` + `${path}`,
       {
         headers: Object.assign({ Accept: 'Application/json' }, headers),
         query: query,
         transform: adapter
           ? (beforeData) => adapter(beforeData)
-          : (beforeData) => beforeData
+          : (beforeData) => beforeData,
+        onResponse({ response: res }) {
+          response.value = res;
+        }
       }
     );
-    return { data, error, pending, refresh, status };
+    return { data, error, pending, refresh, status, response };
   };
   const getPaginationData = async (
     path,

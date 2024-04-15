@@ -68,15 +68,23 @@ const advantages = ref([
 const { query } = useRoute();
 const { clearToken, setToken } = useStore();
 
-if (query.invite && process.client) {
+if (query.invite) {
+  const { data, error } = await AuthUser.companyInvite(query.invite);
   console.log(query.invite);
-  const { data } = await AuthUser.companyInvite(query.invite);
-  console.log(data);
+  if (data.value) {
+    console.log(data.value);
+  }
+  if (error.value) {
+    if (error.value.statusCode === 401) {
+      router.push(`/auth/registration?invite=${query.invite}`);
+    } else if (error.value.statusCode === 422) {
+      console.log('код недействителен');
+    }
+  }
 }
 
 const userData = useUserData();
 onMounted(async () => {
-  console.log(query);
   if (query.data) {
     clearToken();
     userData.value = authCurrentUserAdapter(JSON.parse(query.data));
@@ -97,21 +105,11 @@ onMounted(async () => {
 }
 .arrowDown {
   @apply absolute left-1/2 -translate-x-1/2 transform;
-  width: calcWidth(42);
-  height: calcWidth(32);
-  bottom: calcWidth(30);
+  width: 42px;
+  height: 21px;
+  bottom: 30px;
   color: $gray;
   cursor: pointer;
-  @media screen and ($media-lg-query) {
-    width: calculateVw768(42);
-    height: calculateVw768(32);
-    bottom: calculateVw768(30);
-  }
-  @media screen and ($media-md-query) {
-    width: calculateVw425(42);
-    height: calculateVw425(32);
-    bottom: calculateVw425(30);
-  }
 }
 </style>
 <style lang="scss">

@@ -8,9 +8,18 @@
   outline: none;
   color: $white;
 }
+html {
+  font-size: 100%; // 16px
+  @media screen and (max-width: 1560px) {
+    font-size: 80%;
+  }
+  @media screen and (max-width: 1250px) {
+    font-size: 60%;
+  }
+}
 body {
   &::-webkit-scrollbar {
-    width: 10px;
+    width: 0.625rem;
   }
   &::-webkit-scrollbar-track {
     background: $border-block;
@@ -19,28 +28,14 @@ body {
     background: $white;
     border-radius: 5px;
   }
-  overflow-x: hidden;
 }
 a {
   text-decoration: none;
 }
-// .container {
-//   max-width: $media-desktop;
-// }
 .container {
-  max-width: calcWidth(1360);
+  max-width: 85rem; // 1360px
 }
 
-@media screen and (max-width: 1360px) {
-  .container {
-    max-width: calcWidth(1560);
-  }
-}
-@media screen and (max-width: 768px) {
-  .container {
-    max-width: calculateVw768(708);
-  }
-}
 #telegram-login-contractis_ro_bot {
   opacity: 0.01;
   border-radius: 10px;

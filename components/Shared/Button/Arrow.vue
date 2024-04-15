@@ -15,8 +15,8 @@ defineProps({
 <style scoped lang="scss">
 .button-arrow {
   @apply flex justify-center items-center;
-  width: v-bind(width);
-  height: v-bind(height);
+  /* width: v-bind(width);
+  height: v-bind(height); */
   background: inherit;
   border-left: 1px solid $white;
   opacity: 0.5;

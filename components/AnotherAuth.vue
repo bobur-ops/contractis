@@ -55,77 +55,34 @@ const toGoogle = () => {
 <style scoped lang="scss">
 .another-auth {
   @apply inline-flex w-full items-center;
-  margin: calcWidth(27) 0;
-  gap: calcWidth(6);
-  @media screen and ($media-lg-query) {
-    margin: calculateVw768(27) 0;
-    gap: calculateVw768(6);
-  }
-  @media screen and ($media-md-query) {
-    margin: calculateVw425(27) 0;
-    gap: calculateVw425(6);
-  }
-  &__text {
-    font-size: calcWidth(18);
-    @media screen and ($media-lg-query) {
-      font-size: calculateVw768(18);
-    }
-    @media screen and ($media-md-query) {
-      font-size: calculateVw425(18);
-    }
-  }
+  margin: 27px 0;
+  gap: 6px;
   &__socials {
     @apply flex justify-between;
     &-item {
-      width: calcWidth(79);
-      height: calcWidth(42);
+      width: 79px;
+      height: 42.5px;
       cursor: pointer;
-      @media screen and ($media-lg-query) {
-        width: calculateVw768(79);
-        height: calculateVw768(42);
-      }
-      @media screen and ($media-md-query) {
-        width: calculateVw425(79);
-        height: calculateVw425(42);
-      }
       &_tg {
         @apply relative;
         background: url('assets/images/social-networks/Telegram.png');
-        background-size: calcWidth(79) calcWidth(42);
+        background-size: 79px 42.5px;
         overflow: hidden;
-        border-radius: calcWidth(11);
+        border-radius: 11px;
         cursor: pointer;
-        @media screen and ($media-lg-query) {
-          background-size: calculateVw768(79) calculateVw768(42);
-          border-radius: calculateVw768(11);
-        }
-        @media screen and ($media-md-query) {
-          background-size: calculateVw425(79) calculateVw425(42);
-          border-radius: calculateVw425(11);
-        }
       }
     }
   }
   &__line {
     @apply w-full inline-block;
-    height: calcWidth(1);
+    height: 1px;
     background: $white;
-    @media screen and ($media-lg-query) {
-      height: calculateVw768(1);
-    }
-    @media screen and ($media-md-query) {
-      height: calculateVw425(1);
-    }
   }
   &__text {
-    line-height: calcWidth(13);
+    line-height: 13px;
     font-family: $base-font;
-    font-size: calcWidth(16);
+    font-size: 16px;
     font-weight: 400;
-    @media screen and ($media-lg-query) {
-      line-height: calculateVw768(13);
-      font-size: calculateVw768(16);
-    }
   }
 }
 </style>

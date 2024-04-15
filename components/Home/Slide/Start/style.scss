@@ -7,115 +7,57 @@
   }
   &__info {
     @apply flex flex-col;
-    gap: calcWidth(60);
-    max-width: calcWidth(680);
-    @media screen and ($media-lg-query) {
-      max-width: calculateVw768(680);
-      gap: calculateVw768(60);
-    }
-    @media screen and ($media-md-query) {
-      max-width: 100%;
-      gap: calculateVw425(40);
-    }
+    gap: pxToRem(60);
+    max-width: pxToRem(862);
 
     &-name {
-      font-family: $base-font;
-      font-size: calcWidth(50);
+      font-family: $title-font;
+      font-size: pxToRem(70);
       font-style: normal;
-      font-weight: 500;
-      letter-spacing: 2.75px;
-      color: rgba($color: #fff, $alpha: 0.85);
-      line-height: 100%; /* 80px */
-      @media screen and ($media-lg-query) {
-        font-size: calculateVw768(50);
-      }
-      @media screen and ($media-md-query) {
-        font-size: calculateVw425(22);
-      }
-
+      font-weight: 700;
+      line-height: 80%; /* 80px */
       &_gradient {
-        @include gradient-text($logo-font, calcWidth(42), 700);
-        letter-spacing: -2.75px;
-        @media screen and ($media-lg-query) {
-          @include gradient-text($logo-font, calculateVw768(42), 700);
-        }
-        @media screen and ($media-md-query) {
-          @include gradient-text($logo-font, calculateVw425(18), 700);
-        }
+        @include gradient-text($logo-font, pxToRem(55), 700);
+        // letter-spacing: -2.75px;
       }
     }
     &-description {
-      max-width: calcWidth(597);
+      max-width: pxToRem(742);
       font-family: $base-font;
-      color: rgba($color: #fff, $alpha: 0.6);
-      font-size: calcWidth(18);
+      font-size: pxToRem(18);
       font-style: normal;
       font-weight: 400;
-      line-height: 140%;
-      @media screen and ($media-lg-query) {
-        max-width: calculateVw768(597);
-        font-size: calculateVw768(18);
-      }
-      @media screen and ($media-md-query) {
-        max-width: unset;
-        font-size: calculateVw425(13);
-      }
+      line-height: 150%;
     }
 
     &-buttons {
       @apply flex;
-      gap: $space-large-plus;
-      @media screen and ($media-lg-query) {
-        margin-bottom: calculateVw768(40);
-      }
-      @media screen and ($media-md-query) {
-        margin-bottom: calculateVw425(40);
-      }
+      gap: pxToRem(40);
     }
 
     &-advantages {
       @apply flex;
-      gap: $space-large;
+      gap: pxToRem(35);
       &-item {
         @apply flex flex-col;
-        line-height: 13px;
+        line-height: pxToRem(13);
         font-family: $base-font;
-        font-size: calcWidth(15);
+        font-size: pxToRem(15);
         font-weight: 500;
-        color: rgba($color: #fff, $alpha: 0.9);
-        gap: calcWidth(20);
-        @media screen and ($media-lg-query) {
-          font-size: calculateVw768(15);
-          gap: calculateVw768(20);
-        }
-        @media screen and ($media-md-query) {
-          font-size: calculateVw425(15);
-          gap: calculateVw425(20);
-        }
+        gap: pxToRem(15);
       }
       &-count {
         font-family: $title-font;
-        font-size: calcWidth(30);
+        font-size: pxToRem(34);
         font-weight: 700;
-        // line-height: 23px;
-        @media screen and ($media-lg-query) {
-          font-size: calculateVw768(30);
-        }
-        @media screen and ($media-md-query) {
-          font-size: calculateVw425(30);
-        }
+        line-height: pxToRem(23);
       }
     }
   }
   &__earth-block {
-    @include earth-block(calcWidth(500));
-    // @include earth-block(500px);
-    @media screen and ($media-lg-query) {
-      display: none;
-    }
+    @include earth-block(pxToRem(500));
   }
   &__earth {
-    @include earth-video(calcWidth(662), calcWidth(106), calcWidth(100));
-    // @include earth-video(662px, 106px, 100px);
+    @include earth-video(pxToRem(662), pxToRem(106), pxToRem(100));
   }
 }

@@ -14,8 +14,7 @@ const { token: userToken } = useStore();
 
 <style scoped lang="scss">
 .main {
-  min-height: 100vh;
-  /* min-height: $main-height; */
+  min-height: $main-height;
 }
 .main-layout {
   @include gb-blur();

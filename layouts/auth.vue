@@ -30,8 +30,7 @@
   min-height: $full-height;
 }
 .auth-layout {
-  /* background: $black $bg-stars repeat fixed center; */
-  @include gb-blur();
+  background: $black $bg-stars repeat fixed center;
   font-family: $base-font;
 }
 .astronaut {
@@ -39,36 +38,26 @@
   top: 50%;
   transform: translateY(-50%);
   right: -99%;
-  @media screen and ($media-lg-query) {
-    @apply hidden;
-  }
 }
 .planet {
   @apply absolute;
   top: calcHeight(120px);
   left: 0;
-  @media screen and ($media-lg-query) {
-    @apply hidden;
-  }
 }
 .auth {
   @apply w-full flex justify-center items-center;
   min-height: $full-height;
-  padding: calcWidth(45) 0;
+  padding: 45px 0;
   &__inner {
     @apply w-full h-full flex justify-center items-center relative;
   }
   &-block {
     @apply relative;
     border-radius: $border-radius-l;
-    /* background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(14.846222877502441px); */
-    border: calcWidth(1) solid rgba($color: #fff, $alpha: 0.8);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(14.846222877502441px);
+    border: 1.5px solid $white;
     font-family: $base-font;
-    @media screen and ($media-lg-query) {
-      @apply w-full;
-      border: none;
-    }
   }
 }
 </style>

@@ -5,7 +5,7 @@
       <p class="verification__description-text">
         Код для подтверждения пароля отправлен на ваш Email и в Telegram-bot.
       </p>
-      <p class="verification__description-subtext">
+      <p class="verification__description-text">
         Не пришел код?
         <span class="verification__send">Отправить еще раз (20 с.)</span>
       </p>
@@ -26,14 +26,17 @@
       </template>
       <template #buttons>
         <shared-button-gradient-blue button-height="50px" font-size="20px">
-          <shared-arrow-text> Подтвердить </shared-arrow-text>
+          Подтвердить
         </shared-button-gradient-blue>
       </template>
     </form-base>
+    <role-select v-if="isVerified" />
   </div>
 </template>
 
 <script setup>
+import { AuthUser } from '~/utils/api';
+
 definePageMeta({
   layout: 'auth',
   middleware: 'user'
@@ -44,40 +47,41 @@ const { handleSubmit, errors, defineField, setErrors } = useForm({
     agree: false
   }
 });
+
+const isVerified = ref(false);
+const { query } = useRoute();
 const [codeValue] = defineField('codeValue');
 const [agree] = defineField('agree');
-const submit = handleSubmit((values) => {
-  if (values.codeValue.length !== 6)
-    setErrors({ codeValue: 'Заполните все поля' });
-  else setErrors({ codeValue: null });
-  if (values.agree !== true)
-    setErrors({ agree: 'Для продолжения необходимо согласие' });
-  else setErrors({ agree: null });
-  if (!errors.value.agree && !errors.value.codeValue) {
+const submit = handleSubmit(async (values) => {
+  values.codeValue.length !== 6
+    ? setErrors({ codeValue: 'Заполните все поля' })
+    : setErrors({ codeValue: null });
+  values.agree
+    ? setErrors({ agree: null })
+    : setErrors({ agree: 'Для продолжения необходимо согласие' });
+
+  if (!errors.value.agree && !errors.value.codeValue && query.userId) {
+    const { error, response } = await AuthUser.verification(
+      query.userId,
+      values.codeValue
+    );
+    if (response.value.status === 200) {
+      isVerified.value = true;
+    } else if (error.value) {
+      console.log(error.value);
+    }
     console.log(values);
   }
 });
 </script>
 <style scoped lang="scss">
 .verification {
-  width: calcWidth(397);
-  margin: calcWidth(37) calcWidth(40);
-  @media screen and ($media-lg-query) {
-    width: unset;
-    margin: 0;
-  }
+  width: 392px;
+  margin: 37px 40px;
   &__info {
     @apply flex flex-col;
-    margin-bottom: calcWidth(30);
-    gap: calcWidth(30);
-    @media screen and ($media-lg-query) {
-      gap: calculateVw768(30);
-      margin-bottom: calculateVw768(30);
-    }
-    @media screen and ($media-md-query) {
-      gap: calculateVw425(30);
-      margin-bottom: calculateVw425(30);
-    }
+    margin-bottom: 30px;
+    gap: 30px;
   }
   &__form {
     &-necessarily {
@@ -87,79 +91,31 @@ const submit = handleSubmit((values) => {
   }
   &__description {
     &-text {
-      color: rgba($color: #fff, $alpha: 0.6);
-      line-height: calcWidth(20);
+      color: $gray;
+      line-height: 20px;
       font-weight: 400;
-      font-size: calcWidth(16);
-      @media screen and ($media-lg-query) {
-        font-size: calculateVw768(16);
-        line-height: calculateVw768(20);
-      }
-      @media screen and ($media-md-query) {
-        font-size: calculateVw425(13);
-        line-height: calculateVw425(20);
-      }
-    }
-    &-subtext {
-      color: rgba($color: #fff, $alpha: 0.6);
-      font-weight: 300;
-      line-height: calcWidth(20);
-      font-size: calcWidth(16);
-      @media screen and ($media-lg-query) {
-        font-size: calculateVw768(16);
-        line-height: calculateVw768(20);
-      }
-      @media screen and ($media-md-query) {
-        font-size: calculateVw425(13);
-        line-height: calculateVw425(20);
-      }
+      font-size: 16px;
     }
     &-link {
+      line-height: 20px;
       text-decoration: underline;
       font-weight: 400;
-      color: rgba($color: #fff, $alpha: 0.9);
-      line-height: calcWidth(20);
-      font-size: calcWidth(16);
-      @media screen and ($media-lg-query) {
-        font-size: calculateVw768(16);
-        line-height: calculateVw768(20);
-      }
-      @media screen and ($media-md-query) {
-        font-size: calculateVw425(14);
-        line-height: calculateVw425(20);
-      }
+      font-size: 16px;
     }
   }
   &__send {
+    line-height: 20px;
     text-decoration: underline;
-    font-weight: 300;
-    color: rgba($color: #fff, $alpha: 0.9);
+    font-weight: 400;
+    font-size: 16px;
     float: right;
-    font-size: calcWidth(16);
-    line-height: calcWidth(20);
-    @media screen and ($media-lg-query) {
-      font-size: calculateVw768(16);
-      line-height: calculateVw768(20);
-    }
-    @media screen and ($media-md-query) {
-      font-size: calculateVw425(14);
-      line-height: calculateVw425(20);
-    }
   }
   &__name {
+    line-height: 48px;
     font-family: $base-font;
-    font-weight: 500;
-    color: rgba($color: #fff, $alpha: 0.85);
-    line-height: calcWidth(48);
-    font-size: calcWidth(36);
-    @media screen and ($media-lg-query) {
-      font-size: calculateVw768(36);
-      line-height: calculateVw768(48);
-    }
-    @media screen and ($media-md-query) {
-      font-size: calculateVw425(24);
-      line-height: calculateVw425(28);
-    }
+    font-weight: 600;
+    color: white;
+    font-size: 36px;
   }
 }
 </style>

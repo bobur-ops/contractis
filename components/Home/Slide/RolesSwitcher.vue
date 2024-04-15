@@ -13,7 +13,7 @@
       <shared-arrow-text
         :font-weight="roleFont[0]"
         font-size="22px"
-        font-family="base"
+        font-family="title"
       >
         Исполнитель
       </shared-arrow-text>
@@ -31,7 +31,7 @@
       <shared-arrow-text
         :font-weight="roleFont[1]"
         font-size="22px"
-        font-family="base"
+        font-family="title"
       >
         Заказчик
       </shared-arrow-text>
@@ -57,66 +57,28 @@ watch(role, () => {
   @apply absolute flex justify-between;
   bottom: calcHeight(40px);
   right: 0;
-  color: rgba($color: #fff, $alpha: 0.9);
+  color: $white;
   z-index: $z-index-2;
-  gap: calcWidth(55);
-  @media screen and ($media-lg-query) {
-    /* @apply static; */
-    gap: calculateVw768(55);
-    bottom: calculateVw768(40);
-    width: 100%;
-  }
-  @media screen and ($media-md-query) {
-    gap: calculateVw425(55);
-    bottom: calculateVw425(40);
-  }
+  gap: calcHeight(55px);
   &__role-block {
     @apply flex flex-col justify-end cursor-pointer;
-    gap: calcWidth(12);
-    @media screen and ($media-lg-query) {
-      gap: calculateVw768(12);
-    }
-    @media screen and ($media-md-query) {
-      gap: calculateVw425(12);
-    }
+    gap: calcHeight(12px);
   }
   &__role-image {
     @apply flex justify-center items-end;
-    width: calcWidth(180);
+    width: pxToRem(180);
     background-color: $black-transparent;
-    border-radius: calcWidth(20);
+    border-radius: $border-radius-l;
     backdrop-filter: blur(14.846222877502441px);
     border: 1.5px solid $white;
-    height: calcWidth(130);
+    height: pxToRem(130);
     transition: 0.6s;
-    @media screen and ($media-lg-query) {
-      width: calculateVw768(180);
-      height: calculateVw768(130);
-      border-radius: calculateVw768(20);
-    }
-    @media screen and ($media-md-query) {
-      width: calculateVw425(140);
-      height: calculateVw425(95);
-      border-radius: calculateVw425(20);
-    }
     img {
-      height: calcWidth(170);
-      @media screen and ($media-lg-query) {
-        height: calculateVw768(170);
-      }
-      @media screen and ($media-md-query) {
-        height: calculateVw425(131);
-      }
+      height: pxToRem(170);
     }
     &_active {
       box-shadow: 0 0 35px 0 $white-transparent;
-      height: calcWidth(190);
-      @media screen and ($media-lg-query) {
-        height: calculateVw768(190);
-      }
-      @media screen and ($media-md-query) {
-        height: calculateVw425(159);
-      }
+      height: pxToRem(190);
     }
   }
 }

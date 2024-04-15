@@ -1,5 +1,5 @@
 <template>
-  <section v-if="userData || true" class="dashboard">
+  <section v-if="userData" class="dashboard">
     <div class="dashboard__inner container">
       <div class="dashboard__title">
         <div class="dashboard__title-mark" />

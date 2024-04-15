@@ -23,7 +23,7 @@
             width="240px"
             height="45px"
             font-size="18px"
-            font-weight="500"
+            font-weight="600"
             arrow-gap="15px"
             @click="ToLogin"
           >

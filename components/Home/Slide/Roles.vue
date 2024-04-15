@@ -15,24 +15,19 @@
           <div class="home-slide-roles__text-block">
             <h2 class="home-slide-roles__title">Исполнитель</h2>
             <p class="home-slide-roles__text">
-              <span
-                >В IT-сфере за 2020-2023 года Исполнители сильно
-                разделились</span
-              >
+              <b>В IT-сфере за 2020-2023 года Исполнители сильно разделились</b>
               по категориям, у кого-то команда, кто-то работает как фрилансер, а
               у кого-то организация.
             </p>
             <p class="home-slide-roles__text">
-              <span>CONTRACTIS позволит работать</span> всем описанным выше
-              категориям Исполнителей, честно и по своему уровню навыков.
+              <b>CONTRACTIS позволит работать</b> всем описанным выше категориям
+              Исполнителей, честно и по своему уровню навыков.
             </p>
             <p class="home-slide-roles__text">
-              <span>Начните делать первые шаги</span> для получения Заказа прямо
+              <b>Начните делать первые шаги</b> для получения Заказа прямо
               сейчас!
             </p>
             <shared-button-ghost
-              width="245px"
-              height="45px"
               font-size="18px"
               font-weight="600"
               arrow-gap="15px"
@@ -54,14 +49,14 @@
           <div class="home-slide-roles__text-block">
             <h2 class="home-slide-roles__title">Заказчик</h2>
             <p class="home-slide-roles__text">
-              <span>Биржа CONTRACTIS</span> ориентирована на честную и
-              взаимовыгодную работу Заказчика и Исполнителя. С каждым годом
-              становится все сложнее и сложнее выбрать себе разработчика,
-              фрилансера или подобрать профессиональную команду.
+              <b>Биржа CONTRACTIS</b> ориентирована на честную и взаимовыгодную
+              работу Заказчика и Исполнителя. С каждым годом становится все
+              сложнее и сложнее выбрать себе разработчика, фрилансера или
+              подобрать профессиональную команду.
             </p>
             <p class="home-slide-roles__text">
-              <span>CONTRACTIS и умная система рейтингов</span> и честных
-              отзывов поможет вам определиться с конечным Исполнителем, а
+              <b>CONTRACTIS и умная система рейтингов</b> и честных отзывов
+              <b>поможет вам</b> определиться с конечным Исполнителем, а
               Telegram-взаимодействие сделает его удобным!
             </p>
             <shared-button-ghost
@@ -70,7 +65,6 @@
               font-size="18px"
               font-weight="600"
               arrow-gap="15px"
-              class="home-slide-roles__button"
               @click="ToLogin"
               >Найти исполнителя</shared-button-ghost
             >
@@ -106,88 +100,32 @@ const ToLogin = () => {
   &__customer-block {
     @apply absolute flex;
     min-height: $full-height;
-    column-gap: calcWidth(90);
-    @media screen and ($media-lg-query) {
-      /* @apply static; */
-      /* min-height: auto; */
-      column-gap: calculateVw768(90);
-    }
-    @media screen and ($media-md-query) {
-      /* @apply static; */
-      /* min-height: auto; */
-      column-gap: calculateVw425(90);
-    }
+    column-gap: pxToRem(90);
   }
   &__role-image {
-    height: calcWidth(650);
+    height: pxToRem(650);
     @apply self-end;
-    @media screen and ($media-lg-query) {
-      @apply hidden;
-    }
   }
   &__title {
-    @include gradient-text($title-font, calcWidth(50), 500, 150%);
-    margin-bottom: calcWidth(50);
-    @media screen and ($media-lg-query) {
-      @include gradient-text($title-font, calculateVw768(50), 500, 150%);
-      margin-bottom: calculateVw768(35);
-    }
-    @media screen and ($media-md-query) {
-      @include gradient-text($title-font, calculateVw425(26), 500, 150%);
-      margin-bottom: calculateVw425(35);
-    }
-    /* @include gradient-text($title-font, 70px, 700, 70px); */
-    /* margin-bottom: 65px; */
+    @include gradient-text($title-font, pxToRem(70), 700, pxToRem(70));
+    margin-bottom: pxToRem(65);
   }
   &__text {
-    /* line-height: calcWidth(33); */
-    max-width: calcWidth(980);
-    font-size: calcWidth(17);
+    line-height: pxToRem(33);
+    max-width: pxToRem(980);
+    font-size: pxToRem(18);
     font-weight: 400;
-    color: rgba($color: #fff, $alpha: 0.6);
-    margin-bottom: calcWidth(15);
-    @media screen and ($media-lg-query) {
-      line-height: calculateVw768(33);
-      max-width: calculateVw768(980);
-      font-size: calculateVw768(17);
-      margin-bottom: calculateVw768(15);
-    }
-    @media screen and ($media-md-query) {
-      line-height: 150%;
-      max-width: calculateVw425(980);
-      font-size: calculateVw425(13);
-      margin-bottom: calculateVw425(15);
-    }
-    span {
-      font-weight: 500;
-      color: rgba($color: #fff, $alpha: 0.9);
-    }
+    margin-bottom: pxToRem(27);
     &:last-of-type {
-      margin-bottom: calcWidth(60);
-      @media screen and ($media-lg-query) {
-        margin-bottom: calculateVw768(60);
-      }
-      @media screen and ($media-md-query) {
-        margin-bottom: calculateVw425(35);
-      }
+      margin-bottom: pxToRem(60);
     }
   }
   &__button {
-    width: fit-content;
   }
   &__text-block {
     @apply flex flex-col justify-center;
-    margin-bottom: calcWidth(190);
-    @media screen and ($media-lg-query) {
-      @apply justify-start;
-      margin: calculateVw768(67) 0;
-      /* margin: calculateVw768(66) 0; */
-    }
-    @media screen and ($media-md-query) {
-      @apply justify-start;
-      margin: calculateVw425(0) 0;
-      /* margin: calculateVw425(66) 0; */
-    }
+    /* margin-bottom: $header-height; */
+    margin-bottom: pxToRem(90);
   }
 }
 .fade-enter-active,

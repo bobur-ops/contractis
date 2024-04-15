@@ -1,129 +1,67 @@
 .form {
   @apply flex flex-col;
-  gap: calcWidth(30);
+  gap: 30px;
   color: $white;
   font-family: $base-font;
-  @media screen and ($media-lg-query) {
-    gap: calculateVw768(30);
-  }
-  @media screen and ($media-md-query) {
-    gap: calculateVw425(30);
-  }
-
   &-field {
     @apply flex flex-col relative;
-    gap: calcWidth(15);
+    gap: 15px;
     font-weight: 400;
-    @media screen and ($media-lg-query) {
-      gap: calculateVw768(15);
-    }
-    @media screen and ($media-md-query) {
-      gap: calculateVw425(15);
-    }
     &__input {
       @apply relative w-full h-full flex;
       &-switcher {
         @apply absolute cursor-pointer;
         top: 50%;
-        width: calcWidth(19);
-        height: calcWidth(16);
         transform: translate(0, -50%);
-        right: calcWidth(24);
-        @media screen and ($media-lg-query) {
-          right: calculateVw768(24);
-          width: calculateVw768(19);
-          height: calculateVw768(16);
-        }
-        @media screen and ($media-md-query) {
-          right: calculateVw425(24);
-          width: calculateVw425(19);
-          height: calculateVw425(16);
-        }
+        right: 24.68px;
+        width: 19.35px;
+        height: 16.258px;
       }
     }
     &__password-input {
-      padding: 0 calcWidth(65) 0 calcWidth(25) !important;
-      @media screen and ($media-lg-query) {
-        padding: 0 calculateVw768(65) 0 calculateVw768(25) !important;
-      }
-      @media screen and ($media-md-query) {
-        padding: 0 calculateVw425(65) 0 calculateVw425(25) !important;
-      }
+      padding: 0 65px 0 25px !important;
     }
     &__label {
-      color: rgba($color: #fff, $alpha: 0.9);
-      font-weight: 400;
+      color: $white;
       line-height: 100%;
       text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.25);
       transition: color 0.2s ease-in-out;
-      font-size: calcWidth(16);
-      @media screen and ($media-lg-query) {
-        font-size: calculateVw768(16);
-      }
-      @media screen and ($media-md-query) {
-        font-size: calculateVw425(14);
-      }
       &_error {
         color: $light-red !important;
       }
     }
     &__limit {
       @apply absolute;
-      bottom: calcWidth(13);
-      right: calcWidth(25);
-      font-size: calcWidth(18);
+      bottom: 13px;
+      right: 25px;
+      font-size: 18px;
       color: $border-block;
-      @media screen and ($media-lg-query) {
-        right: calculateVw768(25);
-        font-size: calculateVw768(18);
-        bottom: calculateVw768(13);
-      }
-      @media screen and ($media-md-query) {
-        right: calculateVw425(25);
-        font-size: calculateVw425(14);
-        bottom: calculateVw425(13);
-      }
     }
   }
   &-input {
     @apply w-full relative;
-    padding: 0 calcWidth(25);
-    height: calcWidth(55);
-    // background:
-    //   linear-gradient($bg-inputs, $bg-inputs) padding-box,
-    //   $border-block border-box;
-    background: transparent;
-    border: 1px solid $border-block;
-    border-radius: calcWidth(15);
-    font-size: calcWidth(16);
-    @media screen and ($media-lg-query) {
-      padding: 0 calculateVw768(25);
-      height: calculateVw768(55);
-      font-size: calculateVw768(16);
-      border-radius: calculateVw768(15);
-    }
-    @media screen and ($media-md-query) {
-      padding: 0 calculateVw425(25);
-      height: calculateVw425(44);
-      font-size: calculateVw425(14);
-      border-radius: calculateVw425(12);
-    }
+    padding: 0 25px;
+    height: 55px;
+    background:
+            linear-gradient($bg-inputs, $bg-inputs) padding-box,
+            $border-block border-box;
+    border: 1px solid transparent;
+    border-radius: $border-radius-m;
     &:focus {
       background:
-        linear-gradient($bg-inputs, $bg-inputs) padding-box,
-        $gradient-skyblue-blue border-box;
+              linear-gradient($bg-inputs, $bg-inputs) padding-box,
+              $gradient-skyblue-blue border-box;
     }
     &_error {
       transition: 0.2s ease-in-out;
-      border: 1px solid $light-red;
-      // background:
-      //   linear-gradient($bg-inputs, $bg-inputs) padding-box,
-      //   $light-red border-box;
+      background:
+              linear-gradient($bg-inputs, $bg-inputs) padding-box,
+              $light-red border-box;
     }
     &::-webkit-calendar-picker-indicator {
-      width: calcWidth(14);
-      height: calcWidth(16);
-      background: url('assets/icons/Input/calendar.svg') no-repeat center center;
+      width: 14px;
+      height: 16px;
+      background: url("assets/icons/Input/calendar.svg") no-repeat center center;
       color: #00000000;
     }
   }

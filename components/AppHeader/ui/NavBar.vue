@@ -22,25 +22,19 @@ const route = useRoute();
 <style scoped lang="scss">
 .menu {
   @apply flex justify-between;
-  @media screen and ($media-lg-query) {
-    @apply hidden;
-  }
-  min-width: calcWidth(591);
-  /* min-width: 591px; */
+  min-width: 36.9375rem;
   &__item {
-    color: white;
-    opacity: 90;
-    letter-spacing: 0%;
+    color: $white;
     font-family: $base-font;
-    font-size: calcWidth(15);
+    font-size: 0.9rem;
     font-weight: 400;
-    /* line-height: 15px; */
+    line-height: 0.9375rem;
     &:hover {
       color: $gray-70;
       transition: 0.1s;
     }
     &_selected {
-      @include gradient-text($base-font, calcWidth(15), 500, calcWidth(15));
+      @include gradient-text($base-font, 0.9rem, 500, 0.9rem);
     }
   }
 }
