@@ -5,9 +5,9 @@
       <p class="recovery__description-text">
         Код для подтверждения пароля отправлен на ваш Email и в Telegram-bot.
       </p>
-      <p class="recovery__description-text">
+      <p class="recovery__description-subtext">
         Не пришел код?
-        <span class="recovery__send">Отправить еще раз (20 с.)</span>
+        <span class="recovery__send">Отправить еще раз</span>
       </p>
     </div>
     <form-base class="recovery__form" @submit="submit">
@@ -17,7 +17,7 @@
       </template>
       <template #buttons>
         <shared-button-gradient-blue button-height="50px" font-size="20px">
-          Подтвердить
+          <shared-arrow-text> Подтвердить </shared-arrow-text>
         </shared-button-gradient-blue>
       </template>
     </form-base>
@@ -46,12 +46,12 @@ const submit = handleSubmit((values) => {
 </script>
 <style scoped lang="scss">
 .recovery {
-  width: 392px;
-  margin: 37px 40px;
+  width: pxToRem(392);
+  margin: pxToRem(35);
   &__info {
     @apply flex flex-col;
-    margin-bottom: 30px;
-    gap: 30px;
+    margin-bottom: pxToRem(30);
+    gap: pxToRem(30);
   }
   &__form {
     &-necessarily {
@@ -61,31 +61,38 @@ const submit = handleSubmit((values) => {
   }
   &__description {
     &-text {
-      color: $gray;
-      line-height: 24px;
+      color: rgba($color: #fff, $alpha: 0.6);
+      line-height: pxToRem(20);
       font-weight: 400;
-      font-size: 16px;
+      font-size: pxToRem(16);
+    }
+    &-subtext {
+      @apply flex justify-between;
+      color: rgba($color: #fff, $alpha: 0.6);
+      line-height: pxToRem(20);
+      font-weight: 300;
+      font-size: pxToRem(16);
     }
     &-link {
-      line-height: 24px;
+      line-height: pxToRem(24);
       text-decoration: underline;
       font-weight: 400;
-      font-size: 16px;
+      font-size: pxToRem(16);
     }
   }
   &__send {
-    line-height: 24px;
+    color: rgba($color: #fff, $alpha: 0.9);
     text-decoration: underline;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 300;
+    font-size: pxToRem(16);
     float: right;
   }
   &__name {
-    line-height: 48px;
+    line-height: pxToRem(36);
     font-family: $base-font;
-    font-weight: 600;
-    color: white;
-    font-size: 36px;
+    font-weight: 500;
+    color: rgba($color: #fff, $alpha: 0.85);
+    font-size: pxToRem(36);
   }
 }
 </style>

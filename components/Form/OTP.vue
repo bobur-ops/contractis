@@ -62,19 +62,22 @@ const handleInput = (event, index) => {
   @apply w-full flex justify-between;
   &__digit-input {
     @apply flex text-center relative;
-    font-size: 36px;
+    font-size: pxToRem(36);
     font-weight: 500;
-    width: 58px;
-    height: 65px;
+    width: pxToRem(58);
+    height: pxToRem(65);
     color: $white;
     transition: 0.1s;
-    background:
+    background-color: transparent;
+    border: pxToRem(1) solid $border-block;
+    /* background:
       linear-gradient($bg-inputs, $bg-inputs) padding-box,
       $white border-box;
-    border: 1px solid transparent;
-    border-radius: $border-radius-l;
+    border: pxToRem(1) solid transparent; */
+    border-radius: pxToRem(15);
     &_active,
     &:focus {
+      border: 2px solid transparent;
       background:
         linear-gradient($bg-inputs, $bg-inputs) padding-box,
         $gradient-skyblue-blue border-box;

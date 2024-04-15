@@ -55,33 +55,33 @@ const toGoogle = () => {
 <style scoped lang="scss">
 .another-auth {
   @apply inline-flex w-full items-center;
-  margin: 27px 0;
-  gap: 6px;
+  margin: pxToRem(27) 0;
+  gap: pxToRem(6);
   &__socials {
     @apply flex justify-between;
     &-item {
-      width: 79px;
-      height: 42.5px;
+      width: pxToRem(79);
+      height: pxToRem(42.5);
       cursor: pointer;
       &_tg {
         @apply relative;
         background: url('assets/images/social-networks/Telegram.png');
-        background-size: 79px 42.5px;
+        background-size: pxToRem(79) pxToRem(42.5);
         overflow: hidden;
-        border-radius: 11px;
+        border-radius: pxToRem(11);
         cursor: pointer;
       }
     }
   }
   &__line {
     @apply w-full inline-block;
-    height: 1px;
+    height: pxToRem(1);
     background: $white;
   }
   &__text {
-    line-height: 13px;
+    line-height: pxToRem(13);
     font-family: $base-font;
-    font-size: 16px;
+    font-size: pxToRem(16);
     font-weight: 400;
   }
 }

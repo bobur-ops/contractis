@@ -1,7 +1,7 @@
 .home-slide-start {
   @apply w-full flex justify-center items-center;
   height: $full-height;
-  color: $white;
+  color: rgba($color: #fff, $alpha: 0.9);
   &__inner {
     @apply flex justify-between items-center;
   }
@@ -11,33 +11,36 @@
     max-width: pxToRem(862);
 
     &-name {
-      font-family: $title-font;
-      font-size: pxToRem(70);
+      font-family: $base-font;
+      font-size: pxToRem(50);
       font-style: normal;
-      font-weight: 700;
-      line-height: 80%; /* 80px */
+      font-weight: 500;
+      line-height: 100%; /* 80px */
+      max-width: pxToRem(670);
+      letter-spacing: pxToRem(2.5);
       &_gradient {
-        @include gradient-text($logo-font, pxToRem(55), 700);
-        // letter-spacing: -2.75px;
+        @include gradient-text($logo-font, pxToRem(42), 700, 75%);
+        letter-spacing: -2.75px;
       }
     }
     &-description {
-      max-width: pxToRem(742);
+      max-width: pxToRem(597);
       font-family: $base-font;
-      font-size: pxToRem(18);
+      font-size: pxToRem(17);
       font-style: normal;
       font-weight: 400;
-      line-height: 150%;
+      line-height: 140%;
+      color: rgba($color: #fff, $alpha: 0.6);
     }
 
     &-buttons {
       @apply flex;
-      gap: pxToRem(40);
+      gap: pxToRem(35);
     }
 
     &-advantages {
       @apply flex;
-      gap: pxToRem(35);
+      gap: pxToRem(60);
       &-item {
         @apply flex flex-col;
         line-height: pxToRem(13);
@@ -45,10 +48,11 @@
         font-size: pxToRem(15);
         font-weight: 500;
         gap: pxToRem(15);
+        color: rgba($color: #fff, $alpha: 0.9);
       }
       &-count {
         font-family: $title-font;
-        font-size: pxToRem(34);
+        font-size: pxToRem(30);
         font-weight: 700;
         line-height: pxToRem(23);
       }

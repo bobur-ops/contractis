@@ -4,7 +4,7 @@
       <teleport to="main">
         <transition name="slide-fade">
           <profile-ui-init
-            v-if="!userData.user.firstName || !userData.user.type"
+            v-if="!userData?.user?.firstName || !userData?.user?.type"
           />
         </transition>
       </teleport>

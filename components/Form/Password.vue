@@ -24,7 +24,7 @@
         :model-value="passwordModel.text"
         :placeholder="placeholder"
         :type="passwordType"
-        :status-error="statusError"
+        :status-error="statusError || isValidateError"
         class="form-field__password-input"
         @update:model-value="updateValue"
       />

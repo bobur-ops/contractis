@@ -5,7 +5,7 @@
         id="email"
         v-model="email"
         :label="label.email"
-        placeholder="мама"
+        placeholder="E-mail"
         type="text"
         :status-error="errorStatus"
         :is-validate-error="!!errors.email"
@@ -14,7 +14,7 @@
         id="password"
         v-model="password"
         :label="label.password"
-        placeholder="папа"
+        placeholder="Password"
         :status-error="errorStatus"
         :message-error="errorMessage"
         :is-validate-error="!!errors.password"
@@ -32,12 +32,8 @@
       </div>
     </template>
     <template #buttons>
-      <shared-button-gradient-blue
-        button-height="50px"
-        font-size="20px"
-        :disabled="isDisabled"
-      >
-        Войти
+      <shared-button-gradient-blue :disabled="isDisabled">
+        <shared-arrow-text> Войти </shared-arrow-text>
       </shared-button-gradient-blue>
       <another-auth text="или" />
     </template>
@@ -112,7 +108,7 @@ watch(email, () => (errorStatus.value = null));
 @import './style';
 .login-form {
   &-references {
-    margin: 15px 0 0 0;
+    margin: pxToRem(15) 0 0 0;
     @apply flex justify-between w-full;
     color: $gray;
     font-weight: 500;
@@ -120,24 +116,24 @@ watch(email, () => (errorStatus.value = null));
   &__redirect {
     @apply flex;
     color: $white;
-    gap: 30px;
-    font-size: 16px;
+    gap: pxToRem(30);
+    font-size: pxToRem(16);
 
     &-question {
       color: $gray;
-      line-height: 15px;
+      line-height: pxToRem(15);
       font-weight: 400;
     }
 
     &-link {
-      line-height: 15px;
+      line-height: pxToRem(15);
       text-decoration: underline;
       font-weight: 400;
 
       &_mod {
-        font-weight: 500;
-        line-height: 24px;
-        font-size: 16px;
+        font-weight: 300;
+        line-height: pxToRem(24);
+        font-size: pxToRem(16);
       }
     }
   }

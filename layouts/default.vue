@@ -17,7 +17,7 @@ const { token: userToken } = useStore();
   min-height: $full-height;
 }
 .default-layout {
-  background: $black $bg-stars repeat fixed center;
+  background: $black $bg-stars-2 repeat fixed center;
   font-family: $base-font;
 }
 </style>

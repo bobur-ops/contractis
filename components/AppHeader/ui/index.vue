@@ -68,6 +68,7 @@ const ToLogin = () => {
     &__link {
       line-height: 10px;
       font-size: pxToRem(15);
+      color: rgba($color: #fff, $alpha: 0.9);
       &:hover {
         color: $gray-70;
         transition: 0.1s;

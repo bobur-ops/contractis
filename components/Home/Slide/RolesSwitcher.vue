@@ -55,30 +55,30 @@ watch(role, () => {
 <style scoped lang="scss">
 .role-switcher {
   @apply absolute flex justify-between;
-  bottom: calcHeight(40px);
+  bottom: calcHeight(60px);
   right: 0;
-  color: $white;
+  color: rgba($color: #fff, $alpha: 0.9);
   z-index: $z-index-2;
-  gap: calcHeight(55px);
+  gap: calcHeight(45px);
   &__role-block {
     @apply flex flex-col justify-end cursor-pointer;
-    gap: calcHeight(12px);
+    gap: calcHeight(20px);
   }
   &__role-image {
     @apply flex justify-center items-end;
-    width: pxToRem(180);
+    width: pxToRem(170);
     background-color: $black-transparent;
     border-radius: $border-radius-l;
     backdrop-filter: blur(14.846222877502441px);
     border: 1.5px solid $white;
-    height: pxToRem(130);
+    height: pxToRem(120);
     transition: 0.6s;
     img {
       height: pxToRem(170);
     }
     &_active {
       box-shadow: 0 0 35px 0 $white-transparent;
-      height: pxToRem(190);
+      height: pxToRem(180);
     }
   }
 }

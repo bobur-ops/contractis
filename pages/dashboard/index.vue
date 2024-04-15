@@ -1,5 +1,5 @@
 <template>
-  <section v-if="userData" class="dashboard">
+  <section v-if="userData || true" class="dashboard">
     <div class="dashboard__inner container">
       <div class="dashboard__title">
         <div class="dashboard__title-mark" />
@@ -8,6 +8,7 @@
         </h1>
       </div>
       <transition name="slide-fade">
+        <!-- <DashboardUiSlideProfile /> -->
         <component :is="currentComponent" />
       </transition>
     </div>

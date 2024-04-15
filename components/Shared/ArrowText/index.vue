@@ -76,6 +76,7 @@ defineProps({
   font-size: inherit;
   font-weight: inherit;
   gap: pxToRem(10);
+  color: rgba($color: #fff, $alpha: 0.9);
   &_base {
     font-family: $base-font;
   }

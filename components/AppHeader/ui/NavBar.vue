@@ -24,9 +24,9 @@ const route = useRoute();
   @apply flex justify-between;
   min-width: 36.9375rem;
   &__item {
-    color: $white;
+    color: rgba($color: #fff, $alpha: 0.9);
     font-family: $base-font;
-    font-size: 0.9rem;
+    font-size: pxToRem(15);
     font-weight: 400;
     line-height: 0.9375rem;
     &:hover {

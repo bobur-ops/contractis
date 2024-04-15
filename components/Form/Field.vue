@@ -5,9 +5,10 @@
       :id="id"
       class="form-field__label"
       :class="{
-        'form-field__label_error': statusError || isValidateError
+        'form-field__label_error': statusError || isValidateError,
+        'form-field__label_big': size === 'big',
+        'form-field__label_default': size === 'default'
       }"
-      :style="styles.label"
     >
       {{ label }}
     </label>
@@ -17,8 +18,7 @@
       :type="type"
       autocomplete-type="on"
       :placeholder="placeholder"
-      :status-error="statusError"
-      :style="styles.input"
+      :status-error="statusError || isValidateError"
       :input-mode="inputMode"
       :mask="mask"
       @update:model-value="updateValue"
@@ -87,5 +87,13 @@ const updateValue = (value) => {
 @import 'style';
 .form-field {
   gap: v-bind(gap);
+  &__label_default {
+    font-size: pxToRem(16);
+    font-weight: 400;
+  }
+  &__label_big {
+    font-size: pxToRem(18);
+    font-weight: 500;
+  }
 }
 </style>

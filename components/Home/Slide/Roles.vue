@@ -15,16 +15,19 @@
           <div class="home-slide-roles__text-block">
             <h2 class="home-slide-roles__title">Исполнитель</h2>
             <p class="home-slide-roles__text">
-              <b>В IT-сфере за 2020-2023 года Исполнители сильно разделились</b>
+              <span
+                >В IT-сфере за 2020-2023 года Исполнители сильно
+                разделились</span
+              >
               по категориям, у кого-то команда, кто-то работает как фрилансер, а
               у кого-то организация.
             </p>
             <p class="home-slide-roles__text">
-              <b>CONTRACTIS позволит работать</b> всем описанным выше категориям
-              Исполнителей, честно и по своему уровню навыков.
+              <span>CONTRACTIS позволит работать</span> всем описанным выше
+              категориям Исполнителей, честно и по своему уровню навыков.
             </p>
             <p class="home-slide-roles__text">
-              <b>Начните делать первые шаги</b> для получения Заказа прямо
+              <span>Начните делать первые шаги</span> для получения Заказа прямо
               сейчас!
             </p>
             <shared-button-ghost
@@ -90,7 +93,7 @@ const ToLogin = () => {
 <style scoped lang="scss">
 .home-slide-roles {
   @apply w-full flex justify-center relative;
-  color: $white;
+  color: rgba($color: #fff, $alpha: 0.9);
   min-height: $full-height;
   &__inner {
     min-height: $full-height;
@@ -103,29 +106,32 @@ const ToLogin = () => {
     column-gap: pxToRem(90);
   }
   &__role-image {
-    height: pxToRem(650);
+    height: pxToRem(480);
     @apply self-end;
   }
   &__title {
-    @include gradient-text($title-font, pxToRem(70), 700, pxToRem(70));
-    margin-bottom: pxToRem(65);
+    @include gradient-text($base-font, pxToRem(50), 500, 150%);
+    margin-bottom: pxToRem(60);
   }
   &__text {
     line-height: pxToRem(33);
-    max-width: pxToRem(980);
+    max-width: pxToRem(798);
     font-size: pxToRem(18);
     font-weight: 400;
     margin-bottom: pxToRem(27);
+    color: rgba($color: #fff, $alpha: 0.6);
     &:last-of-type {
       margin-bottom: pxToRem(60);
     }
+    span {
+      font-weight: 500;
+    }
   }
   &__button {
+    margin-bottom: pxToRem(90);
   }
   &__text-block {
     @apply flex flex-col justify-center;
-    /* margin-bottom: $header-height; */
-    margin-bottom: pxToRem(90);
   }
 }
 .fade-enter-active,

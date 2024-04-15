@@ -81,14 +81,14 @@ onMounted(() => {
   &__name {
     line-height: pxToRem(10);
     margin-left: pxToRem(5);
-    color: $white;
+    color: rgba($color: #fff, $alpha: 0.9);
   }
   &__image {
     width: pxToRem(16);
   }
   &__options {
     border-radius: $border-radius-s;
-    border: 1px solid $white;
+    border: 1px solid rgba($color: #fff, $alpha: 0.9);
     background: $bg-black-block !important;
   }
   &__base {

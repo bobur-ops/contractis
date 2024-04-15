@@ -48,8 +48,10 @@ watch(
 }
 .checkbox {
   &-text {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: pxToRem(16);
+    line-height: pxToRem(24);
+    font-weight: 300;
+    color: rgba($color: #fff, $alpha: 0.9);
     &:hover {
       transition: 0.2s;
       color: $gray;
@@ -71,9 +73,9 @@ watch(
     @apply flex justify-center items-center;
     top: 0;
     left: 0;
-    height: 24px;
-    min-width: 24px;
-    border-radius: 4px;
+    height: pxToRem(24);
+    min-width: pxToRem(24);
+    border-radius: pxToRem(4);
     background: url('/assets/icons/check-off.svg') no-repeat center center;
     background-size: cover;
   }

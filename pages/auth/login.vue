@@ -23,18 +23,18 @@ definePageMeta({
 </script>
 <style scoped lang="scss">
 .login {
-  width: 392px;
-  margin: 36px 40px;
+  width: pxToRem(392);
+  margin: pxToRem(36) pxToRem(40);
 
   &__info {
     @apply flex flex-col;
-    margin-bottom: 30px;
-    gap: 30px;
+    margin-bottom: pxToRem(30);
+    gap: pxToRem(30);
   }
 
   &__form {
     &-references {
-      margin: 15px 0 0 0;
+      margin: pxToRem(15) 0 0 0;
       @apply flex justify-between w-full;
       color: $gray;
       font-weight: 500;
@@ -42,36 +42,36 @@ definePageMeta({
   }
 
   &__redirect {
-    @apply flex;
-    color: $white;
-    gap: 30px;
-    font-size: 16px;
+    @apply flex justify-between;
+    font-size: pxToRem(16);
 
     &-question {
-      color: $gray;
-      line-height: 15px;
-      font-weight: 400;
+      color: rgba($color: #fff, $alpha: 0.6);
+      line-height: pxToRem(15);
+      font-weight: 300;
     }
 
     &-link {
-      line-height: 15px;
+      line-height: pxToRem(15);
       text-decoration: underline;
-      font-weight: 400;
+      font-weight: 300;
+      font-size: pxToRem(16);
+      color: rgba($color: #fff, $alpha: 0.9);
 
       &_mod {
         font-weight: 500;
-        line-height: 24px;
-        font-size: 16px;
+        line-height: pxToRem(24);
+        font-size: pxToRem(16);
       }
     }
   }
 
   &__name {
-    line-height: 26px;
+    line-height: pxToRem(26);
     font-family: $base-font;
-    font-weight: 600;
-    color: white;
-    font-size: 36px;
+    font-weight: 500;
+    color: rgba($color: #fff, $alpha: 0.85);
+    font-size: pxToRem(30);
   }
 }
 </style>

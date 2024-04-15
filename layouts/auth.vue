@@ -30,7 +30,7 @@
   min-height: $full-height;
 }
 .auth-layout {
-  background: $black $bg-stars repeat fixed center;
+  background: $black $bg-stars-2 repeat fixed center;
   font-family: $base-font;
 }
 .astronaut {
@@ -54,9 +54,9 @@
   &-block {
     @apply relative;
     border-radius: $border-radius-l;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(14.846222877502441px);
-    border: 1.5px solid $white;
+    /* background: rgba(255, 255, 255, 0.05); */
+    /* backdrop-filter: blur(14.846222877502441px); */
+    border: pxToRem(1) solid rgba($color: #fff, $alpha: 0.8);
     font-family: $base-font;
   }
 }

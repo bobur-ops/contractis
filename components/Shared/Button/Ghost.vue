@@ -37,8 +37,8 @@ const { isOutside } = useMouseInElement(btn);
 <style scoped lang="scss">
 .ghost-button {
   @apply flex justify-center items-center;
-  border: 1px solid $white;
-  color: $white;
+  border: 1px solid rgba($color: #fff, $alpha: 0.6);
+  color: rgba($color: #fff, $alpha: 0.9);
   transition: background-color 0.2s ease-in-out;
   background: transparent;
   border-radius: $border-radius-s;

@@ -1,5 +1,10 @@
 <template>
-  <button :disabled="disabled" :type="attrs.type" class="button-gradient-blue">
+  <button
+    :disabled="disabled"
+    :type="attrs.type"
+    class="button-gradient-blue"
+    :class="`size-${size}`"
+  >
     <slot />
   </button>
 </template>
@@ -8,7 +13,7 @@
 defineProps({
   fontSize: {
     type: String,
-    required: true
+    required: false
   },
   buttonHeight: {
     type: String,
@@ -25,25 +30,31 @@ defineProps({
   disabled: {
     type: Boolean,
     default: false
+  },
+  size: {
+    type: String,
+    default: 'medium'
   }
 });
 const attrs = useAttrs();
 </script>
 <style scoped lang="scss">
 .button-gradient-blue {
-  font-family: $base-font;
-  font-weight: 600;
-  border-radius: v-bind(border);
-  letter-spacing: 0.6px;
-  font-size: v-bind(fontSize);
   @apply flex justify-center items-center;
-  height: v-bind(buttonHeight);
+  font-family: $base-font;
+  letter-spacing: 0.6px;
   max-width: 100%;
-  width: v-bind(buttonWidth);
   background: $gradient-skyblue-blue;
+  width: 100%;
   &:hover {
     transition: 0.2s;
     box-shadow: 0 10px 40px 0 rgba(54, 51, 208, 0.6);
+  }
+  &.size-medium {
+    font-size: pxToRem(20);
+    font-weight: 500;
+    border-radius: pxToRem(12);
+    height: pxToRem(50);
   }
 }
 </style>
