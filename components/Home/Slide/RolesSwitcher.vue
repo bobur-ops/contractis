@@ -55,14 +55,21 @@ watch(role, () => {
 <style scoped lang="scss">
 .role-switcher {
   @apply absolute flex justify-between;
-  bottom: calcHeight(60px);
+  bottom: pxToRem(60);
   right: 0;
   color: rgba($color: #fff, $alpha: 0.9);
   z-index: $z-index-2;
-  gap: calcHeight(45px);
+  gap: pxToRem(45);
+  @media screen and ($media-md-query) {
+    @apply w-full;
+    bottom: pxToRem(10);
+  }
   &__role-block {
     @apply flex flex-col justify-end cursor-pointer;
-    gap: calcHeight(20px);
+    gap: pxToRem(20);
+    @media screen and ($media-md-query) {
+      gap: pxToRem(15);
+    }
   }
   &__role-image {
     @apply flex justify-center items-end;
@@ -73,12 +80,22 @@ watch(role, () => {
     border: 1.5px solid $white;
     height: pxToRem(120);
     transition: 0.6s;
+    @media screen and ($media-md-query) {
+      width: pxToRem(140);
+      height: pxToRem(95);
+    }
     img {
       height: pxToRem(170);
+      @media screen and ($media-md-query) {
+        height: pxToRem(159);
+      }
     }
     &_active {
       box-shadow: 0 0 35px 0 $white-transparent;
       height: pxToRem(180);
+      @media screen and ($media-md-query) {
+        height: pxToRem(159);
+      }
     }
   }
 }

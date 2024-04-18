@@ -50,6 +50,11 @@ const { isOutside } = useMouseInElement(btn);
       padding: 0 pxToRem(50);
       font-size: pxToRem(18);
       height: pxToRem(48);
+      @media screen and ($media-md-query) {
+        height: pxToRem(37);
+        padding: 0 pxToRem(25);
+        font-size: pxToRem(13);
+      }
     }
     &-small {
       padding: 0 pxToRem(22);

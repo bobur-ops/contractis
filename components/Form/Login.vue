@@ -134,6 +134,9 @@ watch(email, () => (errorStatus.value = null));
         font-weight: 300;
         line-height: pxToRem(24);
         font-size: pxToRem(16);
+        @media screen and ($media-md-query) {
+          font-size: pxToRem(13);
+        }
       }
     }
   }

@@ -55,6 +55,10 @@ const attrs = useAttrs();
     font-weight: 500;
     border-radius: pxToRem(12);
     height: pxToRem(50);
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(16);
+      height: pxToRem(44);
+    }
   }
 }
 </style>

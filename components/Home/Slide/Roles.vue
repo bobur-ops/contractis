@@ -52,15 +52,15 @@
           <div class="home-slide-roles__text-block">
             <h2 class="home-slide-roles__title">Заказчик</h2>
             <p class="home-slide-roles__text">
-              <b>Биржа CONTRACTIS</b> ориентирована на честную и взаимовыгодную
-              работу Заказчика и Исполнителя. С каждым годом становится все
-              сложнее и сложнее выбрать себе разработчика, фрилансера или
-              подобрать профессиональную команду.
+              <span>Биржа CONTRACTIS</span> ориентирована на честную и
+              взаимовыгодную работу Заказчика и Исполнителя. С каждым годом
+              становится все сложнее и сложнее выбрать себе разработчика,
+              фрилансера или подобрать профессиональную команду.
             </p>
             <p class="home-slide-roles__text">
-              <b>CONTRACTIS и умная система рейтингов</b> и честных отзывов
-              <b>поможет вам</b> определиться с конечным Исполнителем, а
-              Telegram-взаимодействие сделает его удобным!
+              <span>CONTRACTIS и умная система рейтингов</span> и честных
+              отзывов <span>поможет вам</span> определиться с конечным
+              Исполнителем, а Telegram-взаимодействие сделает его удобным!
             </p>
             <shared-button-ghost
               width="302px"
@@ -108,10 +108,17 @@ const ToLogin = () => {
   &__role-image {
     height: pxToRem(480);
     @apply self-end;
+    @media screen and ($media-md-query) {
+      @apply hidden;
+    }
   }
   &__title {
     @include gradient-text($base-font, pxToRem(50), 500, 150%);
     margin-bottom: pxToRem(60);
+    @media screen and ($media-md-query) {
+      @include gradient-text($base-font, pxToRem(26), 500, 150%);
+      margin-bottom: pxToRem(35);
+    }
   }
   &__text {
     line-height: pxToRem(33);
@@ -120,11 +127,17 @@ const ToLogin = () => {
     font-weight: 400;
     margin-bottom: pxToRem(27);
     color: rgba($color: #fff, $alpha: 0.6);
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(13);
+      line-height: 150%;
+      margin-bottom: pxToRem(20);
+    }
     &:last-of-type {
-      margin-bottom: pxToRem(60);
+      margin-bottom: pxToRem(35);
     }
     span {
       font-weight: 500;
+      color: rgba($color: #fff, $alpha: 0.9);
     }
   }
   &__button {
@@ -132,6 +145,9 @@ const ToLogin = () => {
   }
   &__text-block {
     @apply flex flex-col justify-center;
+    @media screen and ($media-md-query) {
+      @apply justify-start;
+    }
   }
 }
 .fade-enter-active,

@@ -30,7 +30,7 @@
         </shared-button-gradient-blue>
       </template>
     </form-base>
-    <role-select v-if="isVerified || true" />
+    <role-select v-if="isVerified" />
   </div>
 </template>
 
@@ -78,6 +78,10 @@ const submit = handleSubmit(async (values) => {
 .verification {
   width: pxToRem(392);
   margin: pxToRem(35);
+  @media screen and ($media-md-query) {
+    @apply w-full;
+    margin: 0;
+  }
   &__info {
     @apply flex flex-col;
     margin-bottom: pxToRem(30);
@@ -95,12 +99,18 @@ const submit = handleSubmit(async (values) => {
       line-height: pxToRem(20);
       font-weight: 400;
       font-size: pxToRem(16);
+      @media screen and ($media-md-query) {
+        font-size: pxToRem(14);
+      }
     }
     &-subtext {
       color: rgba($color: #fff, $alpha: 0.6);
       line-height: pxToRem(20);
       font-weight: 300;
       font-size: pxToRem(16);
+      @media screen and ($media-md-query) {
+        font-size: pxToRem(14);
+      }
     }
     &-link {
       line-height: pxToRem(20);
@@ -116,13 +126,19 @@ const submit = handleSubmit(async (values) => {
     font-size: pxToRem(16);
     float: right;
     color: rgba($color: #fff, $alpha: 0.9);
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(14);
+    }
   }
   &__name {
     line-height: pxToRem(36);
     font-family: $base-font;
     font-weight: 500;
-    color: white;
+    color: rgba($color: #fff, $alpha: 0.85);
     font-size: pxToRem(30);
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(24);
+    }
   }
 }
 </style>

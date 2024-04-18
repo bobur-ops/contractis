@@ -71,7 +71,10 @@ $bottom-page-space: 120px;
 $full-height: calc(100vh - pxToRem(90));
 // $full-height: calc(100vh - $header-height);
 $main-height: calc(100vh - $header-height - $bottom-page-space);
+
 $media-desktop: 1420px;
+$media-lg: 1024px;
+$media-md: 768px;
 
 $ui-step: 5px;
 

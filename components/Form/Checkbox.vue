@@ -45,6 +45,9 @@ watch(
 .checkbox__inner {
   @apply relative flex cursor-pointer items-start select-none;
   gap: v-bind(gap);
+  @media screen and ($media-md-query) {
+    @apply items-center;
+  }
 }
 .checkbox {
   &-text {
@@ -55,6 +58,9 @@ watch(
     &:hover {
       transition: 0.2s;
       color: $gray;
+    }
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(14);
     }
   }
   &__inner input {
@@ -78,6 +84,10 @@ watch(
     border-radius: pxToRem(4);
     background: url('/assets/icons/check-off.svg') no-repeat center center;
     background-size: cover;
+    @media screen and ($media-md-query) {
+      height: pxToRem(20);
+      min-width: pxToRem(20);
+    }
   }
 }
 </style>

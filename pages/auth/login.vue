@@ -25,7 +25,10 @@ definePageMeta({
 .login {
   width: pxToRem(392);
   margin: pxToRem(36) pxToRem(40);
-
+  @media screen and ($media-md-query) {
+    width: 100%;
+    margin: 0;
+  }
   &__info {
     @apply flex flex-col;
     margin-bottom: pxToRem(30);
@@ -44,7 +47,9 @@ definePageMeta({
   &__redirect {
     @apply flex justify-between;
     font-size: pxToRem(16);
-
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(14);
+    }
     &-question {
       color: rgba($color: #fff, $alpha: 0.6);
       line-height: pxToRem(15);
@@ -72,6 +77,9 @@ definePageMeta({
     font-weight: 500;
     color: rgba($color: #fff, $alpha: 0.85);
     font-size: pxToRem(30);
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(24);
+    }
   }
 }
 </style>

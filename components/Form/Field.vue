@@ -90,6 +90,10 @@ const updateValue = (value) => {
   &__label_default {
     font-size: pxToRem(16);
     font-weight: 400;
+    color: rgba($color: #fff, $alpha: 0.9);
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(14);
+    }
   }
   &__label_big {
     font-size: pxToRem(18);

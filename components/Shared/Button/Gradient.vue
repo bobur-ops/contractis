@@ -35,11 +35,20 @@ defineProps({
     font-family: $base-font;
     /* font-size: v-bind(fontSize);
     font-weight: v-bind(fontWeight); */
+    font-size: pxToRem(18);
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(13);
+    }
   }
   &.size-medium {
     width: pxToRem(200);
     height: pxToRem(48);
     background-size: pxToRem(200) pxToRem(48);
+    @media screen and ($media-md-query) {
+      width: pxToRem(122);
+      height: pxToRem(37);
+      background-size: pxToRem(122) pxToRem(37);
+    }
   }
 }
 </style>

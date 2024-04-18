@@ -22,10 +22,14 @@
       padding: pxToRem(0) pxToRem(65) pxToRem(0) pxToRem(25) !important;
     }
     &__label {
-      color: $white;
+      color: rgba($color: #fff, $alpha: 0.9);
       line-height: 100%;
       text-shadow: pxToRem(5) pxToRem(5) pxToRem(5) rgba(0, 0, 0, 0.25);
       transition: color 0.2s ease-in-out;
+      font-size: pxToRem(16);
+      @media screen and ($media-md-query) {
+        font-size: pxToRem(14);
+      }
       &_error {
         color: $light-red !important;
       }
@@ -46,8 +50,14 @@
     //   linear-gradient($bg-inputs, $bg-inputs) padding-box,
     //   $border-block border-box;
     background: transparent;
+    font-size: pxToRem(16);
     border: pxToRem(1) solid $border-block;
     border-radius: $border-radius-m;
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(14);
+      height: pxToRem(44);
+      border-radius: pxToRem(12);
+    }
     &:focus {
       background:
         linear-gradient($bg-inputs, $bg-inputs) padding-box,

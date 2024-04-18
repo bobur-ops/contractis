@@ -121,6 +121,9 @@ const toDashboard = async (role) => {
     border: 1px solid rgba($color: #fff, $alpha: 0.8);
     height: fit-content;
     border-radius: pxToRem(20);
+    @media screen and ($media-md-query) {
+      border: none;
+    }
   }
   &__title {
     @apply w-full;
@@ -129,6 +132,9 @@ const toDashboard = async (role) => {
     color: rgba($color: #fff, $alpha: 0.85);
     margin-bottom: pxToRem(32);
     text-align: left;
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(24);
+    }
   }
   &__roles {
     @apply flex;
@@ -144,7 +150,10 @@ const toDashboard = async (role) => {
     border-radius: $border-radius-m;
     margin-bottom: pxToRem(20);
     cursor: pointer;
-
+    @media screen and ($media-md-query) {
+      width: pxToRem(150);
+      height: pxToRem(115);
+    }
     &.active {
       background: $gradient-skyblue-blue;
       border: 1px solid rgba($color: #fff, $alpha: 0.8);
@@ -152,6 +161,10 @@ const toDashboard = async (role) => {
     img {
       width: pxToRem(133);
       height: pxToRem(162);
+      @media screen and ($media-md-query) {
+        width: pxToRem(112);
+        height: pxToRem(136);
+      }
     }
   }
 }
@@ -161,6 +174,9 @@ const toDashboard = async (role) => {
   top: 50%;
   transform: translateY(-50%);
   right: -99%;
+  @media screen and ($media-md-query) {
+    @apply hidden;
+  }
 }
 .planet {
   @apply absolute;
@@ -168,5 +184,8 @@ const toDashboard = async (role) => {
   width: pxToRem(210);
   height: pxToRem(209);
   left: 0;
+  @media screen and ($media-md-query) {
+    @apply hidden;
+  }
 }
 </style>

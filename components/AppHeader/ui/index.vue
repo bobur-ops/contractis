@@ -27,6 +27,12 @@
           :lang-list="langSelect"
         />
       </article>
+      <article class="lg:hidden">
+        <svgo-burger
+          class="w-[28px] h-[16px] cursor-pointer"
+          @click="() => {}"
+        />
+      </article>
     </section>
   </header>
 </template>
@@ -49,10 +55,16 @@ const ToLogin = () => {
   background: linear-gradient(180deg, #000 29.5%, rgba(0, 0, 0, 0) 100%);
   top: 0;
   z-index: $z-index-3;
+  @media screen and ($media-md-query) {
+    @apply justify-between;
+  }
   &-nav {
     @apply flex items-start;
     gap: $space-x-large-plus;
     padding-bottom: 2.0625rem;
+    @media screen and ($media-md-query) {
+      padding-bottom: 0;
+    }
   }
   &-actions {
     @apply flex  justify-center items-center self-center;
@@ -74,16 +86,26 @@ const ToLogin = () => {
         transition: 0.1s;
       }
     }
+    @media screen and ($media-md-query) {
+      @apply hidden;
+    }
   }
   &-inner {
     @apply flex justify-between items-end;
     background: url('assets/icons/Header/Line.svg') no-repeat bottom 7px left;
     background-size: pxToRem(821);
+    @media screen and ($media-md-query) {
+      @apply items-center;
+      background: none;
+    }
   }
   &__logo {
     line-height: 20px;
     /* width: 180px; */
     width: pxToRem(180);
+    @media screen and ($media-md-query) {
+      width: pxToRem(136);
+    }
   }
 }
 </style>

@@ -23,6 +23,9 @@ const route = useRoute();
 .menu {
   @apply flex justify-between;
   min-width: 36.9375rem;
+  @media screen and ($media-md-query) {
+    @apply hidden;
+  }
   &__item {
     color: rgba($color: #fff, $alpha: 0.9);
     font-family: $base-font;

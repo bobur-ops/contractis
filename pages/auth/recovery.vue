@@ -48,6 +48,10 @@ const submit = handleSubmit((values) => {
 .recovery {
   width: pxToRem(392);
   margin: pxToRem(35);
+  @media screen and ($media-md-query) {
+    width: 100%;
+    margin: 0;
+  }
   &__info {
     @apply flex flex-col;
     margin-bottom: pxToRem(30);
@@ -65,6 +69,9 @@ const submit = handleSubmit((values) => {
       line-height: pxToRem(20);
       font-weight: 400;
       font-size: pxToRem(16);
+      @media screen and ($media-md-query) {
+        font-size: pxToRem(14);
+      }
     }
     &-subtext {
       @apply flex justify-between;
@@ -72,12 +79,18 @@ const submit = handleSubmit((values) => {
       line-height: pxToRem(20);
       font-weight: 300;
       font-size: pxToRem(16);
+      @media screen and ($media-md-query) {
+        font-size: pxToRem(14);
+      }
     }
     &-link {
       line-height: pxToRem(24);
       text-decoration: underline;
       font-weight: 400;
       font-size: pxToRem(16);
+      @media screen and ($media-md-query) {
+        font-size: pxToRem(14);
+      }
     }
   }
   &__send {
@@ -86,13 +99,19 @@ const submit = handleSubmit((values) => {
     font-weight: 300;
     font-size: pxToRem(16);
     float: right;
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(14);
+    }
   }
   &__name {
     line-height: pxToRem(36);
     font-family: $base-font;
     font-weight: 500;
     color: rgba($color: #fff, $alpha: 0.85);
-    font-size: pxToRem(36);
+    font-size: pxToRem(30);
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(24);
+    }
   }
 }
 </style>

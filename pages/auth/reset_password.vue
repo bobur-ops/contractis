@@ -58,6 +58,9 @@ const submit = handleSubmit((values) => {
 .verification {
   width: pxToRem(392);
   margin: pxToRem(35);
+  @media screen and ($media-md-query) {
+    @apply w-full m-0;
+  }
   &__info {
     @apply flex flex-col;
     margin-bottom: pxToRem(30);
@@ -75,12 +78,18 @@ const submit = handleSubmit((values) => {
       line-height: pxToRem(20);
       font-weight: 400;
       font-size: pxToRem(16);
+      @media screen and ($media-md-query) {
+        font-size: pxToRem(14);
+      }
     }
     &-link {
       line-height: pxToRem(20);
       text-decoration: underline;
       font-weight: 400;
       font-size: pxToRem(16);
+      @media screen and ($media-md-query) {
+        font-size: pxToRem(14);
+      }
     }
   }
   &__name {
@@ -89,6 +98,9 @@ const submit = handleSubmit((values) => {
     font-weight: 500;
     color: rgba($color: #fff, $alpha: 0.85);
     font-size: pxToRem(30);
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(24);
+    }
   }
 }
 </style>

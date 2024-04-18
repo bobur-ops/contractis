@@ -75,6 +75,12 @@ const handleInput = (event, index) => {
       $white border-box;
     border: pxToRem(1) solid transparent; */
     border-radius: pxToRem(15);
+    @media screen and ($media-md-query) {
+      font-size: pxToRem(26);
+      width: pxToRem(49);
+      height: pxToRem(54);
+      border-radius: pxToRem(10);
+    }
     &_active,
     &:focus {
       border: 2px solid transparent;

@@ -38,11 +38,17 @@
   top: 50%;
   transform: translateY(-50%);
   right: -99%;
+  @media screen and ($media-md-query) {
+    @apply hidden;
+  }
 }
 .planet {
   @apply absolute;
   top: calcHeight(120px);
   left: 0;
+  @media screen and ($media-md-query) {
+    @apply hidden;
+  }
 }
 .auth {
   @apply w-full flex justify-center items-center;
@@ -58,6 +64,10 @@
     /* backdrop-filter: blur(14.846222877502441px); */
     border: pxToRem(1) solid rgba($color: #fff, $alpha: 0.8);
     font-family: $base-font;
+    @media screen and ($media-md-query) {
+      @apply w-full;
+      border: none;
+    }
   }
 }
 </style>

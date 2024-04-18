@@ -16,6 +16,9 @@ html {
   @media screen and (max-width: 1250px) {
     font-size: 60%;
   }
+  @media screen and ($media-md-query) {
+    font-size: 100%;
+  }
 }
 body {
   &::-webkit-scrollbar {
@@ -34,6 +37,11 @@ a {
 }
 .container {
   max-width: 85rem; // 1360px
+  @media screen and ($media-md-query) {
+    // max-width: pxToRem(330);
+    max-width: unset;
+    padding: 0 pxToRem(30);
+  }
 }
 
 #telegram-login-contractis_ro_bot {

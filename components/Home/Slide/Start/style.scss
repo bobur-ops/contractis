@@ -9,7 +9,11 @@
     @apply flex flex-col;
     gap: pxToRem(60);
     max-width: pxToRem(862);
-
+    @media screen and ($media-md-query) {
+      // max-width: pxToRem(330);
+      max-width: 100%;
+      gap: pxToRem(40);
+    }
     &-name {
       font-family: $base-font;
       font-size: pxToRem(50);
@@ -21,6 +25,16 @@
       &_gradient {
         @include gradient-text($logo-font, pxToRem(42), 700, 75%);
         letter-spacing: -2.75px;
+        @media screen and ($media-md-query) {
+          @include gradient-text($logo-font, pxToRem(18), 700, 110%);
+        }
+      }
+      @media screen and ($media-md-query) {
+        font-size: pxToRem(22);
+        line-height: 110%;
+        letter-spacing: pxToRem(1.1);
+        max-width: unset;
+        // max-width: pxToRem(332);
       }
     }
     &-description {
@@ -31,11 +45,19 @@
       font-weight: 400;
       line-height: 140%;
       color: rgba($color: #fff, $alpha: 0.6);
+      @media screen and ($media-md-query) {
+        // max-width: pxToRem(316);
+        max-width: unset;
+        font-size: pxToRem(13);
+      }
     }
 
     &-buttons {
       @apply flex;
       gap: pxToRem(35);
+      @media screen and ($media-md-query) {
+        @apply justify-between;
+      }
     }
 
     &-advantages {
@@ -49,17 +71,30 @@
         font-weight: 500;
         gap: pxToRem(15);
         color: rgba($color: #fff, $alpha: 0.9);
+        @media screen and ($media-md-query) {
+          font-size: pxToRem(12);
+          gap: pxToRem(12);
+        }
       }
       &-count {
         font-family: $title-font;
         font-size: pxToRem(30);
         font-weight: 700;
         line-height: pxToRem(23);
+        @media screen and ($media-md-query) {
+          font-size: pxToRem(18);
+        }
+      }
+      @media screen and ($media-md-query) {
+        gap: pxToRem(35);
       }
     }
   }
   &__earth-block {
     @include earth-block(pxToRem(500));
+    @media screen and ($media-md-query) {
+      @apply hidden;
+    }
   }
   &__earth {
     @include earth-video(pxToRem(662), pxToRem(106), pxToRem(100));
