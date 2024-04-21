@@ -18,6 +18,9 @@
           class="header-actions__select"
           :lang-list="langSelect"
         />
+        <div class="header-actions__theme">
+          <svgo-sun class="header-actions__icon w-[28px] h-[16px]" />
+        </div>
       </article>
       <article v-else-if="userData" class="header-actions">
         <svgo-notification-avail class="header-actions__notifications" />
@@ -27,10 +30,11 @@
           :lang-list="langSelect"
         />
         <div class="header-actions__theme">
-          <svgo-sun class="header-actions__icon" />
+          <svgo-sun class="header-actions__icon w-[28px] h-[16px]" />
         </div>
       </article>
-      <article class="lg:hidden">
+
+      <article class="md:hidden">
         <svgo-burger
           class="w-[28px] h-[16px] cursor-pointer"
           @click="() => {}"
@@ -92,6 +96,9 @@ const ToLogin = () => {
     &__theme {
       width: pxToRem(24);
       height: pxToRem(24);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       @media screen and ($media-md-query) {
         @apply hidden;
       }
