@@ -76,13 +76,14 @@ const toGoogle = () => {
   &__line {
     @apply w-full inline-block;
     height: pxToRem(1);
-    background: $white;
+    background: rgba($color: #fff, $alpha: 0.9);
   }
   &__text {
     line-height: pxToRem(13);
     font-family: $base-font;
     font-size: pxToRem(16);
     font-weight: 400;
+    color: rgba($color: #fff, $alpha: 0.9);
   }
 }
 </style>

@@ -94,7 +94,9 @@ const ToLogin = () => {
 .home-slide-roles {
   @apply w-full flex justify-center relative;
   color: rgba($color: #fff, $alpha: 0.9);
-  min-height: $full-height;
+  /* min-height: $full-height; */
+  min-height: 100%;
+
   &__inner {
     min-height: $full-height;
     @apply relative;
@@ -104,6 +106,9 @@ const ToLogin = () => {
     @apply absolute flex;
     min-height: $full-height;
     column-gap: pxToRem(90);
+    left: 0;
+    top: 0;
+    padding: 0 pxToRem(30);
   }
   &__role-image {
     height: pxToRem(480);
@@ -117,7 +122,7 @@ const ToLogin = () => {
     margin-bottom: pxToRem(60);
     @media screen and ($media-md-query) {
       @include gradient-text($base-font, pxToRem(26), 500, 150%);
-      margin-bottom: pxToRem(35);
+      margin-bottom: pxToRem(25);
     }
   }
   &__text {
@@ -130,10 +135,11 @@ const ToLogin = () => {
     @media screen and ($media-md-query) {
       font-size: pxToRem(13);
       line-height: 150%;
-      margin-bottom: pxToRem(20);
+      margin-bottom: pxToRem(15);
+      max-width: unset;
     }
     &:last-of-type {
-      margin-bottom: pxToRem(35);
+      margin-bottom: pxToRem(25);
     }
     span {
       font-weight: 500;
@@ -145,8 +151,11 @@ const ToLogin = () => {
   }
   &__text-block {
     @apply flex flex-col justify-center;
+    transform: translateY(pxToRem(-100));
     @media screen and ($media-md-query) {
       @apply justify-start;
+      transform: translateY(0);
+      /* transform: translateY(pxToRem(100)); */
     }
   }
 }

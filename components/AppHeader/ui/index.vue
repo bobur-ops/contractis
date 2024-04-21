@@ -26,6 +26,9 @@
           class="header-actions__select"
           :lang-list="langSelect"
         />
+        <div class="header-actions__theme">
+          <svgo-sun class="header-actions__icon" />
+        </div>
       </article>
       <article class="lg:hidden">
         <svgo-burger
@@ -84,6 +87,13 @@ const ToLogin = () => {
       &:hover {
         color: $gray-70;
         transition: 0.1s;
+      }
+    }
+    &__theme {
+      width: pxToRem(24);
+      height: pxToRem(24);
+      @media screen and ($media-md-query) {
+        @apply hidden;
       }
     }
     @media screen and ($media-md-query) {

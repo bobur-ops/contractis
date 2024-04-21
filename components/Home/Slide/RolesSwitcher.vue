@@ -14,6 +14,7 @@
         :font-weight="roleFont[0]"
         font-size="22px"
         font-family="title"
+        class="arrow-text"
       >
         Исполнитель
       </shared-arrow-text>
@@ -32,6 +33,7 @@
         :font-weight="roleFont[1]"
         font-size="22px"
         font-family="title"
+        class="arrow-text"
       >
         Заказчик
       </shared-arrow-text>
@@ -60,6 +62,7 @@ watch(role, () => {
   color: rgba($color: #fff, $alpha: 0.9);
   z-index: $z-index-2;
   gap: pxToRem(45);
+  padding: 0 pxToRem(30);
   @media screen and ($media-md-query) {
     @apply w-full;
     bottom: pxToRem(10);
@@ -97,6 +100,14 @@ watch(role, () => {
         height: pxToRem(159);
       }
     }
+  }
+}
+.arrow-text {
+  font-size: pxToRem(16);
+  font-weight: medium;
+  color: rgba($color: #fff, $alpha: 0.9);
+  @media screen and ($media-md-query) {
+    font-size: pxToRem(13);
   }
 }
 </style>

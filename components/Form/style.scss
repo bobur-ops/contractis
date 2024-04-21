@@ -45,7 +45,7 @@
   &-input {
     @apply w-full relative;
     padding: pxToRem(0) pxToRem(25);
-    height: pxToRem(55);
+    height: pxToRem(50);
     // background:
     //   linear-gradient($bg-inputs, $bg-inputs) padding-box,
     //   $border-block border-box;
@@ -58,11 +58,11 @@
       height: pxToRem(44);
       border-radius: pxToRem(12);
     }
-    &:focus {
-      background:
-        linear-gradient($bg-inputs, $bg-inputs) padding-box,
-        $gradient-skyblue-blue border-box;
-    }
+    // &:focus {
+    //   background:
+    //     linear-gradient($bg-inputs, $bg-inputs) padding-box,
+    //     $gradient-skyblue-blue border-box;
+    // }
     &_error {
       transition: pxToRem(0.2) ease-in-out;
       border: 1px solid $light-red;

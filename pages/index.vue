@@ -105,8 +105,8 @@ onMounted(async () => {
 }
 .arrowDown {
   @apply absolute left-1/2 -translate-x-1/2 transform;
-  width: 42px;
-  height: 21px;
+  width: pxToRem(24);
+  height: pxToRem(11);
   bottom: 30px;
   color: $gray;
   cursor: pointer;
