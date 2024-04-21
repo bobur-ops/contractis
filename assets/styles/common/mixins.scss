@@ -32,37 +32,34 @@
 
 @mixin gb-blur() {
   background:
-          url('/assets/images/subscription/blurs/blur-1.png') top left no-repeat fixed,
-          url('/assets/images/subscription/blurs/blur-2.png') top right no-repeat fixed,
-          url('/assets/images/subscription/blurs/blur-3.png') bottom left no-repeat fixed,
-          url('/assets/images/subscription/blurs/blur-4.png') bottom right no-repeat fixed,
-          $black fixed;
+    url('/assets/images/subscription/blurs/blur-1.png') top left no-repeat fixed,
+    url('/assets/images/subscription/blurs/blur-2.png') top right no-repeat
+      fixed,
+    url('/assets/images/subscription/blurs/blur-3.png') bottom left no-repeat
+      fixed,
+    url('/assets/images/subscription/blurs/blur-4.png') bottom right no-repeat
+      fixed,
+    $black fixed;
 }
 
 @mixin color-block($type) {
-  @if($type == 'yellow') {
+  @if ($type == 'yellow') {
     border: 1px solid rgba(255, 179, 65, 0.51);
-    background: rgba(242, 180, 20, 0.20);
-  }
-  @else if($type == 'pink') {
-    border: 1px solid #9A3985;
-    background: rgba(154, 57, 133, 0.20);
-  }
-  @else if($type == 'blue') {
-    border: 1px solid #3454C4;
-    background: rgba(52, 84, 196, 0.20);
-  }
-  @else if($type == 'red') {
-    border: 1px solid #B74040;
-    background: rgba(183, 64, 64, 0.20);
-  }
-  @else if($type == 'sky') {
-    border: 1px solid #60B1B6;
-    background: rgba(96, 177, 182, 0.20);
-  }
-  @else if($type == 'green') {
+    background: rgba(242, 180, 20, 0.2);
+  } @else if($type == 'pink') {
+    border: 1px solid #9a3985;
+    background: rgba(154, 57, 133, 0.2);
+  } @else if($type == 'blue') {
+    border: 1px solid #3454c4;
+    background: rgba(52, 84, 196, 0.2);
+  } @else if($type == 'red') {
+    border: 1px solid #b74040;
+    background: rgba(183, 64, 64, 0.2);
+  } @else if($type == 'sky') {
+    border: 1px solid #60b1b6;
+    background: rgba(96, 177, 182, 0.2);
+  } @else if($type == 'green') {
     border: 1px solid #468744;
-    background: rgba(70, 135, 68, 0.20);
+    background: rgba(70, 135, 68, 0.2);
   }
-
 }

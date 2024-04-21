@@ -62,6 +62,9 @@ definePageMeta({
       font-weight: 300;
       font-size: pxToRem(16);
       color: rgba($color: #fff, $alpha: 0.9);
+      @media screen and ($media-md-query) {
+        font-size: pxToRem(14);
+      }
 
       &_mod {
         font-weight: 500;

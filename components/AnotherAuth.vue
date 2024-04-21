@@ -57,12 +57,20 @@ const toGoogle = () => {
   @apply inline-flex w-full items-center;
   margin: pxToRem(27) 0;
   gap: pxToRem(6);
+  @media screen and ($media-md-query) {
+    @apply hidden;
+  }
   &__socials {
     @apply flex justify-between;
     &-item {
       width: pxToRem(79);
       height: pxToRem(42.5);
       cursor: pointer;
+      @media screen and ($media-md-query) {
+        width: pxToRem(66);
+        height: pxToRem(40);
+        margin-top: pxToRem(31);
+      }
       &_tg {
         @apply relative;
         background: url('assets/images/social-networks/Telegram.png');

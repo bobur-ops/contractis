@@ -119,7 +119,7 @@ const ToLogin = () => {
   }
   &__title {
     @include gradient-text($base-font, pxToRem(50), 500, 150%);
-    margin-bottom: pxToRem(60);
+    margin-bottom: pxToRem(45);
     @media screen and ($media-md-query) {
       @include gradient-text($base-font, pxToRem(26), 500, 150%);
       margin-bottom: pxToRem(25);
@@ -139,7 +139,10 @@ const ToLogin = () => {
       max-width: unset;
     }
     &:last-of-type {
-      margin-bottom: pxToRem(25);
+      margin-bottom: pxToRem(45);
+      @media screen and ($media-md-query) {
+        margin-bottom: pxToRem(25);
+      }
     }
     span {
       font-weight: 500;

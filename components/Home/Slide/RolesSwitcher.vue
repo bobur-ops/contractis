@@ -13,7 +13,7 @@
       <shared-arrow-text
         :font-weight="roleFont[0]"
         font-size="22px"
-        font-family="title"
+        font-family="base"
         class="arrow-text"
       >
         Исполнитель
@@ -32,7 +32,7 @@
       <shared-arrow-text
         :font-weight="roleFont[1]"
         font-size="22px"
-        font-family="title"
+        font-family="base"
         class="arrow-text"
       >
         Заказчик
@@ -77,7 +77,7 @@ watch(role, () => {
   &__role-image {
     @apply flex justify-center items-end;
     width: pxToRem(170);
-    background-color: $black-transparent;
+    /* background-color: $black-transparent; */
     border-radius: $border-radius-l;
     backdrop-filter: blur(14.846222877502441px);
     border: 1.5px solid $white;
@@ -106,6 +106,7 @@ watch(role, () => {
   font-size: pxToRem(16);
   font-weight: medium;
   color: rgba($color: #fff, $alpha: 0.9);
+  margin: 0 auto;
   @media screen and ($media-md-query) {
     font-size: pxToRem(13);
   }

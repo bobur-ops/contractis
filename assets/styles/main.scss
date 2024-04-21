@@ -19,6 +19,9 @@ html {
   @media screen and ($media-md-query) {
     font-size: 100%;
   }
+  @media screen and (max-width: 370px) {
+    font-size: 80%;
+  }
 }
 body {
   &::-webkit-scrollbar {

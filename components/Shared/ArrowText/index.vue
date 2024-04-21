@@ -55,7 +55,9 @@ defineProps({
   opacity: 0;
 }
 .arrow-icon {
-  height: v-bind(arrowHeight);
+  height: 10px;
+  width: 100%;
+  /* height: v-bind(arrowHeight); */
   position: absolute;
   fill-opacity: v-bind(arrowColor);
 }
@@ -65,8 +67,8 @@ defineProps({
 }
 .arrow-block__icon {
   @apply relative items-center flex;
-  height: pxToRem(8);
-  width: pxToRem(4);
+  height: pxToRem(10);
+  width: pxToRem(12);
 }
 .arrow-text {
   @apply flex items-center;

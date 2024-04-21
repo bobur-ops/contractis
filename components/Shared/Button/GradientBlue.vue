@@ -51,7 +51,7 @@ const attrs = useAttrs();
     box-shadow: 0 10px 40px 0 rgba(54, 51, 208, 0.6);
   }
   &.size-medium {
-    font-size: pxToRem(20);
+    font-size: pxToRem(18);
     font-weight: 500;
     border-radius: pxToRem(12);
     height: pxToRem(50);
